@@ -1,0 +1,6 @@
+#if 1
+    QDateTime dateTime = dateTime.fromString("2015-07-14 08:59:01","yyyy-MM-dd hh:mm:ss");//QDateTime::fromString("M1d1y7000:00:00","'M'M'd'd'y'yyhh:mm:ss");
+    qDebug()<<dateTime.toString("yyyy-MM-dd");
+    qDebug()<<dateTime.toString("hh-mm-ss.zzz");
+    qDebug()<<QString::number(dateTime.toTime_t());
+#endif

@@ -1,0 +1,372 @@
+PRAGMA table_info([tablename])
+.schema tablename
+void MainWindow::delete_CONST()
+{
+    QString strExec ;
+    QSqlRecord sqlRec;
+    QSqlQuery sqlQuery;
+    strExec ="delete from MT_CONST_MET_CONC where BAR_CODE ='4230001001000016254452'";
+
+    if(!sqlQuery.exec(strExec))
+    {
+        qDebug()<<sqlQuery.lastError();
+        showInformationBox(sqlQuery.lastError().text());
+        return;
+    }
+    else
+    {
+        showInformationBox(QString::fromUtf8("删除成功"));
+    }
+
+    sqlRec  = sqlQuery.record();
+}
+
+
+#if 1
+     strExec ="CREATE TABLE MT_DETECT_OUT_EQUIP( DETECT_TASK_NO char(32),IO_TASK_NO char(32),EQUIP_CATEG char(32),BAR_CODE char(32) primary key,BOX_BAR_CODE char(32),PILE_NO char(32),PLATFORM_NO char(32),SYS_NO char(32),WRITE_DATE char(32),HANDLE_FLAG char(32),HANDLE_DATE char(32),ARRIVE_BATCH_NO char(32),REDETECT_FLAG char(32),EMP_NO char(32),PLATFORM_TYPE char(32));";
+
+#endif
+
+#if 1
+     strExec ="CREATE TABLE MT_DETECT_TASK(DETECT_TASK_NO char(32),IO_TASK_NO char(32),EQUIP_CATEG char(32),BAR_CODE char(32) primary key,BOX_BAR_CODE char(32),PILE_NO char(32),PLATFORM_NO char(32),SYS_NO char(32),WRITE_DATE char(32),HANDLE_FLAG char(32),HANDLE_DATE char(32),ARRIVE_BATCH_NO char(32),REDETECT_FLAG char(32),EMP_NO char(32),PLATFORM_TYPE char(32));";
+
+#endif
+
+
+#if 1
+     strExec ="CREATE TABLE MT_P_CODE(BAR_CODE char(32) primary key, CODE_ID char(32),CODE_SORT_ID char(32),P_CODE char(32),CODE_TYPE char(32),ORG_NO char(32),VALUE char(32),NAME char(32),DISP_SN char(32),CONTENT1 char(32),CONTENT2 char(32),CONTENT3 char(32),CONTENT4 char(32),CONTENT5 char(32),PROVINCE char(32),HANDLE_PROVINCE char(32),HANDLE_TYPE char(32),CONTENT9 char(32),CONTENT6 char(32),CONTENT7 char(32),CONTENT8 char(32));";
+
+#endif
+
+#if 1
+        strExec ="CREATE TABLE MT_METER( METER_ID char(32),ERP_BATCH_NO char(32),BAR_CODE char(32) primary key,ASSET_NO char(32),MADE_NO char(32),LOT_NO char(32),ORG_NO char(32),ORG_TYPE char(32),PR_ORG char(32),BELONG_DEPT char(32),\n"
+                     "CONTRACT_ID char(32),CONTRACT_NO char(32),RCV_ID char(32),ARRIVE_BATCH_NO char(32),AREA_CODE char(32),STORE_AREA_SORT char(32),WH_ID char(32),WH_AREA_ID char(32),STORE_AREA_ID char(32),\n"
+                     "STORE_LOC_ID char(32),PALLET_BAR_CODE char(32),BOX_BAR_CODE char(32),SORT_CODE char(32),TYPE_CODE char(32),MODEL_CODE char(32),WIRING_MODE char(32),VOLT_CODE char(32),RATED_CURRENT char(32),OVERLOAD_FACTOR char(32),AP_PRE_LEVEL_CODE char(32),\n"
+                     "RP_PRE_LEVEL_CODE char(32),METER_DIGITS char(32),TS_DIGITS char(32),CONST_CODE char(32),RP_CONSTANT char(32),MANUFACTURER char(32),MADE_DATE char(32),EQIP_PRC char(32),SELF_FACTOR char(32),BOTH_WAY_CALC char(32),\n"
+                     "PREPAY_FLAG char(32),MULTIRATE_FALG char(32),DEMAND_METER_FLAG char(32),HARMONIC_MEAS_FALG char(32),CC_PREVENT_FLAG char(32),PULSE_CONSTANT_CODE char(32),PULSE_AMPLITUDE_CODE char(32),PULSE_SORT_CODE char(32),FREQ_CODE char(32),CON_MODE char(32),\n"
+                     "READING_TYPE_CODE char(32),METER_USAGE char(32),MEAS_THEORY char(32),BEARING_STRUC char(32),CI char(32),RELAY_JOINT char(32),ELEC_MEAS_DISP_FLAG char(32),VL_FLAG char(32),CL_FLAG char(32),ANTI_PHASE_FLAG char(32),\n"
+                     "SUPER_POWER_FLAG char(32),LOAD_CURVE_FLAG char(32),POWEROFF_MR_FLAG char(32),INFRARED_FLAG char(32),DOC_TYPE_CODE char(32),LATEST_CHK_DATE char(32),INST_DATE char(32),RMV_DATE char(32),ROTATE_CYCLE char(32),DISCARD_REASON char(32),\n"
+                     "DESCARD_DATE char(32),PR_CODE char(32),HANDOVER_DEPT char(32),HANDOVER_DATE char(32),CUR_STATUS_CODE char(32),BORROW_FLAG char(32),NEW_FLAG char(32),DOC_CREATOR_NO char(32),DOC_CREATE_DATE char(32),BAUDRATE_CODE char(32),\n"
+                     "METER_CLOSE_MODE char(32),REGISTER_MODE char(32),DISP_MODE char(32),HARD_VER char(32),SOFT_VER char(32),RS485_ROUTE_QTY char(32),COMM_PROT_CODE char(32),COMM_MODE char(32),ATTACHEQUIP_TYPE_CODE char(32),CARRIER_WAVE_ID char(32),\n"
+                     "REMARK char(32),WRITE_DATE char(32),HANDLE_FLAG char(32),HANDLE_DATE char(32),LATEST_DETECT_DATE char(32),CHIP_MANUFACTURER char(32),CHIP_MODEL_CODE char(32),TARIFF_TYPE char(32));";
+
+#endif
+
+
+INSERT INTO MT_BASICERR_MET_CONC( '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21','%22','%23','%24','%25','%26','%27','%28','%29','%30','%31','%32','%33','%34','%35','%36','%37','%38','%39','%40','%41','%42','%43','%44','%45','%46','%47','%48','%49','%50','%51','%52','%53','%54','%55','%56','%57','%58','%59','%60','%61','%62','%63','%64','%65','%66','%67','%68','%69','%70','%71','%72','%73','%74','%75','%76','%77','%78','%79','%80','%81','%82','%83','%84','%85','%86','%87','%88','%89','%90'
+
+.arg("")
+.arg("")
+.arg("")
+.arg("")
+.arg("")
+.arg("")
+.arg("")
+.arg("")
+.arg("")
+.arg("")//10
+c1
+#if 1
+
+strExec ="INSERT INTO MT_INTUIT_MET_CONC(DETECT_TASK_NO, EQUIP_CATEG, SYS_NO, DETECT_EQUIP_NO,DETECT_UNIT_NO,\n"
+        "POSITION_NO,  BAR_CODE,  DETECT_DATE,  PARA_INDEX,  DETECT_ITEM_POINT,  IS_VALID,   DETECT_CONTENT, CONC_CODE,  WRITE_DATE, HANDLE_FLAG,\n"
+        "HANDLE_DATE)values('3915071337300813','01','001','1','1','1','4230001001000016254452','2015','1','1','1','020','01','2015','2','2015')";
+
+#endif
+
+#if 1
+    strExec =  QString("INSERT INTO MT_INTUIT_MET_CONC values( '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16')")
+            .arg("3915071337300813")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("")
+            .arg("1")
+            .arg("1")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("0")
+            .arg("2015-07-17 08:59:00");
+#endif
+
+
+c2//相同的只能插入一条
+#if 1
+    strExec =  QString("INSERT INTO MT_BASICERR_MET_CONC values(  '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21','%22','%23','%24','%25','%26','%27','%28')")
+            .arg("3915071337300813")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("")
+            .arg("1")
+            .arg("1")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("0")
+            .arg("")
+            .arg("")
+            .arg("");
+#endif
+
+
+c3.
+
+#if 2
+    strExec =  QString("INSERT INTO MT_CONST_MET_CONC values(  '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21','%22','%23','%24','%25','%26','%27','%28','%29','%30','%31','%32','%33','%34','%35','%36')")
+            .arg("3915071337300813")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("")
+            .arg("1")
+            .arg("1")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("0")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("");
+#endif
+
+c4.
+
+#if 2
+#if 0
+    strExec = QString("INSERT INTO MT_STARTING_MET_CONC values(  '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21','%22')")
+            .arg("3915071337300813")
+            .arg("01")
+            .arg("402")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("2015-07-17 08:59:00")
+            .arg("1")
+            .arg("5")//10
+            .arg("01")//IS_VALID
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("2015-07-17 08:59:00")
+            .arg("0")//10
+            .arg("2015-07-17 08:59:00")
+            .arg("");
+
+#endif
+#endif
+c5.
+#if 2
+    strExec =  QString("INSERT INTO MT_CREEPING_MET_CONC values(  '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21')")
+            .arg("3915071337300813")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("")
+            .arg("1")
+            .arg("1")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("0")//10
+            .arg("");
+#endif
+c7.
+#if 2
+    strExec =  QString("INSERT INTO MT_DAYERR_MET_CONC values(  '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21','%22','%23')")
+            .arg("3915071337300813")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("")
+            .arg("1")
+            .arg("1")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("0")
+            .arg("")
+            .arg("");
+#endif
+
+c25
+
+#if 2
+    strExec =  QString("INSERT INTO MT_INFLUENCE_QTY_MET_CONC values(  '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16')")
+            .arg("3915071337300813")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("")
+            .arg("1")
+            .arg("1")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("0")
+            .arg("");
+#endif
+
+c34
+#if 1
+    strExec =  QString("INSERT INTO MT_DETECT_RSLT values( '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21','%22','%23','%24','%25','%26','%27','%28','%29','%30','%31','%32','%33','%34','%35','%36','%37','%38','%39','%40','%41','%42','%43','%44','%45','%46','%47','%48','%49','%50','%51','%52','%53','%54','%55','%56','%57','%58','%59','%60','%61','%62','%63','%64','%65','%66','%67','%68','%69','%70','%71','%72','%73','%74','%75','%76','%77','%78','%79','%80','%81','%82','%83','%84','%85','%86','%87','%88','%89','%90')")
+            .arg("3915071337300813")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("4230001001000016254452")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")//10
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("")
+            .arg("");//10
+#endif

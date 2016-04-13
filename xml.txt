@@ -1,0 +1,20 @@
+      // std::cout<<resp.out<<std::endl;
+       //std::cout<<*resp.out<<std::endl;
+       //qDebug()<< QString(resp.out);
+        //qDebug()<<"=="<<QString(QString::fromUtf8((*resp.out).c_str()));
+       // mydomDocument.setContent(QString(QString::fromUtf8((*resp.out).c_str())));//(QString(QString::fromUtf8((strxml.c_str()))))
+       // qDebug()<<mydomDocument.firstChild().toElement().tagName();//.firstChild().nextSibling().toElement().tagName();
+       // showInformationBox(QString::fromUtf8("数据更新出错"));
+       //strItemValue = getItemFromXML(QString(QString::fromUtf8((*resp.out).c_str())),"<RESULT_FLAG>", "</RESULT_FLAG>");
+
+    //xml ="<PARA><SYS_NO>402</SYS_NO><DETECT_TASK_NO>3915071337300813</DETECT_TASK_NO><VALID_QTY>2</VALID_QTY></PARA> ";
+
+#if 0
+   std::string AA="ASDFDS数据更新出错我";
+   std::string *in0=&AA;
+
+   std::cout<<AA<<std::endl;
+  // std::cout<<*in0<<std::endl;
+
+   qDebug()<<"hello"<<QString(QString::fromUtf8((*in0).c_str()));
+#endif
