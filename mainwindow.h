@@ -134,6 +134,12 @@ public:
 
     bool  create_MD5();
 
+    //
+    bool getSampleInfo();
+    void analyse_down_xml(QString str);
+    bool  MD5_down();
+    QString  MD5_getSampleInfo(QString strSou);
+    QString error_info(QString errInfo);
 private slots:
 
     void on_EM_down_Act_triggered();
@@ -179,11 +185,18 @@ private slots:
 
     void on_EM_delete_XML_PsBtn_clicked();
 
-    void on_EM_create_MD5_PsBtn_clicked();
 
     void on_EM_insert_XML_PsBtn_clicked();
 
     void on_EM_read_XML_PsBtn_clicked();
+
+    void on_EM_down_XML_PsBtn_clicked();
+
+    void on_EM_test_XML_PsBtn_clicked();
+
+    void on_EM_test2_XML_PsBtn_clicked();
+
+    void on_EM_save_XML_PsBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

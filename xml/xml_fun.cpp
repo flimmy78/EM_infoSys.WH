@@ -9,11 +9,14 @@
 bool MainWindow::createXmlFile(const QString &strFilePath, const QString &strRoot)
 {
     QDomDocument doc; //整个文档
-    QDomProcessingInstruction instruction = doc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"UTF-8\"");
-    doc.appendChild(instruction);
+   //z QDomProcessingInstruction instruction = doc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"UTF-8\"");
+    QDomProcessingInstruction instruction = doc.createProcessingInstruction("xml","");
+    //doc.
 
-    QDomElement root = doc.createElement(strRoot); //根节点
-    doc.appendChild(root);
+//    doc.appendChild(instruction);
+
+//    QDomElement root = doc.createElement(strRoot); //根节点
+//    doc.appendChild(root);
 
     QString strXmlDir = QFileInfo(strFilePath).absolutePath();//所在目录
     QDir tempDir;
@@ -283,7 +286,7 @@ bool MainWindow::read_xml(QString filename)
 
     file.close();
 
-    //qDebug()<<doc.toString();
+    qDebug()<<doc.toString();
     QDomElement root = doc.documentElement();
     QDomNode    node = root.firstChild();
 
@@ -295,7 +298,7 @@ bool MainWindow::read_xml(QString filename)
             QDomElement element = node.toElement();
             //ui->plainTextEdit->appendPlainText(QString::number(elementNum)+" "+element.tagName());
             //qDebug()<<element.toElement().tagName();
-            qDebug()<<element.toElement().attribute("nominalConstant");
+            //qDebug()<<element.toElement().attribute("nominalConstant");
             QDomNodeList list = element.childNodes();
             for(int i = 0;i < list.count();i++)
             {

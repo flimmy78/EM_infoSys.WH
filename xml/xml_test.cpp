@@ -21,7 +21,7 @@ void MainWindow::on_EM_creat_XML_PsBtn_clicked()
         //showInformationBox(QString strTemp)
     }
 
-
+#if 0
     QMap<QString,QString> nodeMap1,nodeMap2 ;
     nodeMap1.insert("aa", "11"); //向map里添加一对“键-值”
     nodeMap1.insert("bb", "22"); //向map里添加一对“键-值”   //tagname  不能为纯数字
@@ -40,6 +40,35 @@ void MainWindow::on_EM_creat_XML_PsBtn_clicked()
     }
 
     showInformationBox(QString::fromUtf8("创建成功"));
+#endif
+}
+
+void MainWindow::on_EM_save_XML_PsBtn_clicked()
+{
+
+    QFile *file;
+    QString  filename = "e:/config.xml";
+
+    if(file->exists(filename))
+    {
+        read_xml(filename);
+    }
+    else
+    {
+        showInformationBox("No exists");
+        return ;
+    }
+
+    QMap<QString,QString> nodeMap1 ;
+    nodeMap1.insert("aa1", "11");               //向map里添加一对“键-值”
+    nodeMap1.insert("bb1", "22");               //向map里添加一对“键-值”   //tagname  不能为纯数字
+
+    if(!appendNode(filename,"remote",nodeMap1))
+    {
+        showInformationBox("appendNode error");
+    }
+    showInformationBox(QString::fromUtf8("添加成功"));
+
 }
 
 

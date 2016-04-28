@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Win.XML.WH.0324</string>
+   <string>infoSys.WH</string>
   </property>
   <property name="windowIcon">
    <iconset resource="pic/pic.qrc">
@@ -28,7 +28,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="EM_down_page">
        <layout class="QGridLayout" name="gridLayout_2">
@@ -78,14 +78,14 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="6">
+           <item row="1" column="9">
             <widget class="QPushButton" name="EM_down_clean_PsBtn">
              <property name="text">
               <string>清空表格</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="3">
+           <item row="1" column="6">
             <spacer name="EM_down_HLSpacer">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -105,6 +105,27 @@
              </property>
              <property name="checkable">
               <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="EM_down_XML_PsBtn">
+             <property name="text">
+              <string>downXML</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QPushButton" name="EM_test_XML_PsBtn">
+             <property name="text">
+              <string>down</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="5">
+            <widget class="QPushButton" name="EM_test2_XML_PsBtn">
+             <property name="text">
+              <string>up</string>
              </property>
             </widget>
            </item>
@@ -149,20 +170,6 @@
            <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="1">
-            <widget class="QPushButton" name="EM_down_saveLocalSql_PsBtn">
-             <property name="text">
-              <string>保存表格信息</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QPushButton" name="EM_down_deleteLocalSqlItem_PsBtn">
-             <property name="text">
-              <string>删除条形码信息</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="0">
             <widget class="QLabel" name="label">
              <property name="styleSheet">
@@ -173,10 +180,24 @@
              </property>
             </widget>
            </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="EM_down_saveLocalSql_PsBtn">
+             <property name="text">
+              <string>保存表格信息</string>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="2">
             <widget class="QPushButton" name="EM_down_loadLocalSql_PsBtn">
              <property name="text">
               <string>查看条形码信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="EM_down_deleteLocalSqlItem_PsBtn">
+             <property name="text">
+              <string>删除条形码信息</string>
              </property>
             </widget>
            </item>
@@ -193,6 +214,41 @@
              </property>
             </spacer>
            </item>
+           <item row="0" column="5">
+            <widget class="QPushButton" name="EM_creat_XML_PsBtn">
+             <property name="text">
+              <string>生成XML</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QPushButton" name="EM_insert_XML_PsBtn">
+             <property name="text">
+              <string>添加节点</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7">
+            <widget class="QPushButton" name="EM_delete_XML_PsBtn">
+             <property name="text">
+              <string>删除XML</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="8">
+            <widget class="QPushButton" name="EM_read_XML_PsBtn">
+             <property name="text">
+              <string>读取节点</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="9">
+            <widget class="QPushButton" name="EM_save_XML_PsBtn">
+             <property name="text">
+              <string>保存</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -205,7 +261,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>4</number>
           </property>
           <widget class="QWidget" name="EM_METER_tab">
            <attribute name="title">
@@ -1571,6 +1627,117 @@
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="EM_sampleInfo_tab">
+           <attribute name="title">
+            <string>页</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="0" column="0">
+             <widget class="QTableWidget" name="EM_sampleInfo_TblWidget">
+              <column>
+               <property name="text">
+                <string>1sampleNo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>tableType</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>phaseType</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>nominalVoltage</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>5nominalCurrent</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>sampleType</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>nominalConstant</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>reactiveConstant</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>activeLevel</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>10reactiveLevel</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>freq</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>inputMode</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>isEmulator</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>measurementDirection</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>15sampleName</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>redSeal</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>producer</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>sampleUserName</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>sampleManuNo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>20sampleSeal</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </widget>
         </item>
        </layout>
@@ -1805,21 +1972,14 @@
               <property name="margin">
                <number>6</number>
               </property>
-              <item row="0" column="1">
-               <widget class="QPushButton" name="EM_insert_XML_PsBtn">
-                <property name="text">
-                 <string>添加节点</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="8">
+              <item row="0" column="3">
                <widget class="QPushButton" name="EM_update_insertDestSql_PsBtn">
                 <property name="text">
                  <string>添加到中间库</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="9">
+              <item row="0" column="4">
                <widget class="QPushButton" name="EM_update_updateRSLT_PsBtn">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -1832,7 +1992,7 @@
                 </property>
                </widget>
               </item>
-              <item row="0" column="5">
+              <item row="0" column="0">
                <spacer name="horizontalSpacer_3">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -1844,34 +2004,6 @@
                  </size>
                 </property>
                </spacer>
-              </item>
-              <item row="0" column="2">
-               <widget class="QPushButton" name="EM_delete_XML_PsBtn">
-                <property name="text">
-                 <string>删除XML</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QPushButton" name="EM_creat_XML_PsBtn">
-                <property name="text">
-                 <string>生成XML</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="4">
-               <widget class="QPushButton" name="EM_create_MD5_PsBtn">
-                <property name="text">
-                 <string>MD5</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="3">
-               <widget class="QPushButton" name="EM_read_XML_PsBtn">
-                <property name="text">
-                 <string>读取节点</string>
-                </property>
-               </widget>
               </item>
              </layout>
             </widget>
@@ -3274,7 +3406,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>

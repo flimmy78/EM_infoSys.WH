@@ -4,12 +4,19 @@
 #include "QDebug"
 #include "QMessageBox"
 #include "QTextStream"
-#
+
 #include "QCryptographicHash"
 
-void MainWindow::on_EM_create_MD5_PsBtn_clicked()
+
+
+//将数据加密返回,要求大写
+QString MainWindow::MD5_getSampleInfo(QString strSou)
 {
-   create_MD5();
+    QString secretKey;
+    QByteArray byteArray;
+    byteArray = QCryptographicHash::hash(strSou.toAscii(),QCryptographicHash::Md5);
+    secretKey.append(byteArray.toHex());
+    return secretKey.toUpper();
 }
 
 
