@@ -6,48 +6,6 @@
 #include "QTextStream"
 #include "QCryptographicHash"
 
-void MainWindow::on_EM_down_XML_PsBtn_clicked()
-{
-    if(false == getSampleInfo())
-    {
-//         showInformationBox(QString::fromUtf8("error"));
-//         return;
-    }
-
-//    MD5_down();
-    qDebug()<< error_info("1010");
-}
-
- bool MainWindow:: getSampleInfo()
- {
-     QString sampleNo,sysParams;
-
-     sampleNo  = "";//样品编号 “SGCM011620130018-01”
-     sysParams = "";//系统参数，组成方式：AppKey|date|Appsign，如“169827|2012-5-17 13:42:17|9865747FB8EBBB00F6C036A4185287F7”
-
-     //qDebug()<<currentTime();
- }
-
- void MainWindow::analyse_down_xml(QString strTemp)
- {
-     QString tagName ="sampleNo";
-     if(!search_domNode(tagName))
-     {
-         showInformationBox("no sample");
-         return;
-     }
-
- #if 1
-      QStringList tagNameList = g_map.keys();
-
-      foreach (QString str, tagNameList)
-      {
-          qDebug()  << str;
-          qDebug() << g_map.value(str);
-      }
- #endif
- }
-
  //获取下载平台信息,需要加密匹配
  bool MainWindow:: MD5_down()
 {

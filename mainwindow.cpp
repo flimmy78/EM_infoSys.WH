@@ -61,7 +61,7 @@ void MainWindow:: init_TblWidget()
     ui->EM_MEASURE_REPEAT_TblWidget->horizontalHeader()->setResizeMode( QHeaderView::ResizeToContents);
 
     ui->EM_sampleInfo_TblWidget->horizontalHeader()->setResizeMode( QHeaderView::ResizeToContents);
-    ui->EM_sampleInfo_TblWidget->verticalHeader()->setHidden(true);
+    ui->EM_sampleInfo_TblWidget->verticalHeader()->setHidden(false);
 
 }
 
@@ -287,17 +287,4 @@ QString MainWindow::compare_DateTime(QString str1,QString str2)
     qDebug()<<QString::number(dateTime.toTime_t());
 #endif
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

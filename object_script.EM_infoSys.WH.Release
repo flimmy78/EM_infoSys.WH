@@ -34,7 +34,8 @@ INPUT(
 ./release\md5.o
 ./release\error_XML.o
 ./release\xml_down.o
-./release\xml_update.o
+./release\mds_fun.o
+./release\EM_sampleInfo.o
 ./release\moc_mainwindow.o
 ./release\qrc_pic.o
 );

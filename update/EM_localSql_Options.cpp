@@ -30,6 +30,16 @@ void  MainWindow::open_localSql()
      }
 
 //武汉MDS 创建表格
+
+     strExec ="CREATE TABLE if  not exists sampleInfo(sampleNo char(128) primary key,tableType char(128),phaseType char(128),nominalVoltage char(128),nominalCurrent char(128),sampleType char(128),nominalConstant char(128),reactiveConstant char(128),activeLevel char(128),reactiveLevel char(128),freq char(128),inputMode char(128),isEmulator char(128),measurementDirection char(128),sampleName char(128),redSeal char(128),producer char(128),sampleUserName char(128),sampleManuNo char(128),sampleSeal char(128));";
+     intResult= sql_exec(strExec.toLatin1().data());
+     if(intResult!=SQLITE_OK)
+     {
+         showInformationBox(QString::fromUtf8("create sampleInfo error"));
+         return;
+     }
+
+
     strExec ="CREATE TABLE if not exists MT_DETECT_OUT_EQUIP( DETECT_TASK_NO char(128),IO_TASK_NO char(128),EQUIP_CATEG char(128),BAR_CODE char(128) primary key,BOX_BAR_CODE char(128),PILE_NO char(128),PLATFORM_NO char(128),SYS_NO char(128),WRITE_DATE char(128),HANDLE_FLAG char(128),HANDLE_DATE char(128),ARRIVE_BATCH_NO char(128),REDETECT_FLAG char(128),EMP_NO char(128),PLATFORM_TYPE char(128));";
     intResult= sql_exec(strExec.toLatin1().data());
 

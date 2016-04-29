@@ -5,18 +5,93 @@
 #include "QDir"
 #include "QDebug"
 #include "QMessageBox"
+#include "QFile"
+
+
+//加载XML内容
+bool MainWindow:: load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc)
+{
+    QString errorStr;
+    int errorLine,errorColumn;
+
+    QFile file(strFilePath);
+
+    if(!file.open(QIODevice::ReadOnly | QFile::Text))
+    {
+        showInformationBox(QString::fromUtf8("open error"));
+        return  false ;
+    }
+
+    if (!domDoc.setContent(&file, false, &errorStr, &errorLine, &errorColumn))
+    {
+        showInformationBox("domDoc.setContent:"+errorStr);
+        file.close();
+        return false ;
+    }
+
+    file.close();
+
+    return  true;
+
+}
+
+//将XML保存为文档形式.格式为UTF-8
+bool MainWindow::save_xmlFile(const QString &strFilePath,  const QDomDocument domDoc)
+{
+    QFile file(strFilePath);
+
+    if(!file.open(QIODevice::ReadWrite | QFile::Text))
+    {
+        showInformationBox(QString::fromUtf8("open error"));
+        file.close();
+        return  false;
+    }
+
+    QTextStream out(&file);
+    out.setCodec("UTF-8");
+    domDoc.save(out,4,QDomNode::EncodingFromTextStream);
+    file.close();
+
+    return  true;
+}
+
+//读取XML某个节点，tgt(target)
+bool MainWindow::search_domNode(QString tgtNodeName,const QDomDocument domDoc)
+{
+   QDomElement root;
+   QDomNode    node;
+   root = domDoc.documentElement();
+   node = root.firstChild();
+   if(recurse_domNode(node,tgtNodeName))//遍历节点 tgtDomEle =
+   {
+        return true;
+   }
+
+   return false;
+}
+
+QStringList MainWindow::get_errList(const QString strTemp)
+{
+    QString errCode,errDesc;
+    QStringList strList;
+    errCode = getItemFromXML(strTemp,"<errCode>", "</errCode>");
+    errDesc = getItemFromXML(strTemp,"<errDesc>", "</errDesc>");
+    strList<<errCode<<errDesc;
+    //qDebug()<<strList.at(0)<<strList.at(1);
+    return  strList;
+}
+
+
 //创建xml文件
 bool MainWindow::createXmlFile(const QString &strFilePath, const QString &strRoot)
 {
     QDomDocument doc; //整个文档
-   //z QDomProcessingInstruction instruction = doc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"UTF-8\"");
-    QDomProcessingInstruction instruction = doc.createProcessingInstruction("xml","");
-    //doc.
+    QDomProcessingInstruction instruction = doc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"UTF-8\"");
 
-//    doc.appendChild(instruction);
+    doc.appendChild(instruction);
 
-//    QDomElement root = doc.createElement(strRoot); //根节点
-//    doc.appendChild(root);
+    QDomElement root = doc.createElement(strRoot); //根节点
+    doc.appendChild(root);
 
     QString strXmlDir = QFileInfo(strFilePath).absolutePath();//所在目录
     QDir tempDir;
@@ -39,6 +114,7 @@ bool MainWindow::createXmlFile(const QString &strFilePath, const QString &strRoo
     file.close(); //关闭文件
     return  true;
 }
+
 
 //节点最前插入
 bool MainWindow::prependNode(const QString &strFilePath, const QString &strNodeName, const QMap<QString,QString> &nodeMap)
@@ -208,34 +284,6 @@ bool MainWindow::removeNodeByTag(const QString &strFilePath, const QString &strT
 
 
 
-
- //读取XML某个节点，tgt(target)
- bool MainWindow::search_domNode(QString tgtNodeName)
- {
-    QFile *file;
-    QDomElement root;
-    QDomNode    node;
-    QString  filename = "e:/config.xml";
-    g_domDoc.clear();
-
-    if(file->exists(filename)==false)
-    {
-        showInformationBox("xml no exists");
-        return false ;
-    }
-
-    open_xml(filename);
-    //qDebug()<<g_domDoc.toString();
-
-    root = g_domDoc.documentElement();
-    node = root.firstChild();
-    if(recurse_domNode(node,tgtNodeName))//遍历节点 tgtDomEle =
-    {
-         return true;
-    }
-
-    return false;
- }
 
   //加载XML内容
  bool MainWindow::open_xml(QString filename)

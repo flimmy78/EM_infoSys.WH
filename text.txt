@@ -4,3 +4,11 @@
     qDebug()<<dateTime.toString("hh-mm-ss.zzz");
     qDebug()<<QString::number(dateTime.toTime_t());
 #endif
+
+#if 0
+     foreach (QString str, tagNameList)
+     {
+         qDebug() << str;
+         qDebug() << g_map.value(str);
+     }
+#endif

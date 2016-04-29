@@ -45,26 +45,26 @@ public:
     QGridLayout *gridLayout_2;
     QFrame *EM_down_barCode_Frame;
     QGridLayout *gridLayout_25;
+    QPushButton *EM_down_sampleInfo_PsBtn;
     QLineEdit *EM_down_barCode_LnEdit;
     QLabel *EM_down_barCode_Label;
     QPushButton *EM_down_clean_PsBtn;
     QSpacerItem *EM_down_HLSpacer;
     QPushButton *EM_down_insertLocalSql_PsBtn;
-    QPushButton *EM_down_XML_PsBtn;
-    QPushButton *EM_test_XML_PsBtn;
     QPushButton *EM_test2_XML_PsBtn;
     QGroupBox *EM_down_GpBox;
     QGridLayout *gridLayout_4;
-    QLabel *label;
-    QPushButton *EM_down_saveLocalSql_PsBtn;
-    QPushButton *EM_down_loadLocalSql_PsBtn;
+    QPushButton *EM_options_deleteLocalSqlAll_PsBtn;
     QPushButton *EM_down_deleteLocalSqlItem_PsBtn;
-    QSpacerItem *EM_down_HLSpacer_2;
-    QPushButton *EM_creat_XML_PsBtn;
-    QPushButton *EM_insert_XML_PsBtn;
-    QPushButton *EM_delete_XML_PsBtn;
+    QPushButton *EM_save_XML_PsBtn;
     QPushButton *EM_read_XML_PsBtn;
-    QPushButton *EM_create_MD5_PsBtn;
+    QPushButton *EM_insert_XML_PsBtn;
+    QPushButton *EM_down_loadLocalSql_PsBtn;
+    QPushButton *EM_creat_XML_PsBtn;
+    QPushButton *EM_down_saveLocalSql_PsBtn;
+    QLabel *label;
+    QPushButton *EM_delete_XML_PsBtn;
+    QSpacerItem *horizontalSpacer;
     QTabWidget *EM_down_TabWidget;
     QWidget *EM_METER_tab;
     QGridLayout *gridLayout_18;
@@ -145,12 +145,15 @@ public:
     QLineEdit *EM_options_setArg_PassWord_LnEdit;
     QLabel *EM_options_setArg_SID_Label;
     QLineEdit *EM_options_setArg_SID_LnEdit;
-    QPushButton *EM_options_setArg_Oracle_PsBtn;
+    QLabel *EM_options_appKey_Lable;
     QPushButton *EM_options_setArg_localSqlPath_PsBtn;
-    QLineEdit *EM_options_setArg_localSqlPath_LnEdit;
-    QPushButton *EM_options_deleteLocalSqlAll_PsBtn;
+    QPushButton *EM_options_setArg_Oracle_PsBtn;
     QPushButton *EM_options_detectEquipNo_PsBtn;
+    QLineEdit *EM_options_appKey_LnEdit;
     QLineEdit *EM_options_detectEquipNo_LnEdit;
+    QLineEdit *EM_options_setArg_localSqlPath_LnEdit;
+    QLabel *EM_options_appSecret_Lable;
+    QLineEdit *EM_options_appSecret_LnEdit;
     QWidget *page;
     QTableWidget *electricMeter_CONST_TabWidget;
     QTableWidget *electricMeter_BASICERR_TabWidget_6;
@@ -208,6 +211,11 @@ public:
         gridLayout_25->setSpacing(6);
         gridLayout_25->setContentsMargins(6, 6, 6, 6);
         gridLayout_25->setObjectName(QString::fromUtf8("gridLayout_25"));
+        EM_down_sampleInfo_PsBtn = new QPushButton(EM_down_barCode_Frame);
+        EM_down_sampleInfo_PsBtn->setObjectName(QString::fromUtf8("EM_down_sampleInfo_PsBtn"));
+
+        gridLayout_25->addWidget(EM_down_sampleInfo_PsBtn, 1, 3, 1, 1);
+
         EM_down_barCode_LnEdit = new QLineEdit(EM_down_barCode_Frame);
         EM_down_barCode_LnEdit->setObjectName(QString::fromUtf8("EM_down_barCode_LnEdit"));
 
@@ -222,11 +230,11 @@ public:
         EM_down_clean_PsBtn = new QPushButton(EM_down_barCode_Frame);
         EM_down_clean_PsBtn->setObjectName(QString::fromUtf8("EM_down_clean_PsBtn"));
 
-        gridLayout_25->addWidget(EM_down_clean_PsBtn, 1, 9, 1, 1);
+        gridLayout_25->addWidget(EM_down_clean_PsBtn, 1, 8, 1, 1);
 
         EM_down_HLSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_25->addItem(EM_down_HLSpacer, 1, 6, 1, 1);
+        gridLayout_25->addItem(EM_down_HLSpacer, 1, 5, 1, 1);
 
         EM_down_insertLocalSql_PsBtn = new QPushButton(EM_down_barCode_Frame);
         EM_down_insertLocalSql_PsBtn->setObjectName(QString::fromUtf8("EM_down_insertLocalSql_PsBtn"));
@@ -234,20 +242,10 @@ public:
 
         gridLayout_25->addWidget(EM_down_insertLocalSql_PsBtn, 1, 2, 1, 1);
 
-        EM_down_XML_PsBtn = new QPushButton(EM_down_barCode_Frame);
-        EM_down_XML_PsBtn->setObjectName(QString::fromUtf8("EM_down_XML_PsBtn"));
-
-        gridLayout_25->addWidget(EM_down_XML_PsBtn, 1, 3, 1, 1);
-
-        EM_test_XML_PsBtn = new QPushButton(EM_down_barCode_Frame);
-        EM_test_XML_PsBtn->setObjectName(QString::fromUtf8("EM_test_XML_PsBtn"));
-
-        gridLayout_25->addWidget(EM_test_XML_PsBtn, 1, 4, 1, 1);
-
         EM_test2_XML_PsBtn = new QPushButton(EM_down_barCode_Frame);
         EM_test2_XML_PsBtn->setObjectName(QString::fromUtf8("EM_test2_XML_PsBtn"));
 
-        gridLayout_25->addWidget(EM_test2_XML_PsBtn, 1, 5, 1, 1);
+        gridLayout_25->addWidget(EM_test2_XML_PsBtn, 1, 4, 1, 1);
 
 
         gridLayout_2->addWidget(EM_down_barCode_Frame, 0, 0, 1, 2);
@@ -281,55 +279,60 @@ public:
         gridLayout_4->setSpacing(6);
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        label = new QLabel(EM_down_GpBox);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setStyleSheet(QString::fromUtf8(""));
+        EM_options_deleteLocalSqlAll_PsBtn = new QPushButton(EM_down_GpBox);
+        EM_options_deleteLocalSqlAll_PsBtn->setObjectName(QString::fromUtf8("EM_options_deleteLocalSqlAll_PsBtn"));
 
-        gridLayout_4->addWidget(label, 0, 0, 1, 1);
-
-        EM_down_saveLocalSql_PsBtn = new QPushButton(EM_down_GpBox);
-        EM_down_saveLocalSql_PsBtn->setObjectName(QString::fromUtf8("EM_down_saveLocalSql_PsBtn"));
-
-        gridLayout_4->addWidget(EM_down_saveLocalSql_PsBtn, 0, 1, 1, 1);
-
-        EM_down_loadLocalSql_PsBtn = new QPushButton(EM_down_GpBox);
-        EM_down_loadLocalSql_PsBtn->setObjectName(QString::fromUtf8("EM_down_loadLocalSql_PsBtn"));
-
-        gridLayout_4->addWidget(EM_down_loadLocalSql_PsBtn, 0, 2, 1, 1);
+        gridLayout_4->addWidget(EM_options_deleteLocalSqlAll_PsBtn, 0, 4, 1, 1);
 
         EM_down_deleteLocalSqlItem_PsBtn = new QPushButton(EM_down_GpBox);
         EM_down_deleteLocalSqlItem_PsBtn->setObjectName(QString::fromUtf8("EM_down_deleteLocalSqlItem_PsBtn"));
 
         gridLayout_4->addWidget(EM_down_deleteLocalSqlItem_PsBtn, 0, 3, 1, 1);
 
-        EM_down_HLSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        EM_save_XML_PsBtn = new QPushButton(EM_down_GpBox);
+        EM_save_XML_PsBtn->setObjectName(QString::fromUtf8("EM_save_XML_PsBtn"));
 
-        gridLayout_4->addItem(EM_down_HLSpacer_2, 0, 4, 1, 1);
-
-        EM_creat_XML_PsBtn = new QPushButton(EM_down_GpBox);
-        EM_creat_XML_PsBtn->setObjectName(QString::fromUtf8("EM_creat_XML_PsBtn"));
-
-        gridLayout_4->addWidget(EM_creat_XML_PsBtn, 0, 5, 1, 1);
-
-        EM_insert_XML_PsBtn = new QPushButton(EM_down_GpBox);
-        EM_insert_XML_PsBtn->setObjectName(QString::fromUtf8("EM_insert_XML_PsBtn"));
-
-        gridLayout_4->addWidget(EM_insert_XML_PsBtn, 0, 6, 1, 1);
-
-        EM_delete_XML_PsBtn = new QPushButton(EM_down_GpBox);
-        EM_delete_XML_PsBtn->setObjectName(QString::fromUtf8("EM_delete_XML_PsBtn"));
-
-        gridLayout_4->addWidget(EM_delete_XML_PsBtn, 0, 7, 1, 1);
+        gridLayout_4->addWidget(EM_save_XML_PsBtn, 0, 6, 1, 1);
 
         EM_read_XML_PsBtn = new QPushButton(EM_down_GpBox);
         EM_read_XML_PsBtn->setObjectName(QString::fromUtf8("EM_read_XML_PsBtn"));
 
-        gridLayout_4->addWidget(EM_read_XML_PsBtn, 0, 8, 1, 1);
+        gridLayout_4->addWidget(EM_read_XML_PsBtn, 0, 10, 1, 1);
 
-        EM_create_MD5_PsBtn = new QPushButton(EM_down_GpBox);
-        EM_create_MD5_PsBtn->setObjectName(QString::fromUtf8("EM_create_MD5_PsBtn"));
+        EM_insert_XML_PsBtn = new QPushButton(EM_down_GpBox);
+        EM_insert_XML_PsBtn->setObjectName(QString::fromUtf8("EM_insert_XML_PsBtn"));
 
-        gridLayout_4->addWidget(EM_create_MD5_PsBtn, 0, 9, 1, 1);
+        gridLayout_4->addWidget(EM_insert_XML_PsBtn, 0, 8, 1, 1);
+
+        EM_down_loadLocalSql_PsBtn = new QPushButton(EM_down_GpBox);
+        EM_down_loadLocalSql_PsBtn->setObjectName(QString::fromUtf8("EM_down_loadLocalSql_PsBtn"));
+
+        gridLayout_4->addWidget(EM_down_loadLocalSql_PsBtn, 0, 2, 1, 1);
+
+        EM_creat_XML_PsBtn = new QPushButton(EM_down_GpBox);
+        EM_creat_XML_PsBtn->setObjectName(QString::fromUtf8("EM_creat_XML_PsBtn"));
+
+        gridLayout_4->addWidget(EM_creat_XML_PsBtn, 0, 7, 1, 1);
+
+        EM_down_saveLocalSql_PsBtn = new QPushButton(EM_down_GpBox);
+        EM_down_saveLocalSql_PsBtn->setObjectName(QString::fromUtf8("EM_down_saveLocalSql_PsBtn"));
+
+        gridLayout_4->addWidget(EM_down_saveLocalSql_PsBtn, 0, 1, 1, 1);
+
+        label = new QLabel(EM_down_GpBox);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setStyleSheet(QString::fromUtf8(""));
+
+        gridLayout_4->addWidget(label, 0, 0, 1, 1);
+
+        EM_delete_XML_PsBtn = new QPushButton(EM_down_GpBox);
+        EM_delete_XML_PsBtn->setObjectName(QString::fromUtf8("EM_delete_XML_PsBtn"));
+
+        gridLayout_4->addWidget(EM_delete_XML_PsBtn, 0, 9, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_4->addItem(horizontalSpacer, 0, 5, 1, 1);
 
 
         gridLayout_2->addWidget(EM_down_GpBox, 1, 0, 1, 2);
@@ -1786,57 +1789,58 @@ public:
         EM_options_setArg_IP_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
         EM_options_setArg_IP_LnEdit->setObjectName(QString::fromUtf8("EM_options_setArg_IP_LnEdit"));
 
-        gridLayout_12->addWidget(EM_options_setArg_IP_LnEdit, 0, 2, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_IP_LnEdit, 1, 3, 1, 1);
 
         EM_options_setArg_IP_Label = new QLabel(EM_options_setArg_GpBox);
         EM_options_setArg_IP_Label->setObjectName(QString::fromUtf8("EM_options_setArg_IP_Label"));
 
-        gridLayout_12->addWidget(EM_options_setArg_IP_Label, 0, 1, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_IP_Label, 1, 2, 1, 1);
 
         EM_options_setArg_Port_Label = new QLabel(EM_options_setArg_GpBox);
         EM_options_setArg_Port_Label->setObjectName(QString::fromUtf8("EM_options_setArg_Port_Label"));
 
-        gridLayout_12->addWidget(EM_options_setArg_Port_Label, 0, 3, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_Port_Label, 1, 4, 1, 1);
 
         EM_options_setArg_Port_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
         EM_options_setArg_Port_LnEdit->setObjectName(QString::fromUtf8("EM_options_setArg_Port_LnEdit"));
 
-        gridLayout_12->addWidget(EM_options_setArg_Port_LnEdit, 0, 4, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_Port_LnEdit, 1, 5, 1, 1);
 
         EM_options_setArg_UserName_Label = new QLabel(EM_options_setArg_GpBox);
         EM_options_setArg_UserName_Label->setObjectName(QString::fromUtf8("EM_options_setArg_UserName_Label"));
 
-        gridLayout_12->addWidget(EM_options_setArg_UserName_Label, 0, 5, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_UserName_Label, 1, 6, 1, 1);
 
         EM_options_setArg_UserName_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
         EM_options_setArg_UserName_LnEdit->setObjectName(QString::fromUtf8("EM_options_setArg_UserName_LnEdit"));
 
-        gridLayout_12->addWidget(EM_options_setArg_UserName_LnEdit, 0, 6, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_UserName_LnEdit, 1, 7, 1, 1);
 
         EM_options_setArg_PassWord_Label = new QLabel(EM_options_setArg_GpBox);
         EM_options_setArg_PassWord_Label->setObjectName(QString::fromUtf8("EM_options_setArg_PassWord_Label"));
 
-        gridLayout_12->addWidget(EM_options_setArg_PassWord_Label, 0, 7, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_PassWord_Label, 1, 8, 1, 1);
 
         EM_options_setArg_PassWord_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
         EM_options_setArg_PassWord_LnEdit->setObjectName(QString::fromUtf8("EM_options_setArg_PassWord_LnEdit"));
 
-        gridLayout_12->addWidget(EM_options_setArg_PassWord_LnEdit, 0, 8, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_PassWord_LnEdit, 1, 9, 1, 1);
 
         EM_options_setArg_SID_Label = new QLabel(EM_options_setArg_GpBox);
         EM_options_setArg_SID_Label->setObjectName(QString::fromUtf8("EM_options_setArg_SID_Label"));
 
-        gridLayout_12->addWidget(EM_options_setArg_SID_Label, 0, 9, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_SID_Label, 1, 10, 1, 1);
 
         EM_options_setArg_SID_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
         EM_options_setArg_SID_LnEdit->setObjectName(QString::fromUtf8("EM_options_setArg_SID_LnEdit"));
 
-        gridLayout_12->addWidget(EM_options_setArg_SID_LnEdit, 0, 10, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_SID_LnEdit, 1, 11, 1, 1);
 
-        EM_options_setArg_Oracle_PsBtn = new QPushButton(EM_options_setArg_GpBox);
-        EM_options_setArg_Oracle_PsBtn->setObjectName(QString::fromUtf8("EM_options_setArg_Oracle_PsBtn"));
+        EM_options_appKey_Lable = new QLabel(EM_options_setArg_GpBox);
+        EM_options_appKey_Lable->setObjectName(QString::fromUtf8("EM_options_appKey_Lable"));
+        EM_options_appKey_Lable->setAlignment(Qt::AlignCenter);
 
-        gridLayout_12->addWidget(EM_options_setArg_Oracle_PsBtn, 0, 0, 1, 1);
+        gridLayout_12->addWidget(EM_options_appKey_Lable, 0, 0, 1, 1);
 
         EM_options_setArg_localSqlPath_PsBtn = new QPushButton(EM_options_setArg_GpBox);
         EM_options_setArg_localSqlPath_PsBtn->setObjectName(QString::fromUtf8("EM_options_setArg_localSqlPath_PsBtn"));
@@ -1847,28 +1851,44 @@ public:
         EM_options_setArg_localSqlPath_PsBtn->setSizePolicy(sizePolicy9);
         EM_options_setArg_localSqlPath_PsBtn->setMinimumSize(QSize(5, 4));
 
-        gridLayout_12->addWidget(EM_options_setArg_localSqlPath_PsBtn, 5, 0, 1, 1);
+        gridLayout_12->addWidget(EM_options_setArg_localSqlPath_PsBtn, 6, 0, 1, 1);
+
+        EM_options_setArg_Oracle_PsBtn = new QPushButton(EM_options_setArg_GpBox);
+        EM_options_setArg_Oracle_PsBtn->setObjectName(QString::fromUtf8("EM_options_setArg_Oracle_PsBtn"));
+
+        gridLayout_12->addWidget(EM_options_setArg_Oracle_PsBtn, 1, 0, 1, 1);
+
+        EM_options_detectEquipNo_PsBtn = new QPushButton(EM_options_setArg_GpBox);
+        EM_options_detectEquipNo_PsBtn->setObjectName(QString::fromUtf8("EM_options_detectEquipNo_PsBtn"));
+
+        gridLayout_12->addWidget(EM_options_detectEquipNo_PsBtn, 2, 0, 1, 1);
+
+        EM_options_appKey_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
+        EM_options_appKey_LnEdit->setObjectName(QString::fromUtf8("EM_options_appKey_LnEdit"));
+
+        gridLayout_12->addWidget(EM_options_appKey_LnEdit, 0, 3, 1, 1);
+
+        EM_options_detectEquipNo_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
+        EM_options_detectEquipNo_LnEdit->setObjectName(QString::fromUtf8("EM_options_detectEquipNo_LnEdit"));
+
+        gridLayout_12->addWidget(EM_options_detectEquipNo_LnEdit, 2, 3, 1, 1);
 
         EM_options_setArg_localSqlPath_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
         EM_options_setArg_localSqlPath_LnEdit->setObjectName(QString::fromUtf8("EM_options_setArg_localSqlPath_LnEdit"));
         EM_options_setArg_localSqlPath_LnEdit->setLayoutDirection(Qt::LeftToRight);
 
-        gridLayout_12->addWidget(EM_options_setArg_localSqlPath_LnEdit, 5, 1, 1, 8);
+        gridLayout_12->addWidget(EM_options_setArg_localSqlPath_LnEdit, 6, 3, 1, 5);
 
-        EM_options_deleteLocalSqlAll_PsBtn = new QPushButton(EM_options_setArg_GpBox);
-        EM_options_deleteLocalSqlAll_PsBtn->setObjectName(QString::fromUtf8("EM_options_deleteLocalSqlAll_PsBtn"));
+        EM_options_appSecret_Lable = new QLabel(EM_options_setArg_GpBox);
+        EM_options_appSecret_Lable->setObjectName(QString::fromUtf8("EM_options_appSecret_Lable"));
+        EM_options_appSecret_Lable->setAlignment(Qt::AlignCenter);
 
-        gridLayout_12->addWidget(EM_options_deleteLocalSqlAll_PsBtn, 5, 10, 1, 1);
+        gridLayout_12->addWidget(EM_options_appSecret_Lable, 0, 4, 1, 1);
 
-        EM_options_detectEquipNo_PsBtn = new QPushButton(EM_options_setArg_GpBox);
-        EM_options_detectEquipNo_PsBtn->setObjectName(QString::fromUtf8("EM_options_detectEquipNo_PsBtn"));
+        EM_options_appSecret_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
+        EM_options_appSecret_LnEdit->setObjectName(QString::fromUtf8("EM_options_appSecret_LnEdit"));
 
-        gridLayout_12->addWidget(EM_options_detectEquipNo_PsBtn, 1, 0, 1, 1);
-
-        EM_options_detectEquipNo_LnEdit = new QLineEdit(EM_options_setArg_GpBox);
-        EM_options_detectEquipNo_LnEdit->setObjectName(QString::fromUtf8("EM_options_detectEquipNo_LnEdit"));
-
-        gridLayout_12->addWidget(EM_options_detectEquipNo_LnEdit, 1, 1, 1, 2);
+        gridLayout_12->addWidget(EM_options_appSecret_LnEdit, 0, 5, 1, 3);
 
 
         gridLayout_22->addWidget(EM_options_setArg_GpBox, 1, 0, 1, 1);
@@ -2047,7 +2067,7 @@ public:
 
         stackedWidget->setCurrentIndex(0);
         EM_down_TabWidget->setCurrentIndex(4);
-        EM_update_TabWidget->setCurrentIndex(0);
+        EM_update_TabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -2055,7 +2075,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "infoSys.WH", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "EM_infoSys.WH", 0, QApplication::UnicodeUTF8));
         EM_down_Act->setText(QApplication::translate("MainWindow", "\344\270\213\350\275\275\345\237\272\346\234\254\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
         EM_down_Act->setToolTip(QApplication::translate("MainWindow", "\344\270\213\350\275\275\345\237\272\346\234\254\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
@@ -2065,23 +2085,23 @@ public:
 #ifndef QT_NO_TOOLTIP
         EM_update_Act->setToolTip(QApplication::translate("MainWindow", "\344\270\212\344\274\240\346\225\260\346\215\256", 0, QApplication::UnicodeUTF8));
 #endif // QT_NO_TOOLTIP
-        EM_down_barCode_LnEdit->setText(QString());
+        EM_down_sampleInfo_PsBtn->setText(QApplication::translate("MainWindow", "\344\270\213\350\275\275\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        EM_down_barCode_LnEdit->setText(QApplication::translate("MainWindow", "JLXC-160425-1", 0, QApplication::UnicodeUTF8));
         EM_down_barCode_Label->setText(QApplication::translate("MainWindow", " \347\224\265\350\203\275\350\241\250\346\235\241\345\275\242\347\240\201: ", 0, QApplication::UnicodeUTF8));
         EM_down_clean_PsBtn->setText(QApplication::translate("MainWindow", "\346\270\205\347\251\272\350\241\250\346\240\274", 0, QApplication::UnicodeUTF8));
         EM_down_insertLocalSql_PsBtn->setText(QApplication::translate("MainWindow", "\344\270\213\350\275\275\344\277\241\346\201\257(\344\270\255\351\227\264\345\272\223)", 0, QApplication::UnicodeUTF8));
-        EM_down_XML_PsBtn->setText(QApplication::translate("MainWindow", "downXML", 0, QApplication::UnicodeUTF8));
-        EM_test_XML_PsBtn->setText(QApplication::translate("MainWindow", "down", 0, QApplication::UnicodeUTF8));
         EM_test2_XML_PsBtn->setText(QApplication::translate("MainWindow", "up", 0, QApplication::UnicodeUTF8));
         EM_down_GpBox->setTitle(QString());
-        label->setText(QApplication::translate("MainWindow", "\346\234\254\345\234\260\346\225\260\346\215\256\345\272\223:", 0, QApplication::UnicodeUTF8));
-        EM_down_saveLocalSql_PsBtn->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230\350\241\250\346\240\274\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
-        EM_down_loadLocalSql_PsBtn->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213\346\235\241\345\275\242\347\240\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        EM_options_deleteLocalSqlAll_PsBtn->setText(QApplication::translate("MainWindow", "\345\210\240\351\231\244\346\211\200\346\234\211\344\270\213\350\275\275\345\216\206\345\217\262\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
         EM_down_deleteLocalSqlItem_PsBtn->setText(QApplication::translate("MainWindow", "\345\210\240\351\231\244\346\235\241\345\275\242\347\240\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
-        EM_creat_XML_PsBtn->setText(QApplication::translate("MainWindow", "\347\224\237\346\210\220XML", 0, QApplication::UnicodeUTF8));
-        EM_insert_XML_PsBtn->setText(QApplication::translate("MainWindow", "\346\267\273\345\212\240\350\212\202\347\202\271", 0, QApplication::UnicodeUTF8));
-        EM_delete_XML_PsBtn->setText(QApplication::translate("MainWindow", "\345\210\240\351\231\244XML", 0, QApplication::UnicodeUTF8));
+        EM_save_XML_PsBtn->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230", 0, QApplication::UnicodeUTF8));
         EM_read_XML_PsBtn->setText(QApplication::translate("MainWindow", "\350\257\273\345\217\226\350\212\202\347\202\271", 0, QApplication::UnicodeUTF8));
-        EM_create_MD5_PsBtn->setText(QApplication::translate("MainWindow", "MD5", 0, QApplication::UnicodeUTF8));
+        EM_insert_XML_PsBtn->setText(QApplication::translate("MainWindow", "\346\267\273\345\212\240\350\212\202\347\202\271", 0, QApplication::UnicodeUTF8));
+        EM_down_loadLocalSql_PsBtn->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213\346\235\241\345\275\242\347\240\201\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        EM_creat_XML_PsBtn->setText(QApplication::translate("MainWindow", "\347\224\237\346\210\220XML", 0, QApplication::UnicodeUTF8));
+        EM_down_saveLocalSql_PsBtn->setText(QApplication::translate("MainWindow", "\344\277\235\345\255\230\350\241\250\346\240\274\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("MainWindow", "\346\234\254\345\234\260\346\225\260\346\215\256\345\272\223:", 0, QApplication::UnicodeUTF8));
+        EM_delete_XML_PsBtn->setText(QApplication::translate("MainWindow", "\345\210\240\351\231\244XML", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = EM_METER_TblWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "1METER_ID", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = EM_METER_TblWidget->horizontalHeaderItem(1);
@@ -3104,12 +3124,15 @@ public:
         EM_options_setArg_UserName_Label->setText(QApplication::translate("MainWindow", "UserName:", 0, QApplication::UnicodeUTF8));
         EM_options_setArg_PassWord_Label->setText(QApplication::translate("MainWindow", "PassWord:", 0, QApplication::UnicodeUTF8));
         EM_options_setArg_SID_Label->setText(QApplication::translate("MainWindow", "SID:", 0, QApplication::UnicodeUTF8));
-        EM_options_setArg_Oracle_PsBtn->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271\351\205\215\347\275\256", 0, QApplication::UnicodeUTF8));
+        EM_options_appKey_Lable->setText(QApplication::translate("MainWindow", "appKey:", 0, QApplication::UnicodeUTF8));
         EM_options_setArg_localSqlPath_PsBtn->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271\350\267\257\345\276\204:", 0, QApplication::UnicodeUTF8));
-        EM_options_setArg_localSqlPath_LnEdit->setText(QApplication::translate("MainWindow", "E:\\XL.Win.MDS_WH\\DBUpdate\\\346\243\200\345\256\232\346\225\260\346\215\256\344\277\235\345\255\230\346\225\260\346\215\256\345\272\223.db", 0, QApplication::UnicodeUTF8));
-        EM_options_deleteLocalSqlAll_PsBtn->setText(QApplication::translate("MainWindow", "\346\270\205\347\251\272\344\270\213\350\275\275\345\216\206\345\217\262\346\225\260\346\215\256\345\272\223", 0, QApplication::UnicodeUTF8));
+        EM_options_setArg_Oracle_PsBtn->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271\351\205\215\347\275\256", 0, QApplication::UnicodeUTF8));
         EM_options_detectEquipNo_PsBtn->setText(QApplication::translate("MainWindow", "\346\243\200\345\256\232\347\272\277\345\217\260\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
+        EM_options_appKey_LnEdit->setText(QApplication::translate("MainWindow", "169827", 0, QApplication::UnicodeUTF8));
         EM_options_detectEquipNo_LnEdit->setText(QString());
+        EM_options_setArg_localSqlPath_LnEdit->setText(QApplication::translate("MainWindow", "D:\\EM_infoSys.WH\\DBUpdate\\\346\243\200\345\256\232\346\225\260\346\215\256\344\277\235\345\255\230\346\225\260\346\215\256\345\272\223.db", 0, QApplication::UnicodeUTF8));
+        EM_options_appSecret_Lable->setText(QApplication::translate("MainWindow", "appSecret:", 0, QApplication::UnicodeUTF8));
+        EM_options_appSecret_LnEdit->setText(QApplication::translate("MainWindow", "2e33edf32o34492uf58f233ksl3er60f", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem484 = electricMeter_CONST_TabWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem484->setText(QApplication::translate("MainWindow", "1.DETECT_TASK_NO", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem485 = electricMeter_CONST_TabWidget->horizontalHeaderItem(1);

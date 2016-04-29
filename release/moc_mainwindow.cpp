@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -54,10 +54,9 @@ static const uint qt_meta_data_MainWindow[] = {
      842,   11,   11,   11, 0x08,
      875,   11,   11,   11, 0x08,
      908,   11,   11,   11, 0x08,
-     941,   11,   11,   11, 0x08,
-     972,   11,   11,   11, 0x08,
-    1003,   11,   11,   11, 0x08,
-    1034,   11,   11,   11, 0x08,
+     939,   11,   11,   11, 0x08,
+     971,   11,   11,   11, 0x08,
+    1002,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -85,12 +84,11 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_EM_options_detectEquipNo_PsBtn_clicked()\0"
     "on_EM_creat_XML_PsBtn_clicked()\0"
     "on_EM_delete_XML_PsBtn_clicked()\0"
-    "on_EM_create_MD5_PsBtn_clicked()\0"
     "on_EM_insert_XML_PsBtn_clicked()\0"
     "on_EM_read_XML_PsBtn_clicked()\0"
-    "on_EM_down_XML_PsBtn_clicked()\0"
-    "on_EM_test_XML_PsBtn_clicked()\0"
     "on_EM_test2_XML_PsBtn_clicked()\0"
+    "on_EM_save_XML_PsBtn_clicked()\0"
+    "on_EM_down_sampleInfo_PsBtn_clicked()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -121,12 +119,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 19: _t->on_EM_options_detectEquipNo_PsBtn_clicked(); break;
         case 20: _t->on_EM_creat_XML_PsBtn_clicked(); break;
         case 21: _t->on_EM_delete_XML_PsBtn_clicked(); break;
-        case 22: _t->on_EM_create_MD5_PsBtn_clicked(); break;
-        case 23: _t->on_EM_insert_XML_PsBtn_clicked(); break;
-        case 24: _t->on_EM_read_XML_PsBtn_clicked(); break;
-        case 25: _t->on_EM_down_XML_PsBtn_clicked(); break;
-        case 26: _t->on_EM_test_XML_PsBtn_clicked(); break;
-        case 27: _t->on_EM_test2_XML_PsBtn_clicked(); break;
+        case 22: _t->on_EM_insert_XML_PsBtn_clicked(); break;
+        case 23: _t->on_EM_read_XML_PsBtn_clicked(); break;
+        case 24: _t->on_EM_test2_XML_PsBtn_clicked(); break;
+        case 25: _t->on_EM_save_XML_PsBtn_clicked(); break;
+        case 26: _t->on_EM_down_sampleInfo_PsBtn_clicked(); break;
         default: ;
         }
     }
@@ -165,9 +162,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 27;
     }
     return _id;
 }

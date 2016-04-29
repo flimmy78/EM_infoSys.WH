@@ -157,10 +157,21 @@ void MainWindow::on_EM_options_deleteLocalSqlAll_PsBtn_clicked()
        {
           case QMessageBox::Yes:
          {
-            #if 1
+
+
                 QString strExec;
                 int intResult;
 
+                strExec ="delete from  sampleInfo";
+                intResult= sql_exec(strExec.toLatin1().data());
+
+                if(intResult!=SQLITE_OK)
+                {
+                     showInformationBox(QString::fromUtf8("delete sampleInfo error"));
+                     return;
+                }
+
+                #if 0
                 strExec ="delete from  MT_P_CODE";
                 intResult= sql_exec(strExec.toLatin1().data());
 
@@ -197,14 +208,14 @@ void MainWindow::on_EM_options_deleteLocalSqlAll_PsBtn_clicked()
                     showInformationBox(QString::fromUtf8("delete TABLEMT_DETECT_OUT_EQUIP error"));
                     return;
                 }
-
+            #endif
              showInformationBox(QString::fromUtf8("已经清空"));
              break;
          }
+
            case QMessageBox::No: break;
            default:   break;
-       }
-#endif
 
+       }
 }
 

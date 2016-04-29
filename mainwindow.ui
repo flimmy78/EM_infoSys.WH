@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>infoSys.WH</string>
+   <string>EM_infoSys.WH</string>
   </property>
   <property name="windowIcon">
    <iconset resource="pic/pic.qrc">
@@ -61,10 +61,17 @@
            <property name="spacing">
             <number>6</number>
            </property>
+           <item row="1" column="3">
+            <widget class="QPushButton" name="EM_down_sampleInfo_PsBtn">
+             <property name="text">
+              <string>下载信息</string>
+             </property>
+            </widget>
+           </item>
            <item row="1" column="1">
             <widget class="QLineEdit" name="EM_down_barCode_LnEdit">
              <property name="text">
-              <string/>
+              <string>JLXC-160425-1</string>
              </property>
             </widget>
            </item>
@@ -78,14 +85,14 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="9">
+           <item row="1" column="8">
             <widget class="QPushButton" name="EM_down_clean_PsBtn">
              <property name="text">
               <string>清空表格</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="6">
+           <item row="1" column="5">
             <spacer name="EM_down_HLSpacer">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -108,21 +115,7 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="3">
-            <widget class="QPushButton" name="EM_down_XML_PsBtn">
-             <property name="text">
-              <string>downXML</string>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="4">
-            <widget class="QPushButton" name="EM_test_XML_PsBtn">
-             <property name="text">
-              <string>down</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="5">
             <widget class="QPushButton" name="EM_test2_XML_PsBtn">
              <property name="text">
               <string>up</string>
@@ -170,27 +163,10 @@
            <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
-             <property name="styleSheet">
-              <string notr="true"/>
-             </property>
+           <item row="0" column="4">
+            <widget class="QPushButton" name="EM_options_deleteLocalSqlAll_PsBtn">
              <property name="text">
-              <string>本地数据库:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QPushButton" name="EM_down_saveLocalSql_PsBtn">
-             <property name="text">
-              <string>保存表格信息</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QPushButton" name="EM_down_loadLocalSql_PsBtn">
-             <property name="text">
-              <string>查看条形码信息</string>
+              <string>删除所有下载历史信息</string>
              </property>
             </widget>
            </item>
@@ -201,8 +177,67 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="4">
-            <spacer name="EM_down_HLSpacer_2">
+           <item row="0" column="6">
+            <widget class="QPushButton" name="EM_save_XML_PsBtn">
+             <property name="text">
+              <string>保存</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="10">
+            <widget class="QPushButton" name="EM_read_XML_PsBtn">
+             <property name="text">
+              <string>读取节点</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="8">
+            <widget class="QPushButton" name="EM_insert_XML_PsBtn">
+             <property name="text">
+              <string>添加节点</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="EM_down_loadLocalSql_PsBtn">
+             <property name="text">
+              <string>查看条形码信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7">
+            <widget class="QPushButton" name="EM_creat_XML_PsBtn">
+             <property name="text">
+              <string>生成XML</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="EM_down_saveLocalSql_PsBtn">
+             <property name="text">
+              <string>保存表格信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>本地数据库:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="9">
+            <widget class="QPushButton" name="EM_delete_XML_PsBtn">
+             <property name="text">
+              <string>删除XML</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <spacer name="horizontalSpacer">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -213,41 +248,6 @@
               </size>
              </property>
             </spacer>
-           </item>
-           <item row="0" column="5">
-            <widget class="QPushButton" name="EM_creat_XML_PsBtn">
-             <property name="text">
-              <string>生成XML</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="6">
-            <widget class="QPushButton" name="EM_insert_XML_PsBtn">
-             <property name="text">
-              <string>添加节点</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="7">
-            <widget class="QPushButton" name="EM_delete_XML_PsBtn">
-             <property name="text">
-              <string>删除XML</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="8">
-            <widget class="QPushButton" name="EM_read_XML_PsBtn">
-             <property name="text">
-              <string>读取节点</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="9">
-            <widget class="QPushButton" name="EM_save_XML_PsBtn">
-             <property name="text">
-              <string>保存</string>
-             </property>
-            </widget>
            </item>
           </layout>
          </widget>
@@ -2020,7 +2020,7 @@
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="EM_INTUIT_MET_tab">
               <attribute name="title">
@@ -3428,64 +3428,67 @@ p, li { white-space: pre-wrap; }
            <property name="spacing">
             <number>5</number>
            </property>
-           <item row="0" column="2">
+           <item row="1" column="3">
             <widget class="QLineEdit" name="EM_options_setArg_IP_LnEdit"/>
            </item>
-           <item row="0" column="1">
+           <item row="1" column="2">
             <widget class="QLabel" name="EM_options_setArg_IP_Label">
              <property name="text">
               <string>IP:</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="3">
+           <item row="1" column="4">
             <widget class="QLabel" name="EM_options_setArg_Port_Label">
              <property name="text">
               <string>Port:</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="4">
+           <item row="1" column="5">
             <widget class="QLineEdit" name="EM_options_setArg_Port_LnEdit"/>
            </item>
-           <item row="0" column="5">
+           <item row="1" column="6">
             <widget class="QLabel" name="EM_options_setArg_UserName_Label">
              <property name="text">
               <string>UserName:</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="6">
+           <item row="1" column="7">
             <widget class="QLineEdit" name="EM_options_setArg_UserName_LnEdit"/>
            </item>
-           <item row="0" column="7">
+           <item row="1" column="8">
             <widget class="QLabel" name="EM_options_setArg_PassWord_Label">
              <property name="text">
               <string>PassWord:</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="8">
+           <item row="1" column="9">
             <widget class="QLineEdit" name="EM_options_setArg_PassWord_LnEdit"/>
            </item>
-           <item row="0" column="9">
+           <item row="1" column="10">
             <widget class="QLabel" name="EM_options_setArg_SID_Label">
              <property name="text">
               <string>SID:</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="10">
+           <item row="1" column="11">
             <widget class="QLineEdit" name="EM_options_setArg_SID_LnEdit"/>
            </item>
            <item row="0" column="0">
-            <widget class="QPushButton" name="EM_options_setArg_Oracle_PsBtn">
+            <widget class="QLabel" name="EM_options_appKey_Lable">
              <property name="text">
-              <string>修改配置</string>
+              <string>appKey:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
-           <item row="5" column="0">
+           <item row="6" column="0">
             <widget class="QPushButton" name="EM_options_setArg_localSqlPath_PsBtn">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -3504,34 +3507,58 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="5" column="1" colspan="8">
-            <widget class="QLineEdit" name="EM_options_setArg_localSqlPath_LnEdit">
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="text">
-              <string>E:\XL.Win.MDS_WH\DBUpdate\检定数据保存数据库.db</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="10">
-            <widget class="QPushButton" name="EM_options_deleteLocalSqlAll_PsBtn">
-             <property name="text">
-              <string>清空下载历史数据库</string>
-             </property>
-            </widget>
-           </item>
            <item row="1" column="0">
+            <widget class="QPushButton" name="EM_options_setArg_Oracle_PsBtn">
+             <property name="text">
+              <string>修改配置</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
             <widget class="QPushButton" name="EM_options_detectEquipNo_PsBtn">
              <property name="text">
               <string>检定线台编号</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="1" colspan="2">
+           <item row="0" column="3">
+            <widget class="QLineEdit" name="EM_options_appKey_LnEdit">
+             <property name="text">
+              <string>169827</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
             <widget class="QLineEdit" name="EM_options_detectEquipNo_LnEdit">
              <property name="text">
               <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="3" colspan="5">
+            <widget class="QLineEdit" name="EM_options_setArg_localSqlPath_LnEdit">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="text">
+              <string>D:\EM_infoSys.WH\DBUpdate\检定数据保存数据库.db</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="EM_options_appSecret_Lable">
+             <property name="text">
+              <string>appSecret:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5" colspan="3">
+            <widget class="QLineEdit" name="EM_options_appSecret_LnEdit">
+             <property name="text">
+              <string>2e33edf32o34492uf58f233ksl3er60f</string>
              </property>
             </widget>
            </item>

@@ -61,6 +61,7 @@ void MainWindow:: get_checkParameter_detectTaskNo()
         strArray[0][i]=QString(sqlTemp[i][0]);//key
         strArray[1][i]=QString(sqlTemp[i][10]);//任务编号
         strArray[2][i]=QString(sqlTemp[i][9]);//其它测试信息
+        qDebug()<<QString::fromUtf8(sqlTemp[i][10]);
 #endif
 #if 0
         strArray[0][i]=QString(sqlTemp[i][0]);//key

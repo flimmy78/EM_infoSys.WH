@@ -7,7 +7,7 @@
 QT       += core gui
 QT       += sql
 QT       +=xml
-TARGET = infoSystem.WH
+TARGET = EM_infoSys.WH
 TEMPLATE = app
 
 SOURCES += main.cpp\
@@ -45,7 +45,8 @@ SOURCES += main.cpp\
     md5.cpp \
     error_XML.cpp \
     xml_down.cpp \
-    mds/xml_update.cpp
+    mds/mds_fun.cpp \
+    down/EM_sampleInfo.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/stdsoap2.h \

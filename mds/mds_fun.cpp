@@ -9,10 +9,11 @@
 #include "QFile"
 #include "QTextCodec"
 
-void MainWindow::on_EM_test_XML_PsBtn_clicked()
+//下载信息
+void MainWindow::on_EM_down_sampleInfo_PsBtn_clicked()
 {
+    QStringList strList;
     QString sampleNo,sysParams,Appsecret,strTemp,AppKey,date,Appsign,appsignBefore;
-#if 1
 
     SGCMSwitchProjectSoapBindingProxy soap;
     soap_set_mode(&soap, SOAP_C_UTFSTRING);
@@ -20,41 +21,49 @@ void MainWindow::on_EM_test_XML_PsBtn_clicked()
     _ns1__getSampleInfo getSampleInfo;
     _ns1__getSampleInfoResponse resp;
 
-    QString strItemValue;
     char *endPoint = NULL;
     char *action = NULL;
 
     setCursor(QCursor(Qt::WaitCursor));
-    sampleNo ="JLXC-160425-1";
-    AppKey = "169827";
-    date =currentTime();
-    Appsecret = "2e33edf32o34492uf58f233ksl3er60f";
-    appsignBefore   = Appsecret+"sampleNo"+sampleNo;
-    Appsign=MD5_getSampleInfo(appsignBefore);
+    sampleNo  = ui->EM_down_barCode_LnEdit->text();  //"JLXC-160425-1";
+    AppKey    = ui->EM_options_appKey_LnEdit->text();                     //"169827";
+    date      = currentTime();
+    Appsecret = ui->EM_options_appSecret_LnEdit->text();                  //"2e33edf32o34492uf58f233ksl3er60f";
+    appsignBefore = Appsecret+"sampleNo"+sampleNo;
 
+    Appsign = MD5_getSampleInfo(appsignBefore);
     sysParams =AppKey+"|"+date+"|"+Appsign;
 
-    getSampleInfo.sampleNo=sampleNo.toStdString(); //样品编号
-    getSampleInfo.sysParams=sysParams.toStdString();//系统参数，组成方式：AppKey|date|Appsign
-
-    qDebug()<<strTemp<<endl<<Appsign;
-    //qDebug()<<QString::fromUtf8(getSampleInfo.sysParams.c_str());
-    //std::cout<<*(getDETedTestData).in0<<std::endl;
+    getSampleInfo.sampleNo=sampleNo.toStdString();                        //样品编号
+    getSampleInfo.sysParams=sysParams.toStdString();                      //系统参数，组成方式：AppKey|date|Appsign
 
     soap.getSampleInfo(endPoint,action,&getSampleInfo, resp);
-    //strItemValue = getItemFromXML(QString(QString::fromUtf8((*resp.out).c_str())),"<ERROR_INFO>", "</ERROR_INFO>");
-    //showInformationBox(strItemValue);
-//    qDebug()<<QString(QString::fromUtf8((*resp.out).c_str()));
+//  qDebug()<<QString(QString::fromUtf8((*resp.out).c_str()));
+
     strTemp = QString::fromUtf8(resp.getSampleInfoReturn.c_str());
-    //qDebug()<<QString::fromUtf8(resp.getSampleInfoReturn.c_str());
-    showInformationBox(strTemp);
+    if(strTemp.isEmpty())
+    {
+        setCursor(QCursor(Qt::ArrowCursor));
+        showInformationBox(QString::fromUtf8("链接服务器异常"));
+        return;
+    }
 
-    createXmlFile("e:/c1.xml",strTemp);
-    //analyse_down_xml(strTemp);
+    strList = get_errList(strTemp);
+    if(strList.at(0) != "0000")//返回不成功
+    {
+       setCursor(QCursor(Qt::ArrowCursor));
+       showInformationBox(strList.at(1));
+       return;
+    }
 
+#if 1
+    QDomDocument domDoc;
+    domDoc.setContent(strTemp);
+    analyze_sampleInfo(domDoc);
+#endif
 
     setCursor(QCursor(Qt::ArrowCursor));
-#endif
+
 }
 
 

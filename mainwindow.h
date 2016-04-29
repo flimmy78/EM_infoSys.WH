@@ -77,6 +77,7 @@ public:
     void down_MT_DETECT_TASK(QString barCode,QString detectTaskNo);//b7
 
     //保存表格
+    void save_sampleInfo();
     void save_MT_P_CODE();
     void save_MT_METER();
     void save_MT_DETECT_TASK();
@@ -125,18 +126,20 @@ public:
     bool  createXmlFile(const QString &strFilePath, const QString &strRoot);
     bool  removeNodeByTag(const QString &strFilePath, const QString &strTagName, const QString &strText);
 
+    bool  load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc);
+    bool  save_xmlFile(const QString &strFilePath, const QDomDocument domDoc);
+   QStringList get_errList(const QString strTemp );
+    void  analyze_sampleInfo(const QDomDocument domDoc);
+
     bool  read_xml(QString filename);
     bool  recurse_domNode(QDomNode ,QString);
     bool  recurse_Element(QDomElement element);//递归节点
 
     bool  open_xml(QString filename);
-    bool  search_domNode(QString );
-
-    bool  create_MD5();
+    bool  search_domNode(QString,const QDomDocument );
 
     //
-    bool getSampleInfo();
-    void analyse_down_xml(QString str);
+
     bool  MD5_down();
     QString  MD5_getSampleInfo(QString strSou);
     QString error_info(QString errInfo);
@@ -187,17 +190,10 @@ private slots:
 
 
     void on_EM_insert_XML_PsBtn_clicked();
-
     void on_EM_read_XML_PsBtn_clicked();
-
-    void on_EM_down_XML_PsBtn_clicked();
-
-    void on_EM_test_XML_PsBtn_clicked();
-
     void on_EM_test2_XML_PsBtn_clicked();
-
     void on_EM_save_XML_PsBtn_clicked();
-
+    void on_EM_down_sampleInfo_PsBtn_clicked();
 private:
     Ui::MainWindow *ui;
 

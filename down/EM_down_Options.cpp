@@ -12,6 +12,7 @@
 //通过条形码到MDS下载到的信息
 void MainWindow::on_EM_down_insertLocalSql_PsBtn_clicked()
 {
+
     down_MT_METER(ui->EM_down_barCode_LnEdit->text());
 
 }
@@ -19,6 +20,7 @@ void MainWindow::on_EM_down_insertLocalSql_PsBtn_clicked()
 //清除表格
 void MainWindow::on_EM_down_clean_PsBtn_clicked()
 {
+     remove_TblWdiget_Row(ui->EM_sampleInfo_TblWidget);
      remove_TblWdiget_Row(ui->EM_P_CODE_TblWidget);
      remove_TblWdiget_Row(ui->EM_METER_TblWidget);
      remove_TblWdiget_Row(ui->EM_DETECT_TASK_TblWidget);
@@ -39,11 +41,12 @@ void MainWindow::on_EM_down_saveLocalSql_PsBtn_clicked()
         setCursor(QCursor(Qt::ArrowCursor));
         return ;
     }
-
-    save_MT_P_CODE();
-    save_MT_METER();
-    save_MT_DETECT_TASK();
-    save_MT_DETECT_OUT_EQUIP();
+    save_sampleInfo();
+//  save_MT_P_CODE();
+//    save_MT_METER();
+//    save_MT_DETECT_TASK();
+//    save_MT_DETECT_OUT_EQUIP();
+    showInformationBox(QString::fromUtf8("保存成功"));
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
@@ -63,7 +66,11 @@ void MainWindow::on_EM_down_loadLocalSql_PsBtn_clicked()
     getDataFromLocalSqlToTblWidget("select * from  MT_DETECT_OUT_EQUIP;",ui->EM_DETECT_OUT_EQUIP_TblWidget,ui->EM_DETECT_OUT_EQUIP_TblWidget->columnCount());
     #endif
 
-    #if 1
+
+    strExec = QString("select * from  sampleInfo where sampleNo = '%1'").arg(strBarCode);
+    getDataFromLocalSqlToTblWidget(strExec,ui->EM_sampleInfo_TblWidget,ui->EM_sampleInfo_TblWidget->columnCount());
+
+    #if 0
     //查看某条记录
     strExec = QString("select * from  MT_P_CODE where BAR_CODE = '%1'").arg(strBarCode);
     getDataFromLocalSqlToTblWidget(strExec,ui->EM_P_CODE_TblWidget,ui->EM_P_CODE_TblWidget->columnCount());
@@ -89,6 +96,10 @@ void MainWindow::on_EM_down_deleteLocalSqlItem_PsBtn_clicked()
     QByteArray byteArray;
     strBarCode = ui->EM_down_barCode_LnEdit->text();
 
+    strExec=QString("delete  from sampleInfo where sampleNo ='%1'").arg(strBarCode);
+    byteArray = strExec.toLocal8Bit();
+    sql_exec(byteArray.data());
+#if 0
     strExec=QString("delete  from MT_P_CODE where BAR_CODE ='%1'").arg(strBarCode);
     byteArray = strExec.toLocal8Bit();
     sql_exec(byteArray.data());
@@ -104,7 +115,7 @@ void MainWindow::on_EM_down_deleteLocalSqlItem_PsBtn_clicked()
     strExec=QString("delete from MT_DETECT_OUT_EQUIP where BAR_CODE ='%1'").arg(strBarCode);
     byteArray = strExec.toLocal8Bit();
     sql_exec(byteArray.data());
-
+#endif
     showInformationBox(QString::fromUtf8("删除成功，请读查看以确认"));
     //on_EM_down_loadLocalSql_PsBtn_clicked();
 

@@ -34,7 +34,8 @@ INPUT(
 ./debug\md5.o
 ./debug\error_XML.o
 ./debug\xml_down.o
-./debug\xml_update.o
+./debug\mds_fun.o
+./debug\EM_sampleInfo.o
 ./debug\moc_mainwindow.o
 ./debug\qrc_pic.o
 );

@@ -36,7 +36,6 @@ void MainWindow::down_MT_P_CODE(QString barCode ,QString strValue)
             }
         }
     }
-
 }
 
 
