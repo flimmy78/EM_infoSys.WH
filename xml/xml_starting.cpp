@@ -3,7 +3,8 @@
 #include "QDebug"
 #include "QDomComment"
 
-void MainWindow::addNode_INTUIT(QString nodeName, QDomDocument &domDoc)
+//启动试验
+void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
 {
     QDomElement  domElement,sampleElement,projectsElement,projectElement;
     sampleElement = domDoc.documentElement().firstChild().toElement();
@@ -27,7 +28,7 @@ void MainWindow::addNode_INTUIT(QString nodeName, QDomDocument &domDoc)
     domElement.setAttribute("testGroup","L");
     domElement.setAttribute("freq","50Hz");
     domElement.setAttribute("PF","1.0");
-    domElement.setAttribute("volt","Un");
+    domElement.setAttribute("volt","1Un");
 
     domElement.setAttribute("curr","0.004Ib");
     domElement.setAttribute("conclusion","0");
@@ -35,36 +36,3 @@ void MainWindow::addNode_INTUIT(QString nodeName, QDomDocument &domDoc)
     domElement.setAttribute("strSampleID","160311025630");
 
 }
-
-bool MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
-{
-    QDomElement  domElement;
-    domElement = domDoc.createElement( nodeName );
-    domDoc.documentElement().appendChild( domElement );
-     //qDebug()<<domDoc.toString();
-#if 1
-    domElement.setAttribute("sampleNo","equipmentname");
-    domElement.setAttribute("checkResult","CSC101B");
-    domElement.setAttribute("checkDate","itemName");
-    domElement.setAttribute("testMan","equipmentname");
-    domElement.setAttribute("checkMan","CSC101B");
-
-    domElement.setAttribute("checkTemp","equipmentname");
-    domElement.setAttribute("checkWet","CSC101B");
-    domElement.setAttribute("checkVolt","itemName");
-    domElement.setAttribute("checkCurr","equipmentname");
-    domElement.setAttribute("checkRate","CSC101B");
-
-    domElement.setAttribute("checkClass","equipmentname");
-    domElement.setAttribute("factory","CSC101B");
-    domElement.setAttribute("metConst","itemName");
-    domElement.setAttribute("metVarConst","equipmentname");
-    domElement.setAttribute("metClass","CSC101B");
-
-    domElement.setAttribute("metVarClass","equipmentname");
-    domElement.setAttribute("metPhase","CSC101B");
-
-#endif
-    return true;
-}
-

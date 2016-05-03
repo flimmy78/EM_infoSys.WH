@@ -6,19 +6,26 @@
 //删除在生成新文件
 void MainWindow::on_EM_creat_XML_PsBtn_clicked()
 {
-    QString  filename = "e:/update.xml";
+    QString  fileName = "e:/update.xml";
     QFile *file;
     QDomDocument domDoc;
 
-   if(file->exists(filename))
+   if(file->exists(fileName))
    {
-      file->remove(filename);
+      file->remove(fileName);
    }
 
-    create_xml(filename,"samples");
-    load_xmlFile(filename,domDoc);
-    addNode_sample(domDoc);
-   // addNode_INTUIT(filename);
+    create_xml(fileName,"samples");
+    load_xmlFile(fileName,domDoc);
+    addNode_sample("sample",domDoc);
+    //qDebug()<<domDoc.toString();
+
+    addNode_BASICERR("project",domDoc);
+    //addNode_INTUIT("project",domDoc);
+    //addNode_CREEPING("project",domDoc);
+    //addNode_STARTING("project",domDoc); //
+    save_xmlFile(fileName, domDoc);
+
 
 #if 0
     QMap<QString,QString> nodeMap1,nodeMap2 ;
@@ -38,7 +45,7 @@ void MainWindow::on_EM_creat_XML_PsBtn_clicked()
         showInformationBox("prependNode error");
     }
 #endif
-    showInformationBox(QString::fromUtf8("创建成功"));
+    //showInformationBox(QString::fromUtf8("创建成功"));
 
 }
 

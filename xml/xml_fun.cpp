@@ -14,9 +14,17 @@ bool MainWindow::create_xml(const QString &strFilePath, const QString &strRoot)
     QDomProcessingInstruction instruction = domDoc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"GB2312\"");
 
     domDoc.appendChild(instruction);
-
     QDomElement root = domDoc.createElement(strRoot); //根节点
     domDoc.appendChild(root);
+//    QDomElement general = domDoc.createElement( "general" );
+//    root.appendChild( general );
+    //qDebug()<<domDoc.documentElement().tagName();// .firstChild().parentNode().toElement().tagName();
+//    if(domDoc().isNull())
+//    {
+//        qDebug()<<"dafds";
+
+//    }
+   // qDebug()<<domDoc.toString();
     return save_xmlFile(strFilePath,domDoc);
 
 }

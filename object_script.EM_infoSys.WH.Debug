@@ -37,6 +37,9 @@ INPUT(
 ./debug\mds_fun.o
 ./debug\EM_sampleInfo.o
 ./debug\xml_update.o
+./debug\xml_creeping.o
+./debug\xml_starting.o
+./debug\xml_basicerrr.o
 ./debug\moc_mainwindow.o
 ./debug\qrc_pic.o
 );

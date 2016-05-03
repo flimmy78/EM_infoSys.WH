@@ -136,12 +136,15 @@ public:
     bool  recurse_domNode(QDomNode ,QString);
     bool  recurse_Element(QDomElement element);//递归节点
 
-    bool addNode_sample(QDomDocument &domDoc);
+    bool addNode_sample(QString nodeName,QDomDocument &domDoc);
 
     bool  open_xml(QString filename);
     bool  search_domNode(QString,const QDomDocument );
 
-    void   addNode_INTUIT(QString filename);
+    void   addNode_BASICERR(QString nodeName, QDomDocument &domDoc);
+    void   addNode_INTUIT(QString nodeName, QDomDocument &domDoc);
+    void   addNode_STARTING(QString nodeName, QDomDocument &domDoc);
+    void   addNode_CREEPING(QString nodeName, QDomDocument &domDoc);
     //
 
     bool  MD5_down();

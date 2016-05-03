@@ -47,7 +47,10 @@ SOURCES += main.cpp\
     xml_down.cpp \
     mds/mds_fun.cpp \
     down/EM_sampleInfo.cpp \
-    xml/xml_update.cpp
+    xml/xml_update.cpp \
+    xml/xml_creeping.cpp \
+    xml/xml_starting.cpp \
+    xml/xml_basicerrr.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/stdsoap2.h \
