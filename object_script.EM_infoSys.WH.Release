@@ -36,6 +36,7 @@ INPUT(
 ./release\xml_down.o
 ./release\mds_fun.o
 ./release\EM_sampleInfo.o
+./release\xml_update.o
 ./release\moc_mainwindow.o
 ./release\qrc_pic.o
 );

@@ -3,23 +3,22 @@
 #include "QFile"
 #include "QDebug"
 
+//删除在生成新文件
 void MainWindow::on_EM_creat_XML_PsBtn_clicked()
 {
-
+    QString  filename = "e:/update.xml";
     QFile *file;
-    QString  filename = "e:/config.xml";
+    QDomDocument domDoc;
 
-    if(file->exists(filename))
-    {
-        read_xml(filename);
-        qDebug()<<"exists";
-    }
-    else
-    {
-        createXmlFile(filename,"ipconfig");
-        qDebug()<<"No exists";
-        //showInformationBox(QString strTemp)
-    }
+   if(file->exists(filename))
+   {
+      file->remove(filename);
+   }
+
+    create_xml(filename,"samples");
+    load_xmlFile(filename,domDoc);
+    addNode_sample(domDoc);
+   // addNode_INTUIT(filename);
 
 #if 0
     QMap<QString,QString> nodeMap1,nodeMap2 ;
@@ -38,9 +37,9 @@ void MainWindow::on_EM_creat_XML_PsBtn_clicked()
     {
         showInformationBox("prependNode error");
     }
-
-    showInformationBox(QString::fromUtf8("创建成功"));
 #endif
+    showInformationBox(QString::fromUtf8("创建成功"));
+
 }
 
 void MainWindow::on_EM_save_XML_PsBtn_clicked()

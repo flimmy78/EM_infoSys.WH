@@ -7,7 +7,19 @@
 #include "QMessageBox"
 #include "QFile"
 
+//创建xml文件
+bool MainWindow::create_xml(const QString &strFilePath, const QString &strRoot)
+{
+    QDomDocument domDoc; //整个文档
+    QDomProcessingInstruction instruction = domDoc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"GB2312\"");
 
+    domDoc.appendChild(instruction);
+
+    QDomElement root = domDoc.createElement(strRoot); //根节点
+    domDoc.appendChild(root);
+    return save_xmlFile(strFilePath,domDoc);
+
+}
 //加载XML内容
 bool MainWindow:: load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc)
 {
@@ -82,38 +94,6 @@ QStringList MainWindow::get_errList(const QString strTemp)
 }
 
 
-//创建xml文件
-bool MainWindow::createXmlFile(const QString &strFilePath, const QString &strRoot)
-{
-    QDomDocument doc; //整个文档
-    QDomProcessingInstruction instruction = doc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"UTF-8\"");
-
-    doc.appendChild(instruction);
-
-    QDomElement root = doc.createElement(strRoot); //根节点
-    doc.appendChild(root);
-
-    QString strXmlDir = QFileInfo(strFilePath).absolutePath();//所在目录
-    QDir tempDir;
-
-    if (!tempDir.exists(strXmlDir))
-    {
-        tempDir.mkpath(strXmlDir); //先创建目录
-    }
-
-    QFile file(strFilePath); //xml文件
-
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) //创建文件
-    {
-        return  false;
-    }
-
-    QTextStream out(&file); //输出流
-    out.setCodec("UTF-8");
-    doc.save(out,4,QDomNode::EncodingFromTextStream);
-    file.close(); //关闭文件
-    return  true;
-}
 
 
 //节点最前插入

@@ -13,7 +13,6 @@
      QDomDocument doc;
      int errorLine,errorColumn;
 
-
      filename = "e:/config.xml";
      QFile file(filename);
 

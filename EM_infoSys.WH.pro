@@ -46,7 +46,8 @@ SOURCES += main.cpp\
     error_XML.cpp \
     xml_down.cpp \
     mds/mds_fun.cpp \
-    down/EM_sampleInfo.cpp
+    down/EM_sampleInfo.cpp \
+    xml/xml_update.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/stdsoap2.h \

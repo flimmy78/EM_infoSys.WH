@@ -1,3 +1,27 @@
+   QFile file(strFilePath);
+
+   if(!file.open(QIODevice::ReadWrite | QFile::Text))
+   {
+       showInformationBox(QString::fromUtf8("open error"));
+       file.close();
+       return  false;
+   }
+#if 0
+    QDomDocument doc;
+    QDomProcessingInstruction instruction;
+    instruction = doc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"GB2312\"");
+    doc.appendChild(instruction);
+    QDomElement root=doc.createElement(tr("data"));
+    doc.appendChild(root);
+    QDomElement StartWeek=doc.createElement(tr("sample"));
+    root.appendChild(StartWeek);
+    QTextStream out(&file);
+     out.setCodec("UTF-8");
+    doc.save(out,4);
+    file.close();
+#endif
+
+
 #if 0
     switch(QMessageBox::question(this,QString::fromUtf8("信息提醒"),QString::fromUtf8("是否保存？"),
                                  QMessageBox::Yes|QMessageBox::No,QMessageBox::Yes))

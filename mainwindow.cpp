@@ -19,13 +19,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
     init_TblWidget();
     set_localSqlPath();
     open_localSql();
     //on_EM_options_cnt_RdBtn_clicked();
     on_EM_down_clean_PsBtn_clicked();
-
 
 //   create_localDatabase(); //测试用
 //   create_c1ToC10();
@@ -222,10 +220,7 @@ bool MainWindow::sqlQueryExec(QString tabelName,QString barCode,QString strExec,
         //showInformationBox(strImfo);
         return true;
     }
-
 }
-
-
 
 bool MainWindow::delete_destSql_tableItem(QString tabelName,QString barCode)
 {

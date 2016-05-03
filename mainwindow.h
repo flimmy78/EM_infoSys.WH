@@ -123,7 +123,7 @@ public:
 
     bool  appendNode(const QString &strFilePath, const QString &strNodeName, const QMap<QString,QString> &nodeMap);
     bool  prependNode(const QString &strFilePath, const QString &strNodeName, const QMap<QString,QString> &nodeMap);
-    bool  createXmlFile(const QString &strFilePath, const QString &strRoot);
+
     bool  removeNodeByTag(const QString &strFilePath, const QString &strTagName, const QString &strText);
 
     bool  load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc);
@@ -131,13 +131,17 @@ public:
    QStringList get_errList(const QString strTemp );
     void  analyze_sampleInfo(const QDomDocument domDoc);
 
+    bool  create_xml(const QString &strFilePath, const QString &strRoot);
     bool  read_xml(QString filename);
     bool  recurse_domNode(QDomNode ,QString);
     bool  recurse_Element(QDomElement element);//递归节点
 
+    bool addNode_sample(QDomDocument &domDoc);
+
     bool  open_xml(QString filename);
     bool  search_domNode(QString,const QDomDocument );
 
+    void   addNode_INTUIT(QString filename);
     //
 
     bool  MD5_down();
