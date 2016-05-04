@@ -61,6 +61,10 @@ void MainWindow:: init_TblWidget()
     ui->EM_sampleInfo_TblWidget->horizontalHeader()->setResizeMode( QHeaderView::ResizeToContents);
     ui->EM_sampleInfo_TblWidget->verticalHeader()->setHidden(false);
 
+    ui->EM_down_TabWidget->setTabEnabled(2,false);
+    ui->EM_down_TabWidget->setTabEnabled(3,false);
+    ui->EM_down_TabWidget->setTabEnabled(4,false);
+
 }
 
 //设置本地数据的路径
@@ -154,6 +158,7 @@ void MainWindow::on_EM_down_Act_triggered()
   ui->EM_down_Act->setChecked(true);
   ui->EM_update_Act->setChecked(false);
   ui->EM_options_Act->setChecked(false);
+
 }
 
 void MainWindow::on_EM_update_Act_triggered()
@@ -282,4 +287,5 @@ QString MainWindow::compare_DateTime(QString str1,QString str2)
     qDebug()<<QString::number(dateTime.toTime_t());
 #endif
 }
+
 

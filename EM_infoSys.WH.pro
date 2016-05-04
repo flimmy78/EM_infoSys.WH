@@ -43,14 +43,15 @@ SOURCES += main.cpp\
     xml/xml_fun.cpp \
     xml/xml_test.cpp \
     md5.cpp \
-    error_XML.cpp \
-    xml_down.cpp \
-    mds/mds_fun.cpp \
     down/EM_sampleInfo.cpp \
-    xml/xml_update.cpp \
-    xml/xml_creeping.cpp \
-    xml/xml_starting.cpp \
-    xml/xml_basicerrr.cpp
+    xml/xml_server.cpp \
+    xml/xml_err.cpp \
+    update/xml_add_creeping.cpp \
+    update/xml_add_intuit.cpp \
+    update/xml_add_sample.cpp \
+    update/xml_basicerrr.cpp \
+    update/xml_starting.cpp \
+    update/xml_influence.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/stdsoap2.h \
@@ -64,7 +65,7 @@ FORMS    += mainwindow.ui
 
 LIBS     += -lws2_32
 
-LIBS += -L E:/sqldrivers
+#LIBS += -L E:/sqldrivers
 
 RESOURCES += \
     pic/pic.qrc

@@ -55,6 +55,7 @@ public:
     bool update_MEASURE_REPEAT();
 
     QString indexOfTable(QString strSou,QString strKey);
+    QString get_itemFromSql(QString strSou,QString strKey,QString strName);
     QString indexOfotherText(QString strSou,QString strKey);
     QString indexOfInfluence (QString strSou,QString strKey);
     QString getItemFromXML(QString strSou,QString strBegin,QString strEnd);
@@ -136,7 +137,7 @@ public:
     bool  recurse_domNode(QDomNode ,QString);
     bool  recurse_Element(QDomElement element);//递归节点
 
-    bool addNode_sample(QString nodeName,QDomDocument &domDoc);
+    bool  addNode_sample(QString nodeName,QDomDocument &domDoc);
 
     bool  open_xml(QString filename);
     bool  search_domNode(QString,const QDomDocument );
@@ -145,9 +146,8 @@ public:
     void   addNode_INTUIT(QString nodeName, QDomDocument &domDoc);
     void   addNode_STARTING(QString nodeName, QDomDocument &domDoc);
     void   addNode_CREEPING(QString nodeName, QDomDocument &domDoc);
+    void   addNode_INFLUENCE(QString nodeName, QDomDocument &domDoc);
     //
-
-    bool  MD5_down();
     QString  MD5_getSampleInfo(QString strSou);
     QString error_info(QString errInfo);
 private slots:
@@ -192,15 +192,11 @@ private slots:
     void on_EM_options_detectEquipNo_PsBtn_clicked();
 
     void on_EM_creat_XML_PsBtn_clicked();
-
-    void on_EM_delete_XML_PsBtn_clicked();
-
-
-    void on_EM_insert_XML_PsBtn_clicked();
-    void on_EM_read_XML_PsBtn_clicked();
-    void on_EM_test2_XML_PsBtn_clicked();
     void on_EM_save_XML_PsBtn_clicked();
+
     void on_EM_down_sampleInfo_PsBtn_clicked();
+    void on_EM_update_results_PsBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 

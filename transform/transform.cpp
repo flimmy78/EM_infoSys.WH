@@ -19,6 +19,34 @@ QString MainWindow:: indexOfTable(QString strSou,QString strKey)
     return strRe.remove("\t");
 }
 
+//str3 = indexOfTable(str2,QString::fromUtf8("fHumidity"));
+//str3.remove(QString::fromUtf8("相对湿度"));
+//str3.remove(QString::fromUtf8("\t"));
+//str3.remove(QString::fromUtf8("%"));
+
+QString MainWindow:: get_itemFromSql(QString strSou,QString strKey,QString strName)
+{
+    QString strRe;
+    int intStart,intEnd,intlength;
+
+    intlength =strKey.length();
+    intStart=strSou.indexOf(strKey);
+    intEnd=strSou.indexOf(QString::fromUtf8("\n"),intStart);
+    strRe=strSou.mid(intStart+intlength,intEnd-intStart-intlength);
+    if(intStart<0)
+    {
+        return "";
+    }
+    strRe.remove(strName);
+    strRe.remove("\t");
+    strRe.remove("%");
+    strRe.remove("\n");
+    strRe.remove(QString::fromUtf8("度"));
+
+    //qDebug()<<QString::number(intStart);
+    return strRe;
+}
+
 //启动测试
 QString MainWindow:: indexOfotherText (QString strSou,QString strKey)
 {
@@ -59,20 +87,19 @@ QString MainWindow:: indexOfInfluence (QString strSou,QString strKey)
 }
 
 
-//1	正向有功   2正向无功  3反向有功  4反向无功
+//0：正向有功，1：反向有功，2：正向无功，3：反向无功
 
 QString MainWindow::GLFXDM_index(QString strTemp)
 {
-
     if (strTemp ==QString::fromUtf8("有功_正向"))
     {
         return  "0";
     }
-    else if (strTemp ==QString::fromUtf8("无功_正向"))
+    else if (strTemp ==QString::fromUtf8("有功_反向"))
     {
         return  "1";
     }
-    else if (strTemp ==QString::fromUtf8("有功_反向"))
+    else if (strTemp ==QString::fromUtf8("无功_正向"))
     {
         return  "2";
     }
@@ -214,36 +241,24 @@ QString MainWindow::FZDLDM_index(QString strTemp)
 //01合元
 
 
-//电流相别	currentPhaseCode	01	ABC
-//电流相别	currentPhaseCode	02	AC
-//电流相别	currentPhaseCode	03	A
-//电流相别	currentPhaseCode	04	B
-//电流相别	currentPhaseCode	05	C
-//电流相别	currentPhaseCode	06	A元不平衡与平衡负载之差
-//电流相别	currentPhaseCode	07	B元不平衡与平衡负载之差
-//电流相别	currentPhaseCode	08	C元不平衡与平衡负载之差
-
+//测试元组（A：A相，B：B相，C：C相，L：合组）
 QString MainWindow::FYDM_index(QString strTemp)
 {
-    if (strTemp.startsWith("AC"))
+    if(strTemp.startsWith("A"))
     {
-        return  "02";
-    }
-    else if(strTemp.startsWith("A"))
-    {
-        return  "03";
+        return  "A";
     }
     else if(strTemp.startsWith("B"))
     {
-        return  "04";
+        return  "B";
     }
     else if(strTemp.startsWith("C"))
     {
-        return  "05";
+        return  "C";
     }
     else
     {
-        return  "01";
+        return  "L";
     }
 }
 //01合格  02 不合格 03未检查 04重新检定

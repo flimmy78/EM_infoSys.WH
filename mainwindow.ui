@@ -61,7 +61,7 @@
            <property name="spacing">
             <number>6</number>
            </property>
-           <item row="1" column="3">
+           <item row="1" column="2">
             <widget class="QPushButton" name="EM_down_sampleInfo_PsBtn">
              <property name="text">
               <string>下载信息</string>
@@ -85,14 +85,14 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="8">
+           <item row="1" column="6">
             <widget class="QPushButton" name="EM_down_clean_PsBtn">
              <property name="text">
               <string>清空表格</string>
              </property>
             </widget>
            </item>
-           <item row="1" column="5">
+           <item row="1" column="3">
             <spacer name="EM_down_HLSpacer">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
@@ -104,23 +104,6 @@
               </size>
              </property>
             </spacer>
-           </item>
-           <item row="1" column="2">
-            <widget class="QPushButton" name="EM_down_insertLocalSql_PsBtn">
-             <property name="text">
-              <string>下载信息(中间库)</string>
-             </property>
-             <property name="checkable">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="4">
-            <widget class="QPushButton" name="EM_test2_XML_PsBtn">
-             <property name="text">
-              <string>up</string>
-             </property>
-            </widget>
            </item>
           </layout>
          </widget>
@@ -163,34 +146,6 @@
            <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="4">
-            <widget class="QPushButton" name="EM_options_deleteLocalSqlAll_PsBtn">
-             <property name="text">
-              <string>删除所有下载历史信息</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
-            <widget class="QPushButton" name="EM_down_deleteLocalSqlItem_PsBtn">
-             <property name="text">
-              <string>删除条形码信息</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QPushButton" name="EM_down_loadLocalSql_PsBtn">
-             <property name="text">
-              <string>查看条形码信息</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QPushButton" name="EM_down_saveLocalSql_PsBtn">
-             <property name="text">
-              <string>保存表格信息</string>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="0">
             <widget class="QLabel" name="label">
              <property name="styleSheet">
@@ -201,8 +156,29 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="5">
-            <spacer name="horizontalSpacer">
+           <item row="0" column="1">
+            <widget class="QPushButton" name="EM_down_saveLocalSql_PsBtn">
+             <property name="text">
+              <string>保存表格信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QPushButton" name="EM_down_loadLocalSql_PsBtn">
+             <property name="text">
+              <string>查看条形码信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="EM_down_deleteLocalSqlItem_PsBtn">
+             <property name="text">
+              <string>删除条形码信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <spacer name="horizontalSpacer_4">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -213,6 +189,20 @@
               </size>
              </property>
             </spacer>
+           </item>
+           <item row="0" column="5">
+            <widget class="QPushButton" name="EM_save_XML_PsBtn">
+             <property name="text">
+              <string>测试</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QPushButton" name="EM_options_deleteLocalSqlAll_PsBtn">
+             <property name="text">
+              <string>删除所有下载历史信息</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -228,6 +218,123 @@
           <property name="currentIndex">
            <number>1</number>
           </property>
+          <widget class="QWidget" name="EM_sampleInfo_tab">
+           <attribute name="title">
+            <string>sampleInfo</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QTableWidget" name="EM_sampleInfo_TblWidget">
+              <column>
+               <property name="text">
+                <string>1sampleNo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>tableType</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>phaseType</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>nominalVoltage</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>5nominalCurrent</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>sampleType</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>nominalConstant</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>reactiveConstant</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>activeLevel</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>10reactiveLevel</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>freq</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>inputMode</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>isEmulator</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>measurementDirection</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>15sampleName</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>redSeal</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>producer</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>sampleUserName</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>sampleManuNo</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>20sampleSeal</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </widget>
           <widget class="QWidget" name="EM_METER_tab">
            <attribute name="title">
             <string>MT_METER(A.4)</string>
@@ -1592,117 +1699,6 @@
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="EM_sampleInfo_tab">
-           <attribute name="title">
-            <string>页</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_9">
-            <item row="0" column="0">
-             <widget class="QTableWidget" name="EM_sampleInfo_TblWidget">
-              <column>
-               <property name="text">
-                <string>1sampleNo</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>tableType</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>phaseType</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>nominalVoltage</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>5nominalCurrent</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>sampleType</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>nominalConstant</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>reactiveConstant</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>activeLevel</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>10reactiveLevel</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>freq</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>inputMode</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>isEmulator</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>measurementDirection</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>15sampleName</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>redSeal</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>producer</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>sampleUserName</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>sampleManuNo</string>
-               </property>
-              </column>
-              <column>
-               <property name="text">
-                <string>20sampleSeal</string>
-               </property>
-              </column>
-             </widget>
-            </item>
-           </layout>
-          </widget>
          </widget>
         </item>
        </layout>
@@ -1928,42 +1924,27 @@
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
-              <item row="0" column="0">
-               <widget class="QPushButton" name="EM_save_XML_PsBtn">
-                <property name="text">
-                 <string>保存</string>
+              <item row="0" column="4">
+               <widget class="QPushButton" name="EM_update_updateRSLT_PsBtn">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
                 </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QPushButton" name="EM_creat_XML_PsBtn">
                 <property name="text">
-                 <string>创建XML</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QPushButton" name="EM_insert_XML_PsBtn">
-                <property name="text">
-                 <string>添加节点</string>
+                 <string>综合录入MDS</string>
                 </property>
                </widget>
               </item>
               <item row="0" column="3">
-               <widget class="QPushButton" name="EM_delete_XML_PsBtn">
+               <widget class="QPushButton" name="EM_update_insertDestSql_PsBtn">
                 <property name="text">
-                 <string>删除XML</string>
+                 <string>添加到中间库</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="4">
-               <widget class="QPushButton" name="EM_read_XML_PsBtn">
-                <property name="text">
-                 <string>读取节点</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="5">
+              <item row="0" column="2">
                <spacer name="horizontalSpacer_3">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -1976,23 +1957,17 @@
                 </property>
                </spacer>
               </item>
-              <item row="0" column="6">
-               <widget class="QPushButton" name="EM_update_insertDestSql_PsBtn">
+              <item row="0" column="1">
+               <widget class="QPushButton" name="EM_update_results_PsBtn">
                 <property name="text">
-                 <string>添加到中间库</string>
+                 <string>上传信息</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="7">
-               <widget class="QPushButton" name="EM_update_updateRSLT_PsBtn">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
+              <item row="0" column="0">
+               <widget class="QPushButton" name="EM_creat_XML_PsBtn">
                 <property name="text">
-                 <string>综合录入MDS</string>
+                 <string>创建XML</string>
                 </property>
                </widget>
               </item>
@@ -2011,7 +1986,7 @@
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>5</number>
              </property>
              <widget class="QWidget" name="EM_INTUIT_MET_tab">
               <attribute name="title">
@@ -2802,452 +2777,117 @@
                 <widget class="QTableWidget" name="EM_RSLT_TabWidget">
                  <column>
                   <property name="text">
-                   <string>1检定任务编号</string>
+                   <string>1样品编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>2设备类别</string>
+                   <string>总结论</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>3系统编号</string>
+                   <string>检验日期</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>4检定线台编号</string>
+                   <string>检验员</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>5检定单元编号</string>
+                   <string>5校核员</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>6表位编号</string>
+                   <string>温度</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>7设备条形码</string>
+                   <string>湿度</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>8检定时间</string>
+                   <string>电压</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>9检定总结论</string>
+                   <string>电流</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>10外观检查结论</string>
+                   <string>10频率</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>11基本误差结论</string>
+                   <string>等级</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>12电能表常数试验结论</string>
+                   <string>生产厂家</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>13潜动试验结论</string>
+                   <string>有功常数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>14日记时误差结论</string>
+                   <string>无功常数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>15功率消耗结论</string>
+                   <string>15有功等级</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>16交流电压试验结论</string>
+                   <string>无功等级</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>17规约一致性检查结论</string>
+                   <string>相线</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>18载波通信性能试验结论</string>
+                   <string>铅封号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>19误差变差试验结论</string>
+                   <string>功率因数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>20误差一致性试验结论</string>
+                   <string>20额定一次电流</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>21负载电流升降变差试验结论</string>
+                   <string>额定二次电流</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>22电流过载试验结论</string>
+                   <string>额定负荷</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>23时段投切误差结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>24走字试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>25需量周期误差结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>26需量示值误差结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>27密钥下装结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>28参数设置结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>29费控安全认证试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>30费控远程数据回抄试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>31费控保电试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>32费控告警试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>33剩余电量递减试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>34费控取消保电结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>35费控取消告警结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>36费控合闸试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>37费控拉闸结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>38电能表清零结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>39最大需量清零</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>40广播校时试验</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>41通讯测试</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>42探测表地址</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>43多功能口测试</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>44闰年切换</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>45任意数据读取</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>46任意数据写入</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>47标准偏差</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>48GPS校时</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>49检定人员</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>50审核人员</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>51检定线写入时间</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>52铅封线处理标记</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>53铅封线处理时间</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>54平台处理标记</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>55平台处理时间</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>56起动试验结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>57温度(°)</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>58湿度(相对)</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>59预置参数检查1</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>60.485密码修改</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>61预置参数设置1</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>62可靠性验证试验</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>63动稳定试验</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>64抗震性能试验</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>65预置参数检查2</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>66预置参数检查3</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>67预置参数设置2</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>68预置参数设置3</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>69硬件版本</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>70故障类型</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>71事件记录功能</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>72RATE_TIME_FUNC_CONC_CODE</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>73EVENT_REC_FUNC_CONC_CODE</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>74影响量试验.INFLUENCE_QTY_CONC_CODE</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>75测量重复性试验.MEA_REP_CONC_CODE</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>76AUX_POW_CONC_CODE</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>77ALARM_FUNC_CONC_CODE</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>78检定合格证有效日期</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>79红外通信测试结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>80通电检测结论</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>81计度器示值组合...</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>82费率时段电能示值误差</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>83最大误差需量</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>84计量装置证书编号</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>85计量装置证书编号有效期</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>86不合格原因</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>87通讯模块互换能力试验</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>88通讯模块接口带载能力测试</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>89冻结功能试验</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>90时钟示值误差</string>
+                   <string>23仪表保安系数</string>
                   </property>
                  </column>
                 </widget>
@@ -3925,6 +3565,22 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text">
          <string>分项录入MDS</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="EM_down_insertLocalSql_PsBtn">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>70</y>
+          <width>104</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>下载信息(中间库)</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
         </property>
        </widget>
       </widget>

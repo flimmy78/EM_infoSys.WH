@@ -46,13 +46,14 @@ void MainWindow::on_EM_update_insertDestSql_PsBtn_clicked()
             setCursor(QCursor(Qt::ArrowCursor));
             return;
        }
-#endif
+
 
        if(!update_DETECT_RSLT())//C34
        {
             setCursor(QCursor(Qt::ArrowCursor));
             return;
        }
+   #endif
       setCursor(QCursor(Qt::ArrowCursor));
       showInformationBox(QString::fromUtf8("成功各分项添加到中间库"));
 

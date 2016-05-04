@@ -18,33 +18,16 @@ void MainWindow::on_EM_creat_XML_PsBtn_clicked()
     create_xml(fileName,"samples");
     load_xmlFile(fileName,domDoc);
     addNode_sample("sample",domDoc);
+//    addNode_INTUIT("project",domDoc);
     //qDebug()<<domDoc.toString();
 
-    addNode_BASICERR("project",domDoc);
-    //addNode_INTUIT("project",domDoc);
-    //addNode_CREEPING("project",domDoc);
-    //addNode_STARTING("project",domDoc); //
-    save_xmlFile(fileName, domDoc);
+    //addNode_BASICERR("project",domDoc);
 
+//    addNode_CREEPING("project",domDoc);
+//    addNode_STARTING("project",domDoc);
+   // addNode_INFLUENCE("project",domDoc); //
+    //save_xmlFile(fileName, domDoc);
 
-#if 0
-    QMap<QString,QString> nodeMap1,nodeMap2 ;
-    nodeMap1.insert("aa", "11"); //向map里添加一对“键-值”
-    nodeMap1.insert("bb", "22"); //向map里添加一对“键-值”   //tagname  不能为纯数字
-
-    if(!appendNode(filename,"remote",nodeMap1))
-    {
-        showInformationBox("appendNode error");
-    }
-
-    nodeMap2.insert("cc", "11");
-    nodeMap2.insert("dd", "22");
-
-    if(! prependNode(filename,"remote",nodeMap2))
-    {
-        showInformationBox("prependNode error");
-    }
-#endif
     //showInformationBox(QString::fromUtf8("创建成功"));
 
 }
@@ -60,7 +43,7 @@ void MainWindow::on_EM_save_XML_PsBtn_clicked()
         return;
     }
 
-    //strList = get_errList(domDoc.toString());
+    //strList = get_errList(domDoc.toString());//错误信息
     strTemp =domDoc.toString();
     //qDebug()<<strTemp;
 
@@ -75,59 +58,3 @@ void MainWindow::on_EM_save_XML_PsBtn_clicked()
 }
 
 
-void MainWindow::on_EM_insert_XML_PsBtn_clicked()
-{
-    QFile *file;
-    QString  filename = "e:/config.xml";
-
-    if(file->exists(filename))
-    {
-        read_xml(filename);
-    }
-    else
-    {
-        showInformationBox("No exists");
-        return ;
-    }
-
-    QMap<QString,QString> nodeMap1 ;
-    nodeMap1.insert("aa1", "11");               //向map里添加一对“键-值”
-    nodeMap1.insert("bb1", "22");               //向map里添加一对“键-值”   //tagname  不能为纯数字
-
-    if(!appendNode(filename,"remote",nodeMap1))
-    {
-        showInformationBox("appendNode error");
-    }
-    showInformationBox(QString::fromUtf8("添加成功"));
-}
-
-void MainWindow::on_EM_read_XML_PsBtn_clicked()
-{
-    #if 0
-    QString tagName ="sample";
-    if(!search_domNode(tagName,domDoc))
-    {
-        showInformationBox("no sample");
-        return;
-    }
-
-
-     QStringList tagNameList = g_map.keys();
-
-     foreach (QString str, tagNameList)
-     {
-         qDebug()  << str;
-         qDebug() << g_map.value(str);
-     }
-#endif
-}
-
-
-void MainWindow::on_EM_delete_XML_PsBtn_clicked()
-{
-    QString  filename = "e:/config.xml";
-    if(QFile::remove(filename))//刪除文件
-    {
-        showInformationBox(QString::fromUtf8("删除成功"));
-    }
-}

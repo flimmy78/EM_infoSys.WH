@@ -3,10 +3,11 @@
 #include "QDebug"
 #include "QDomComment"
 
-//启动试验
-void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
+//基本误差
+void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
 {
-    QDomElement  domElement,sampleElement,projectsElement,projectElement;
+    QDomElement  domElement,sampleElement,projectsElement,projectElement,errorElement;
+    QDomText domText;
     sampleElement = domDoc.documentElement().firstChild().toElement();
     domElement = domDoc.createElement("projects");
     sampleElement.appendChild( domElement );
@@ -17,7 +18,7 @@ void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
 
    // qDebug()<<projectsElement.firstChild().toElement().tagName();
     domElement.setAttribute("sampleNo","JLXC-160425-1");                      //条形码
-    domElement.setAttribute("projectName",QString::fromUtf8("起动试验"));      //项目名字
+    domElement.setAttribute("projectName",QString::fromUtf8("基本误差"));      //项目名字
     domElement.setAttribute("testResult","1");
 
     projectElement =projectsElement.firstChild().toElement();
@@ -30,9 +31,21 @@ void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
     domElement.setAttribute("PF","1.0");
     domElement.setAttribute("volt","1Un");
 
-    domElement.setAttribute("curr","0.004Ib");
-    domElement.setAttribute("conclusion","0");
-    domElement.setAttribute("refTime",QString::fromUtf8("10分13秒"));
+    domElement.setAttribute("curr","-0.091");
+    domElement.setAttribute("intErr","-0.091");
+    domElement.setAttribute("intErr","-0.0");
     domElement.setAttribute("strSampleID","160311025630");
+    domElement.setAttribute("conclusion","0");
+
+    for(int i =0;i<2;i++)
+    {
+        errorElement =projectElement.firstChild().toElement();
+        domElement = domDoc.createElement("error");
+        domText = domDoc.createTextNode("-0.085");
+        domElement.appendChild( domText );
+        //domElement.toElement().setNodeValue("sdfsdf");
+        errorElement.appendChild( domElement );
+    }
 
 }
+

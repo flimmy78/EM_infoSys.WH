@@ -66,10 +66,9 @@ void MainWindow::on_EM_down_sampleInfo_PsBtn_clicked()
 
 }
 
-
-
 ///QTextCodec::setCodecForTr(QTextCodec::codecForName("GBK"));
-void MainWindow::on_EM_test2_XML_PsBtn_clicked()
+
+void MainWindow::on_EM_update_results_PsBtn_clicked()
 {
     QString sampleNo,sysParams,Appsecret,strTemp,AppKey,date,Appsign,appsignBefore;
 #if 1
@@ -102,7 +101,6 @@ void MainWindow::on_EM_test2_XML_PsBtn_clicked()
     sendProjectResults.checkMan="jing2";//校核员
     sendProjectResults.checkTemp="100"; //检验温度
     sendProjectResults.checkWet="108";//检验湿度
-
 
     QDomDocument doc; //整个文档
     QString strFilePath = "c:/config.xml";
@@ -149,8 +147,6 @@ void MainWindow::on_EM_test2_XML_PsBtn_clicked()
     setCursor(QCursor(Qt::ArrowCursor));
 #endif
 }
-
-
 
 
 //将分项录入MDS,可以覆盖
@@ -304,3 +300,4 @@ QString MainWindow:: getItemFromXML(QString strSou,QString strBegin,QString strE
     strRe=strSou.mid(intStart+intlength,intEnd-intStart-intlength);
     return strRe;
 }
+

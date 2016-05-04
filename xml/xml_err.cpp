@@ -70,3 +70,4 @@ QString MainWindow::error_info(QString errInfo)
     }
     return strRet;
 }
+

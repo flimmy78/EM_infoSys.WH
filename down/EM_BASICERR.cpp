@@ -41,7 +41,7 @@ int MainWindow:: get_BASICERR_checkParameter(QString strID)
         if(strArray[15][0]==ui->EM_BASICERR_TblWidget->item(i,28)->text())//strArray[15][0]为本地localsql key标识符号
         {
             ui->EM_BASICERR_TblWidget->setItem(i,7,new QTableWidgetItem(strArray[15][2]));                //检定日期
-            ui->EM_BASICERR_TblWidget->setItem(i,14,new QTableWidgetItem(DYDM_index("100%Un")));          //电压百分百
+            ui->EM_BASICERR_TblWidget->setItem(i,14,new QTableWidgetItem("100%Un"));//(DYDM_index("100%Un")          //电压百分百
 
             str2 = strArray[15][10];
             str3 = indexOfTable(str2,QString::fromUtf8("校验圈数"));

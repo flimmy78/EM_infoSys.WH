@@ -157,8 +157,6 @@ void MainWindow::on_EM_options_deleteLocalSqlAll_PsBtn_clicked()
        {
           case QMessageBox::Yes:
          {
-
-
                 QString strExec;
                 int intResult;
 
@@ -171,6 +169,16 @@ void MainWindow::on_EM_options_deleteLocalSqlAll_PsBtn_clicked()
                      return;
                 }
 
+                strExec ="delete from  MT_METER";
+                intResult= sql_exec(strExec.toLatin1().data());
+
+                if(intResult!=SQLITE_OK)
+                {
+                    showInformationBox(QString::fromUtf8("delete MT_METER error"));
+                    return;
+                }
+
+
                 #if 0
                 strExec ="delete from  MT_P_CODE";
                 intResult= sql_exec(strExec.toLatin1().data());
@@ -181,14 +189,7 @@ void MainWindow::on_EM_options_deleteLocalSqlAll_PsBtn_clicked()
                      return;
                 }
 
-                strExec ="delete from  MT_METER";
-                intResult= sql_exec(strExec.toLatin1().data());
 
-                if(intResult!=SQLITE_OK)
-                {
-                    showInformationBox(QString::fromUtf8("delete MT_METER error"));
-                    return;
-                }
 
                 strExec ="delete from  MT_DETECT_TASK";
                 intResult= sql_exec(strExec.toLatin1().data());

@@ -41,12 +41,14 @@ void MainWindow::on_EM_down_saveLocalSql_PsBtn_clicked()
         setCursor(QCursor(Qt::ArrowCursor));
         return ;
     }
+
     save_sampleInfo();
-//  save_MT_P_CODE();
-//    save_MT_METER();
+    save_MT_METER();
+
+//    save_MT_P_CODE();
 //    save_MT_DETECT_TASK();
 //    save_MT_DETECT_OUT_EQUIP();
-    showInformationBox(QString::fromUtf8("保存成功"));
+    //showInformationBox(QString::fromUtf8("保存成功"));
     setCursor(QCursor(Qt::ArrowCursor));
 }
 
@@ -70,13 +72,14 @@ void MainWindow::on_EM_down_loadLocalSql_PsBtn_clicked()
     strExec = QString("select * from  sampleInfo where sampleNo = '%1'").arg(strBarCode);
     getDataFromLocalSqlToTblWidget(strExec,ui->EM_sampleInfo_TblWidget,ui->EM_sampleInfo_TblWidget->columnCount());
 
+    strExec = QString("select * from  MT_METER where BAR_CODE = '%1'").arg(strBarCode);
+    getDataFromLocalSqlToTblWidget(strExec,ui->EM_METER_TblWidget,ui->EM_METER_TblWidget->columnCount());
+
     #if 0
     //查看某条记录
     strExec = QString("select * from  MT_P_CODE where BAR_CODE = '%1'").arg(strBarCode);
     getDataFromLocalSqlToTblWidget(strExec,ui->EM_P_CODE_TblWidget,ui->EM_P_CODE_TblWidget->columnCount());
 
-    strExec = QString("select * from  MT_METER where BAR_CODE = '%1'").arg(strBarCode);
-    getDataFromLocalSqlToTblWidget(strExec,ui->EM_METER_TblWidget,ui->EM_METER_TblWidget->columnCount());
 
     strExec = QString("select * from  MT_DETECT_TASK where BAR_CODE = '%1'").arg(strBarCode);
     getDataFromLocalSqlToTblWidget(strExec,ui->EM_DETECT_TASK_TblWidget,ui->EM_DETECT_TASK_TblWidget->columnCount());
@@ -99,12 +102,13 @@ void MainWindow::on_EM_down_deleteLocalSqlItem_PsBtn_clicked()
     strExec=QString("delete  from sampleInfo where sampleNo ='%1'").arg(strBarCode);
     byteArray = strExec.toLocal8Bit();
     sql_exec(byteArray.data());
-#if 0
-    strExec=QString("delete  from MT_P_CODE where BAR_CODE ='%1'").arg(strBarCode);
+
+    strExec=QString("delete  from MT_METER where BAR_CODE ='%1'").arg(strBarCode);
     byteArray = strExec.toLocal8Bit();
     sql_exec(byteArray.data());
 
-    strExec=QString("delete  from MT_METER where BAR_CODE ='%1'").arg(strBarCode);
+#if 0
+    strExec=QString("delete  from MT_P_CODE where BAR_CODE ='%1'").arg(strBarCode);
     byteArray = strExec.toLocal8Bit();
     sql_exec(byteArray.data());
 

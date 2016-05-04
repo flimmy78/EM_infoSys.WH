@@ -4,7 +4,6 @@
 #include "QDebug"
 #include "QMessageBox"
 #include "QTextStream"
-
 #include "QCryptographicHash"
 
 //将数据加密返回,要求大写
