@@ -2,14 +2,15 @@
 #include "ui_mainwindow.h"
 #include "QDebug"
 #include "QDomComment"
-//潜动试验
-void MainWindow::addNode_CREEPING(QString nodeName, QDomDocument &domDoc)
+
+//测量重复性
+void MainWindow::addNode_MEASURE_REPEAT(QString nodeName, QDomDocument &domDoc)
 {
     QDomElement  domElement,projectsElement,projectElement;
 
     int rowCount,columnCount;
-    rowCount = ui->EM_CREEPING_TblWidget->rowCount();
-    columnCount = ui->EM_CREEPING_TblWidget->columnCount();
+    rowCount = ui->EM_MEASURE_REPEAT_TblWidget->rowCount();
+    columnCount = ui->EM_MEASURE_REPEAT_TblWidget->columnCount();
 
     if(rowCount <= 0)
     {
@@ -20,21 +21,21 @@ void MainWindow::addNode_CREEPING(QString nodeName, QDomDocument &domDoc)
     {
         for(int i=0;i<columnCount;i++)
         {
-            if(!ui->EM_CREEPING_TblWidget->item(j,i))
-            ui->EM_CREEPING_TblWidget->setItem(j,i, new QTableWidgetItem(""));
+            if(!ui->EM_MEASURE_REPEAT_TblWidget->item(j,i))
+            ui->EM_MEASURE_REPEAT_TblWidget->setItem(j,i, new QTableWidgetItem(""));
         }
     }
 
     projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
     projectElement = domDoc.createElement(nodeName);
+    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectName",QString::fromUtf8("测量重复性"));
+//    projectElement.setAttribute("testResult",my_CONC_CODE.MEASURE_REPEAT);
     projectsElement.appendChild( projectElement );
 
     for(int i =0;i<rowCount;i++)//
     {
-        projectElement.setAttribute("sampleNo",ui->EM_CREEPING_TblWidget->item(i,6)->text());                      //条形码
-        projectElement.setAttribute("projectName",QString::fromUtf8("潜动试验"));      //项目名字
-
-        projectElement.setAttribute("testResult",ui->EM_CREEPING_TblWidget->item(i,17)->text());
+        projectElement.setAttribute("testResult",ui->EM_MEASURE_REPEAT_TblWidget->item(i,17)->text());
 
         domElement = domDoc.createElement("testData");
         projectElement.appendChild( domElement );
@@ -46,10 +47,11 @@ void MainWindow::addNode_CREEPING(QString nodeName, QDomDocument &domDoc)
         domElement.setAttribute("volt","");
 
         domElement.setAttribute("curr","");
-        domElement.setAttribute("conclusion",ui->EM_CREEPING_TblWidget->item(i,17)->text());
+        domElement.setAttribute("conclusion",ui->EM_MEASURE_REPEAT_TblWidget->item(i,17)->text());
         domElement.setAttribute("refTime","");
         domElement.setAttribute("strSampleID","");
     }
+
 }
 
 

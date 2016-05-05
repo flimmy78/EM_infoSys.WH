@@ -93,7 +93,7 @@ public:
     QPushButton *EM_update_insertDestSql_PsBtn;
     QSpacerItem *horizontalSpacer_3;
     QPushButton *EM_update_results_PsBtn;
-    QPushButton *EM_creat_XML_PsBtn;
+    QPushButton *EM_creat_xml_PsBtn;
     QTabWidget *EM_update_TabWidget;
     QWidget *EM_INTUIT_MET_tab;
     QGridLayout *gridLayout_8;
@@ -1107,10 +1107,10 @@ public:
 
         gridLayout_7->addWidget(EM_update_results_PsBtn, 0, 1, 1, 1);
 
-        EM_creat_XML_PsBtn = new QPushButton(EM_update_Frame);
-        EM_creat_XML_PsBtn->setObjectName(QString::fromUtf8("EM_creat_XML_PsBtn"));
+        EM_creat_xml_PsBtn = new QPushButton(EM_update_Frame);
+        EM_creat_xml_PsBtn->setObjectName(QString::fromUtf8("EM_creat_xml_PsBtn"));
 
-        gridLayout_7->addWidget(EM_creat_XML_PsBtn, 0, 0, 1, 1);
+        gridLayout_7->addWidget(EM_creat_xml_PsBtn, 0, 0, 1, 1);
 
 
         gridLayout_16->addWidget(EM_update_Frame, 0, 0, 1, 1);
@@ -1911,7 +1911,7 @@ public:
 
         stackedWidget->setCurrentIndex(1);
         EM_down_TabWidget->setCurrentIndex(1);
-        EM_update_TabWidget->setCurrentIndex(5);
+        EM_update_TabWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -2495,8 +2495,8 @@ public:
         EM_update_info_GpBox->setTitle(QString());
         EM_update_updateRSLT_PsBtn->setText(QApplication::translate("MainWindow", "\347\273\274\345\220\210\345\275\225\345\205\245MDS", 0, QApplication::UnicodeUTF8));
         EM_update_insertDestSql_PsBtn->setText(QApplication::translate("MainWindow", "\346\267\273\345\212\240\345\210\260\344\270\255\351\227\264\345\272\223", 0, QApplication::UnicodeUTF8));
-        EM_update_results_PsBtn->setText(QApplication::translate("MainWindow", "\344\270\212\344\274\240\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
-        EM_creat_XML_PsBtn->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272XML", 0, QApplication::UnicodeUTF8));
+        EM_update_results_PsBtn->setText(QApplication::translate("MainWindow", "\345\275\225\345\205\245\347\263\273\347\273\237", 0, QApplication::UnicodeUTF8));
+        EM_creat_xml_PsBtn->setText(QApplication::translate("MainWindow", "\345\210\233\345\273\272XML", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem262 = EM_INTUIT_MET_TblWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem262->setText(QApplication::translate("MainWindow", "1.DETECT_TASK_NO", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem263 = EM_INTUIT_MET_TblWidget->horizontalHeaderItem(1);
@@ -2522,7 +2522,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem273 = EM_INTUIT_MET_TblWidget->horizontalHeaderItem(11);
         ___qtablewidgetitem273->setText(QApplication::translate("MainWindow", "DETECT_CONTENT", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem274 = EM_INTUIT_MET_TblWidget->horizontalHeaderItem(12);
-        ___qtablewidgetitem274->setText(QApplication::translate("MainWindow", "CONC_CODE", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem274->setText(QApplication::translate("MainWindow", "13CONC_CODE", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem275 = EM_INTUIT_MET_TblWidget->horizontalHeaderItem(13);
         ___qtablewidgetitem275->setText(QApplication::translate("MainWindow", "WRITE_DATE", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem276 = EM_INTUIT_MET_TblWidget->horizontalHeaderItem(14);
@@ -2624,7 +2624,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem323 = EM_STARTING_TblWidget->horizontalHeaderItem(16);
         ___qtablewidgetitem323->setText(QApplication::translate("MainWindow", "REAL_TEST_TIME", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem324 = EM_STARTING_TblWidget->horizontalHeaderItem(17);
-        ___qtablewidgetitem324->setText(QApplication::translate("MainWindow", "CONC_CODE", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem324->setText(QApplication::translate("MainWindow", "18CONC_CODE", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem325 = EM_STARTING_TblWidget->horizontalHeaderItem(18);
         ___qtablewidgetitem325->setText(QApplication::translate("MainWindow", "WRITE_DATE", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem326 = EM_STARTING_TblWidget->horizontalHeaderItem(19);
@@ -2671,7 +2671,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem346 = EM_CREEPING_TblWidget->horizontalHeaderItem(16);
         ___qtablewidgetitem346->setText(QApplication::translate("MainWindow", "REAL_TEST_TIME", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem347 = EM_CREEPING_TblWidget->horizontalHeaderItem(17);
-        ___qtablewidgetitem347->setText(QApplication::translate("MainWindow", "CONC_CODE", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem347->setText(QApplication::translate("MainWindow", "18CONC_CODE", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem348 = EM_CREEPING_TblWidget->horizontalHeaderItem(18);
         ___qtablewidgetitem348->setText(QApplication::translate("MainWindow", "WRITE_DATE", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem349 = EM_CREEPING_TblWidget->horizontalHeaderItem(19);
@@ -2755,7 +2755,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem387 = EM_INFLUENCE_QTY_TblWidget->horizontalHeaderItem(10);
         ___qtablewidgetitem387->setText(QApplication::translate("MainWindow", "IS_VALID", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem388 = EM_INFLUENCE_QTY_TblWidget->horizontalHeaderItem(11);
-        ___qtablewidgetitem388->setText(QApplication::translate("MainWindow", "CHK_CONC_CODE", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem388->setText(QApplication::translate("MainWindow", "12CHK_CONC_CODE", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem389 = EM_INFLUENCE_QTY_TblWidget->horizontalHeaderItem(12);
         ___qtablewidgetitem389->setText(QApplication::translate("MainWindow", "EFFECT_TEST_ITEM", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem390 = EM_INFLUENCE_QTY_TblWidget->horizontalHeaderItem(13);
@@ -2770,7 +2770,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem394 = EM_RSLT_TabWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem394->setText(QApplication::translate("MainWindow", "1\346\240\267\345\223\201\347\274\226\345\217\267", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem395 = EM_RSLT_TabWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem395->setText(QApplication::translate("MainWindow", "\346\200\273\347\273\223\350\256\272", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem395->setText(QApplication::translate("MainWindow", "2\346\200\273\347\273\223\350\256\272", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem396 = EM_RSLT_TabWidget->horizontalHeaderItem(2);
         ___qtablewidgetitem396->setText(QApplication::translate("MainWindow", "\346\243\200\351\252\214\346\227\245\346\234\237", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem397 = EM_RSLT_TabWidget->horizontalHeaderItem(3);

@@ -1960,12 +1960,12 @@
               <item row="0" column="1">
                <widget class="QPushButton" name="EM_update_results_PsBtn">
                 <property name="text">
-                 <string>上传信息</string>
+                 <string>录入系统</string>
                 </property>
                </widget>
               </item>
               <item row="0" column="0">
-               <widget class="QPushButton" name="EM_creat_XML_PsBtn">
+               <widget class="QPushButton" name="EM_creat_xml_PsBtn">
                 <property name="text">
                  <string>创建XML</string>
                 </property>
@@ -1986,7 +1986,7 @@
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>5</number>
+              <number>6</number>
              </property>
              <widget class="QWidget" name="EM_INTUIT_MET_tab">
               <attribute name="title">
@@ -2063,7 +2063,7 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>CONC_CODE</string>
+                   <string>13CONC_CODE</string>
                   </property>
                  </column>
                  <column>
@@ -2353,7 +2353,7 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>CONC_CODE</string>
+                   <string>18CONC_CODE</string>
                   </property>
                  </column>
                  <column>
@@ -2485,7 +2485,7 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>CONC_CODE</string>
+                   <string>18CONC_CODE</string>
                   </property>
                  </column>
                  <column>
@@ -2730,7 +2730,7 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>CHK_CONC_CODE</string>
+                   <string>12CHK_CONC_CODE</string>
                   </property>
                  </column>
                  <column>
@@ -2782,7 +2782,7 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>总结论</string>
+                   <string>2总结论</string>
                   </property>
                  </column>
                  <column>

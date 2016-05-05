@@ -88,7 +88,7 @@ void MainWindow:: fill_INTUIT()
 
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,10, new QTableWidgetItem("1"));                                          //见附录I：有效标志 0：否、1：是                                           //
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,11, new QTableWidgetItem("#"));
-    my_CONC_CODE.INTUIT="01";
+    my_CONC_CODE.INTUIT="1";
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,12, new QTableWidgetItem(my_CONC_CODE.INTUIT));
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,13, new QTableWidgetItem(currentTime()));
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,14, new QTableWidgetItem("0"));

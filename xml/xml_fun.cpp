@@ -16,20 +16,11 @@ bool MainWindow::create_xml(const QString &strFilePath, const QString &strRoot)
     domDoc.appendChild(instruction);
     QDomElement root = domDoc.createElement(strRoot); //根节点
     domDoc.appendChild(root);
-//    QDomElement general = domDoc.createElement( "general" );
-//    root.appendChild( general );
-    //qDebug()<<domDoc.documentElement().tagName();// .firstChild().parentNode().toElement().tagName();
-//    if(domDoc().isNull())
-//    {
-//        qDebug()<<"dafds";
-
-//    }
-   // qDebug()<<domDoc.toString();
     return save_xmlFile(strFilePath,domDoc);
 
 }
 //加载XML内容
-bool MainWindow:: load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc)
+bool MainWindow::load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc)
 {
     QString errorStr;
     int errorLine,errorColumn;
@@ -38,13 +29,14 @@ bool MainWindow:: load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc
 
     if(!file.open(QIODevice::ReadOnly | QFile::Text))
     {
-        showInformationBox(QString::fromUtf8("open error"));
+        showInformationBox(QString::fromUtf8("error: load_xml open"));
+        file.close();
         return  false ;
     }
 
     if (!domDoc.setContent(&file, false, &errorStr, &errorLine, &errorColumn))
     {
-        showInformationBox("domDoc.setContent:"+errorStr);
+        showInformationBox("error: load_xml:"+errorStr);
         file.close();
         return false ;
     }
@@ -62,7 +54,7 @@ bool MainWindow::save_xmlFile(const QString &strFilePath,  const QDomDocument do
 
     if(!file.open(QIODevice::ReadWrite | QFile::Text))
     {
-        showInformationBox(QString::fromUtf8("open error"));
+        showInformationBox(QString::fromUtf8("error ：save_xmlFile"));
         file.close();
         return  false;
     }
@@ -100,9 +92,6 @@ QStringList MainWindow::get_errList(const QString strTemp)
     //qDebug()<<strList.at(0)<<strList.at(1);
     return  strList;
 }
-
-
-
 
 //节点最前插入
 bool MainWindow::prependNode(const QString &strFilePath, const QString &strNodeName, const QMap<QString,QString> &nodeMap)

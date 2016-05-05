@@ -51,9 +51,9 @@ static const uint qt_meta_data_MainWindow[] = {
      722,   11,   11,   11, 0x08,
      766,   11,   11,   11, 0x08,
      810,   11,   11,   11, 0x08,
-     842,   11,   11,   11, 0x08,
-     873,   11,   11,   11, 0x08,
-     911,   11,   11,   11, 0x08,
+     841,   11,   11,   11, 0x08,
+     879,   11,   11,   11, 0x08,
+     916,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -79,10 +79,10 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_EM_update_loadDetectTaskNo_PsBtn_clicked()\0"
     "on_EM_options_setArg_Oracle_PsBtn_clicked()\0"
     "on_EM_options_detectEquipNo_PsBtn_clicked()\0"
-    "on_EM_creat_XML_PsBtn_clicked()\0"
     "on_EM_save_XML_PsBtn_clicked()\0"
     "on_EM_down_sampleInfo_PsBtn_clicked()\0"
     "on_EM_update_results_PsBtn_clicked()\0"
+    "on_EM_creat_xml_PsBtn_clicked()\0"
 };
 
 void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -111,10 +111,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 17: _t->on_EM_update_loadDetectTaskNo_PsBtn_clicked(); break;
         case 18: _t->on_EM_options_setArg_Oracle_PsBtn_clicked(); break;
         case 19: _t->on_EM_options_detectEquipNo_PsBtn_clicked(); break;
-        case 20: _t->on_EM_creat_XML_PsBtn_clicked(); break;
-        case 21: _t->on_EM_save_XML_PsBtn_clicked(); break;
-        case 22: _t->on_EM_down_sampleInfo_PsBtn_clicked(); break;
-        case 23: _t->on_EM_update_results_PsBtn_clicked(); break;
+        case 20: _t->on_EM_save_XML_PsBtn_clicked(); break;
+        case 21: _t->on_EM_down_sampleInfo_PsBtn_clicked(); break;
+        case 22: _t->on_EM_update_results_PsBtn_clicked(); break;
+        case 23: _t->on_EM_creat_xml_PsBtn_clicked(); break;
         default: ;
         }
     }

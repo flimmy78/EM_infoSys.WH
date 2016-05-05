@@ -40,7 +40,7 @@ bool MainWindow:: fill_INFLUENCE_QTY(int index)
         T3=false;
         T4=false;
 
-       strCONC="01";//默认合格
+       strCONC="1";//默认合格
        if(str1.indexOf(QString::fromUtf8("电压影响"))!=-1)
        {
           str2 =indexOfInfluence(str1,QString::fromUtf8("电压影响"));
@@ -48,7 +48,7 @@ bool MainWindow:: fill_INFLUENCE_QTY(int index)
 
           if(str2.indexOf(QString::fromUtf8("不"))!=-1)
           {
-             strCONC="02";
+             strCONC="0";
           }
 
           str1.remove(str2);
@@ -62,7 +62,7 @@ bool MainWindow:: fill_INFLUENCE_QTY(int index)
 
            if(str2.indexOf(QString::fromUtf8("不"))!=-1)
            {
-              strCONC="02";
+              strCONC="0";
            }
 
            str1.remove(str2);
@@ -76,7 +76,7 @@ bool MainWindow:: fill_INFLUENCE_QTY(int index)
 
            if(str2.indexOf(QString::fromUtf8("不"))!=-1)
            {
-              strCONC="02";
+              strCONC="0";
            }
 
            str1.remove(str2);
@@ -91,7 +91,7 @@ bool MainWindow:: fill_INFLUENCE_QTY(int index)
 
            if(str2.indexOf(QString::fromUtf8("不"),QString::fromUtf8("电压不平衡影响").length())!=-1)//后面一个'不‘合格字符
            {
-              strCONC="02";
+              strCONC="0";
            }
 
            str1.remove(str2);

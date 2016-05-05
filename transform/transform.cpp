@@ -286,11 +286,11 @@ QString MainWindow::JBWCSYJLDM_index(QString strTemp)
 {
     if (strTemp ==QString::fromUtf8("合格"))
     {
-        return  "01";
+        return  "1";
     }
     else
     {
-        return  "02";
+        return  "0";
     }
 }
 #if 1

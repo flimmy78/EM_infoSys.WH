@@ -138,12 +138,12 @@ void MainWindow::fill_DETECT_TASK()
 
     my_CONC_CODE.DETECT_EQUIP_NO=ui->EM_options_detectEquipNo_LnEdit->text();
 
-    my_CONC_CODE.INTUIT     = "";  //每一次都要默认为空
-    my_CONC_CODE.BASICERR   = "";
-    my_CONC_CODE.CONST      = "";
-    my_CONC_CODE.STARTING   = "";
-    my_CONC_CODE.CREEPING   = "";
-    my_CONC_CODE.INFLUENCE  = "";
-    my_CONC_CODE.MEASURE_REPEAT="";
+    my_CONC_CODE.INTUIT     = "1";  //每一次都要默认为1(合格)
+    my_CONC_CODE.BASICERR   = "1";
+    my_CONC_CODE.CONST      = "1";
+    my_CONC_CODE.STARTING   = "1";
+    my_CONC_CODE.CREEPING   = "1";
+    my_CONC_CODE.INFLUENCE  = "1";
+    my_CONC_CODE.MEASURE_REPEAT="1";
 
 }

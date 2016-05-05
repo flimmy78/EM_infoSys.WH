@@ -15,7 +15,6 @@ SOURCES += main.cpp\
     gsoap/stdsoap2.cpp \
     gsoap/soapC.cpp \
     update/sqlite3.c \
-    down/test.cpp \
     down/destSql_simulate.cpp \
     update/LocalSql_RSLT.cpp \
     down/otherTables.cpp \
@@ -41,17 +40,18 @@ SOURCES += main.cpp\
     down/EM_CREEPING.cpp \
     update/EM_MEASURE_REPEAT.cpp \
     xml/xml_fun.cpp \
-    xml/xml_test.cpp \
     md5.cpp \
     down/EM_sampleInfo.cpp \
     xml/xml_server.cpp \
     xml/xml_err.cpp \
-    update/xml_add_creeping.cpp \
-    update/xml_add_intuit.cpp \
-    update/xml_add_sample.cpp \
     update/xml_basicerrr.cpp \
     update/xml_starting.cpp \
-    update/xml_influence.cpp
+    update/xml_influence.cpp \
+    update/xml_sample.cpp \
+    update/xml_measRepeat.cpp \
+    update/xml_intuit.cpp \
+    update/xml_creeping.cpp \
+    xml/xml_ctl.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/stdsoap2.h \

@@ -273,6 +273,11 @@ int MainWindow:: get_BASICERR_checkError(QString strID)
 
         ui->EM_BASICERR_TblWidget->setItem(rowCount,28, new QTableWidgetItem(QString(sqlTemp[j][0])));//KEY
 
+        if(JBWCSYJLDM_index(str1)== "0")
+        {
+            my_CONC_CODE.BASICERR = "0";
+        }
+
     }
 
     return 0;

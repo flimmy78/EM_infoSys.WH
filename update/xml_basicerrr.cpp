@@ -6,46 +6,74 @@
 //基本误差
 void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
 {
-    QDomElement  domElement,sampleElement,projectsElement,projectElement,errorElement;
-    QDomText domText;
-    sampleElement = domDoc.documentElement().firstChild().toElement();
-    domElement = domDoc.createElement("projects");
-    sampleElement.appendChild( domElement );
+    QDomElement  domElement,projectsElement,projectElement,testDataElement;
+    QDomText textNode;
+    QString str1,str2;
 
-    projectsElement =sampleElement.firstChild().toElement();
-    domElement = domDoc.createElement("project");
-    projectsElement.appendChild( domElement );
+    int rowCount,columnCount,index;
+    rowCount = ui->EM_BASICERR_TblWidget->rowCount();
+    columnCount = ui->EM_BASICERR_TblWidget->columnCount();
 
-   // qDebug()<<projectsElement.firstChild().toElement().tagName();
-    domElement.setAttribute("sampleNo","JLXC-160425-1");                      //条形码
-    domElement.setAttribute("projectName",QString::fromUtf8("基本误差"));      //项目名字
-    domElement.setAttribute("testResult","1");
-
-    projectElement =projectsElement.firstChild().toElement();
-    domElement = domDoc.createElement("testData");
-    projectElement.appendChild( domElement );//检定结果
-
-    domElement.setAttribute("testPhase","0");
-    domElement.setAttribute("testGroup","L");
-    domElement.setAttribute("freq","50Hz");
-    domElement.setAttribute("PF","1.0");
-    domElement.setAttribute("volt","1Un");
-
-    domElement.setAttribute("curr","-0.091");
-    domElement.setAttribute("intErr","-0.091");
-    domElement.setAttribute("intErr","-0.0");
-    domElement.setAttribute("strSampleID","160311025630");
-    domElement.setAttribute("conclusion","0");
-
-    for(int i =0;i<2;i++)
+    if(rowCount <= 0)
     {
-        errorElement =projectElement.firstChild().toElement();
-        domElement = domDoc.createElement("error");
-        domText = domDoc.createTextNode("-0.085");
-        domElement.appendChild( domText );
-        //domElement.toElement().setNodeValue("sdfsdf");
-        errorElement.appendChild( domElement );
+        return ;
     }
 
+    for(int j=0;j<rowCount;j++)
+    {
+        for(int i=0;i<columnCount;i++)
+        {
+            if(!ui->EM_BASICERR_TblWidget->item(j,i))
+            ui->EM_BASICERR_TblWidget->setItem(j,i, new QTableWidgetItem(""));
+        }
+    }
+
+    projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
+    projectElement = domDoc.createElement(nodeName);
+    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectName",QString::fromUtf8("基本误差"));
+    projectElement.setAttribute("testResult",my_CONC_CODE.BASICERR);
+    projectsElement.appendChild( projectElement );
+
+    for(int i =0;i<rowCount;i++)//
+    {
+        testDataElement = domDoc.createElement("testData");
+        projectElement.appendChild( testDataElement );
+
+        testDataElement.setAttribute("testPhase",ui->EM_BASICERR_TblWidget->item(i,11)->text());
+        testDataElement.setAttribute("testGroup",ui->EM_BASICERR_TblWidget->item(i,12)->text());
+        testDataElement.setAttribute("freq",ui->EM_BASICERR_TblWidget->item(i,15)->text());
+        testDataElement.setAttribute("PF",ui->EM_BASICERR_TblWidget->item(i,16)->text());
+        testDataElement.setAttribute("volt",ui->EM_BASICERR_TblWidget->item(i,14)->text());
+
+        testDataElement.setAttribute("curr",ui->EM_BASICERR_TblWidget->item(i,13)->text());
+        testDataElement.setAttribute("conclusion",ui->EM_BASICERR_TblWidget->item(i,22)->text());
+        testDataElement.setAttribute("refTime",ui->EM_BASICERR_TblWidget->item(i,7)->text());
+        testDataElement.setAttribute("strSampleID","");
+
+
+        str1= ui->EM_BASICERR_TblWidget->item(i,19)->text(); //误差次数
+        int simplingCount = str1.count("|")+1;
+
+        for(int i =0;i<simplingCount;i++)
+        {
+            index=str1.indexOf("|");
+
+            if(index>0)
+            {
+               str2 = str1.left(index);
+            }
+            else
+            {
+               str2 = str1;
+            }
+
+            str1.remove(0,(index+1));
+            textNode = domDoc.createTextNode(str2);
+            domElement = domDoc.createElement("error");
+            domElement.appendChild(textNode);
+            testDataElement.appendChild( domElement );
+        }
+    }
 }
 

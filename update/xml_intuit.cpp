@@ -25,13 +25,13 @@ void MainWindow::addNode_INTUIT(QString nodeName, QDomDocument &domDoc)
 
     projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
     projectElement = domDoc.createElement(nodeName);
+    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectName",QString::fromUtf8("外观试验"));
+   // projectElement.setAttribute("testResult",my_CONC_CODE.INTUIT);
     projectsElement.appendChild( projectElement );
 
     for(int i =0;i<rowCount;i++)//
     {
-        projectElement.setAttribute("sampleNo",ui->EM_INTUIT_MET_TblWidget->item(i,6)->text());                      //条形码
-        projectElement.setAttribute("projectName",QString::fromUtf8("外观试验"));      //项目名字
-
         projectElement.setAttribute("testResult",ui->EM_INTUIT_MET_TblWidget->item(i,12)->text());
 
         domElement = domDoc.createElement("testData");

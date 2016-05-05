@@ -6,7 +6,7 @@
 #include "QSqlError"
 
 //总结论
-bool MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
+void MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
 {
     QDomElement  domElement,sampleElement,projectsElement;
 
@@ -16,7 +16,7 @@ bool MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
 
     if(rowCount <= 0)
     {
-        return false ;
+        return  ;
     }
 
     for(int j=0;j<rowCount;j++)
@@ -27,6 +27,7 @@ bool MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
             ui->EM_RSLT_TabWidget->setItem(j,i, new QTableWidgetItem(""));
         }
     }
+
     sampleElement = domDoc.createElement( nodeName );
     domDoc.documentElement().appendChild( sampleElement );
 
@@ -34,6 +35,7 @@ bool MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
     domElement = domDoc.createElement("projects");
     projectsElement.appendChild( domElement );
 
+    //qDebug()<<domDoc.toString();
     for(int i =0;i<rowCount;i++)//
     {
     #if 1
@@ -66,6 +68,5 @@ bool MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
         sampleElement.setAttribute("securityFactor",ui->EM_RSLT_TabWidget->item(i,22)->text());
 #endif
     }
-    return true;
 }
 

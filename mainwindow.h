@@ -137,11 +137,12 @@ public:
     bool  recurse_domNode(QDomNode ,QString);
     bool  recurse_Element(QDomElement element);//递归节点
 
-    bool  addNode_sample(QString nodeName,QDomDocument &domDoc);
 
     bool  open_xml(QString filename);
     bool  search_domNode(QString,const QDomDocument );
 
+    void   addNode_sample(QString nodeName,QDomDocument &domDoc);
+    void   addNode_MEASURE_REPEAT(QString nodeName, QDomDocument &domDoc);
     void   addNode_BASICERR(QString nodeName, QDomDocument &domDoc);
     void   addNode_INTUIT(QString nodeName, QDomDocument &domDoc);
     void   addNode_STARTING(QString nodeName, QDomDocument &domDoc);
@@ -190,12 +191,12 @@ private slots:
     void on_EM_options_setArg_Oracle_PsBtn_clicked();
 
     void on_EM_options_detectEquipNo_PsBtn_clicked();
-
-    void on_EM_creat_XML_PsBtn_clicked();
     void on_EM_save_XML_PsBtn_clicked();
 
     void on_EM_down_sampleInfo_PsBtn_clicked();
     void on_EM_update_results_PsBtn_clicked();
+
+    void on_EM_creat_xml_PsBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
