@@ -53,7 +53,7 @@ void MainWindow::addNode_INFLUENCE(QString nodeName, QDomDocument &domDoc)
 
         domElement.setAttribute("curr","");
         domElement.setAttribute("conclusion",strConclusion);
-        domElement.setAttribute("refTime","");
+        domElement.setAttribute("refTime",ui->EM_INFLUENCE_QTY_TblWidget->item(0,7)->text());
         domElement.setAttribute("strSampleID","");
     }
 }

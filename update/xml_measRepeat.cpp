@@ -48,7 +48,7 @@ void MainWindow::addNode_MEASURE_REPEAT(QString nodeName, QDomDocument &domDoc)
 
         domElement.setAttribute("curr","");
         domElement.setAttribute("conclusion",ui->EM_MEASURE_REPEAT_TblWidget->item(i,17)->text());
-        domElement.setAttribute("refTime","");
+        domElement.setAttribute("refTime",ui->EM_MEASURE_REPEAT_TblWidget->item(i,7)->text());
         domElement.setAttribute("strSampleID","");
     }
 

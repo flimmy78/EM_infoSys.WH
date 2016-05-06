@@ -91,8 +91,6 @@ void MainWindow:: save_MT_DETECT_TASK()
                         .arg(ui->EM_DETECT_TASK_TblWidget->item(i,23)->text())
                         .arg(ui->EM_DETECT_TASK_TblWidget->item(i,24)->text())
                         .arg(ui->EM_DETECT_TASK_TblWidget->item(i,25)->text());
-
-
         #endif
             byteArray = strExec.toLocal8Bit();
             intResult= sql_exec(byteArray.data());

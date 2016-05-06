@@ -42,11 +42,11 @@ void MainWindow::addNode_CREEPING(QString nodeName, QDomDocument &domDoc)
         domElement.setAttribute("testGroup","");
         domElement.setAttribute("freq","");
         domElement.setAttribute("PF","");
-        domElement.setAttribute("volt","");
+        domElement.setAttribute("volt",ui->EM_CREEPING_TblWidget->item(i,11)->text());
 
         domElement.setAttribute("curr","");
         domElement.setAttribute("conclusion",ui->EM_CREEPING_TblWidget->item(i,17)->text());
-        domElement.setAttribute("refTime","");
+        domElement.setAttribute("refTime",ui->EM_CREEPING_TblWidget->item(i,7)->text());
         domElement.setAttribute("strSampleID","");
     }
 }

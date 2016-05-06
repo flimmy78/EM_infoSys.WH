@@ -70,7 +70,7 @@ void MainWindow::on_EM_down_sampleInfo_PsBtn_clicked()
 
 void MainWindow::on_EM_update_results_PsBtn_clicked()
 {
-    QString sampleNo,sysParams,Appsecret,strTemp,AppKey,date,Appsign,appsignBefore;
+    QString sampleNo,sysParams,Appsecret,AppKey,date,Appsign,appsignBefore;
 #if 1
     SGCMSwitchProjectSoapBindingProxy soap;
     soap_set_mode(&soap, SOAP_C_UTFSTRING);
@@ -78,12 +78,16 @@ void MainWindow::on_EM_update_results_PsBtn_clicked()
     _ns1__sendProjectResults sendProjectResults;
     _ns1__sendProjectResultsResponse resp;
 
-    QString strItemValue;
     char *endPoint = NULL;
     char *action = NULL;
 
+    if(ui->EM_RSLT_TabWidget->rowCount()<=0)
+    {
+        showInformationBox(QString::fromUtf8("检定综合结论为空"));
+        return;
+    }
     setCursor(QCursor(Qt::WaitCursor));
-    sampleNo ="JLXC-160425-1";
+    sampleNo =ui->EM_RSLT_TabWidget->item(0,0)->text();
     AppKey = "169827";
     date =currentTime();
     Appsecret = "2e33edf32o34492uf58f233ksl3er60f";
@@ -95,55 +99,60 @@ void MainWindow::on_EM_update_results_PsBtn_clicked()
     //qDebug()<<sysParams;
     sendProjectResults.sampleNo=sampleNo.toStdString(); //样品编号
     sendProjectResults.sysParams=sysParams.toStdString();//系统参数
-    sendProjectResults.checkResult="0"; //总结论//0：合格；1：不合格
+    sendProjectResults.checkResult=ui->EM_RSLT_TabWidget->item(0,1)->text().toStdString(); //总结论//0：合格；1：不合格
     sendProjectResults.checkDate=currentTime().toStdString();;//检验日期
-    sendProjectResults.testMan="星龙"; //检验员
-    sendProjectResults.checkMan="jing2";//校核员
-    sendProjectResults.checkTemp="100"; //检验温度
-    sendProjectResults.checkWet="108";//检验湿度
+    sendProjectResults.testMan=ui->EM_RSLT_TabWidget->item(0,3)->text().toStdString(); //检验员
+    sendProjectResults.checkMan=ui->EM_RSLT_TabWidget->item(0,4)->text().toStdString();//校核员
+    sendProjectResults.checkTemp=ui->EM_RSLT_TabWidget->item(0,6)->text().toStdString(); //检验温度
+    sendProjectResults.checkWet=ui->EM_RSLT_TabWidget->item(0,5)->text().toStdString();//检验湿度
 
-    QDomDocument doc; //整个文档
-    QString strFilePath = "c:/config.xml";
-    QFile file(strFilePath); //xml文件
-
-    if (!file.open(QFile::ReadOnly | QFile::Text))
+    QDomDocument domDoc;
+    QString  strTemp;
+    if(!load_xmlFile("./update.xml",domDoc)) //e:/update.xml
     {
-        return  ;
+        setCursor(QCursor(Qt::ArrowCursor));
+        showInformationBox(QString::fromUtf8("当前目录找不到XML结论信息"));
+        return;
     }
+    //qDebug()<<domDoc.toString();
 
-    if(!doc.setContent(&file,true))
-    {
-        qDebug()<<"setContent error";
-        file.close();
-        return ;
-    }
-    file.close(); //读结束
-    //qDebug()<<doc.toString();
 
-   //QTextCodec *utf8 = QTextCodec::codecForName("UTF-8");
-   //strTemp  = utf8->TO.
+//    QTextCodec *gbk = QTextCodec::codecForName("GB18030");
+//    QTextCodec *utf8 = QTextCodec::codecForName("UTF-8");
+//    QString g2u = gbk->toUnicode(gbk->fromUnicode(inStr));              // gbk  convert utf8
 
-//std::string
+//    QTextCodec *utf8 = QTextCodec::codecForName("UTF-8");
+//    QString a= "鎴戞槸姹夊瓧UTF8";//UTF8格式下 写的“我是汉字UTF8”
+//    a = utf8->toUnicode(a.toLatin1());
+
 #if 0
-    strTemp = doc.toString();
+       //const std::string &inStr
+        QString str = QString::fromStdString(inStr);
+        QTextCodec *gbk = QTextCodec::codecForName("GB18030");
+        QTextCodec *utf8 = QTextCodec::codecForName("UTF-8");
+
+        QString utf2gbk = gbk->toUnicode(inStr.toLocal8Bit());
+        return utf2gbk;
+#endif
+
+//需要转成UTF-8格式
+#if 0
+    strTemp = domDoc.toString();
     sendProjectResults.projects=std::string(strTemp.toUtf8());
 #endif
 
 
 //传递成功但是，中文乱码
 #if 1
-    strTemp = QString::fromUtf8(doc.toString().toLocal8Bit().data());
+    strTemp = QString::fromUtf8(domDoc.toString().toLocal8Bit().data());
     sendProjectResults.projects=std::string(strTemp.toUtf8());
 #endif
 
 
-    soap.sendProjectResults(endPoint,action,&sendProjectResults, resp);
-    //strItemValue = getItemFromXML(QString(QString::fromUtf8((*resp.out).c_str())),"<ERROR_INFO>", "</ERROR_INFO>");
-    //showInformationBox(strItemValue);
-//    qDebug()<<QString(QString::fromUtf8((*resp.out).c_str()));
-    qDebug()<<QString::fromUtf8(resp.sendProjectResultsReturn.c_str());
-    showInformationBox(QString::fromUtf8(resp.sendProjectResultsReturn.c_str()));
-    //qDebug()<<QString::fromUtf8(resp.sendProjectResultsReturn.c_str());
+    //soap.sendProjectResults(endPoint,action,&sendProjectResults, resp);
+//  qDebug()<<QString(QString::fromUtf8((*resp.out).c_str()));
+//  qDebug()<<QString::fromUtf8(resp.sendProjectResultsReturn.c_str());
+    // showInformationBox(QString::fromUtf8(resp.sendProjectResultsReturn.c_str()));
     setCursor(QCursor(Qt::ArrowCursor));
 #endif
 }

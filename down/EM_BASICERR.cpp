@@ -11,14 +11,14 @@
  *
  *****************************************************************************************/
 //通过任务单号获取基本误差信息
-bool MainWindow::fill_BASICERR(int index)
+bool MainWindow::fill_BASICERR(QString ID)
 {
-    get_BASICERR_checkError("'"+strArray[0][index]+"'");
+    get_BASICERR_checkError("'"+ID+"'");
     for(int i =0;i<20000;i++)
     {
         //延时
     }
-    get_BASICERR_checkParameter("'"+strArray[0][index]+"'");
+    get_BASICERR_checkParameter("'"+ID+"'");
     return true;
 }
 

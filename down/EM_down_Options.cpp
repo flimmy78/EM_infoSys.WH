@@ -33,7 +33,7 @@ void MainWindow::on_EM_down_saveLocalSql_PsBtn_clicked()
     setCursor(QCursor(Qt::WaitCursor));
     QString strExec ,strBarCode;
     strBarCode = ui->EM_down_barCode_LnEdit->text();
-    strExec = QString("select * from  MT_DETECT_TASK where BAR_CODE = '%1'").arg(strBarCode);
+    strExec = QString("select * from  sampleInfo where sampleNo = '%1'").arg(strBarCode);
 
     if(isLocalBarCodeExist(strExec,strBarCode))
     {

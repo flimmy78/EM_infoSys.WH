@@ -82,7 +82,7 @@ void MainWindow:: fill_INTUIT()
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                                            //表位编号
 
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));               //设备条形码
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,7, new QTableWidgetItem(currentTime()));                                 //检定时间
+    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,7, new QTableWidgetItem(strArray[3][0]));                                 //检定时间
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));                                           //第几次检定(序号)
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,9, new QTableWidgetItem("1"));                                           //检定点序号
 

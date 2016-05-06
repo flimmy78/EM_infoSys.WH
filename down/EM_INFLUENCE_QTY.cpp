@@ -5,29 +5,19 @@
 #include "QSqlRecord"
 #include "QSqlError"
 
-/******************************************************************************************
-C25.电能表影响量试验项目
-01	电压影响试验
-02	频率影响试验
-03	逆相序影响试验
-04	电压不平衡试验
-05	电流线路和电压线路中谐波分量试验
-06	交流电流线路中直流和偶次谐波试验
-07	交流电流线路中奇次谐波试验
-08	交流电流线路中次谐波试验
-09	外磁场影响试验
-*****************************************************************************************/
-
+//影响量
 bool MainWindow:: fill_INFLUENCE_QTY(int index)
 {
     QString str1 ,str2,strItem,strCONC;
-    get_checkParameter_detectTaskNo();
+
     bool T1=false,T2=false,T3=false,T4=false,T=true;
     int rowCount,columnCount,intParaIndex=0;
 
+     //get_checkParameter_detectTaskNo();
     str1=strArray[2][index];
-
     //qDebug()<<str1;
+
+ #if 1
     if(str1=="")
     {
         return true;
@@ -120,7 +110,7 @@ bool MainWindow:: fill_INFLUENCE_QTY(int index)
             ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                 //检定单元编号
             ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                 //表位编号
             ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));                 //设备条形码
-            ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,7, new QTableWidgetItem(currentTime()));     //检定时间
+            ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,7, new QTableWidgetItem(strArray[3][0]));     //检定时间
             ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));//序号
             ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,9, new QTableWidgetItem(QString::number(intParaIndex++)));//检定点序号
             ui->EM_INFLUENCE_QTY_TblWidget->setItem(rowCount,10, new QTableWidgetItem("1"));//是否有效
@@ -136,12 +126,8 @@ bool MainWindow:: fill_INFLUENCE_QTY(int index)
        {
           T=false;
        }
-
    }
-
-
-
-
+#endif
     return true;
 }
 

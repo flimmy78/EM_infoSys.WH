@@ -65,6 +65,11 @@ void MainWindow:: init_TblWidget()
     ui->EM_down_TabWidget->setTabEnabled(3,false);
     ui->EM_down_TabWidget->setTabEnabled(4,false);
 
+
+    ui->EM_update_loadDetectTaskNo_TblWidget->horizontalHeader()->setResizeMode( QHeaderView::ResizeToContents);
+    ui->EM_update_loadDetectTaskNo_TblWidget->verticalHeader()->setHidden(false);
+
+
 }
 
 //设置本地数据的路径
@@ -82,46 +87,21 @@ void MainWindow:: set_localSqlPath()
     }
     ui->EM_options_setArg_localSqlPath_LnEdit->setText(strTemp);
 
-    strTemp =configIniRead->value("Oracle/IP").toString();
+    strTemp =configIniRead->value("sysParams/appKey").toString();
     if(strTemp.isEmpty())
     {
-       strTemp=QString::fromUtf8("10.229.255.178");
-       writeIni("Oracle/IP",strTemp);
+       strTemp=QString::fromUtf8("169827");
+       writeIni("sysParams/appKey",strTemp);
     }
-    ui->EM_options_setArg_IP_LnEdit->setText(strTemp);
+    ui->EM_options_appKey_LnEdit->setText(strTemp);
 
-    strTemp =configIniRead->value("Oracle/Port").toString();
+    strTemp =configIniRead->value("sysParams/appSecret").toString();
     if(strTemp.isEmpty())
     {
-       strTemp=QString::fromUtf8("1521");
-       writeIni("Oracle/Port",strTemp);
+       strTemp=QString::fromUtf8("2e33edf32o34492uf58f233ksl3er60f");
+       writeIni("sysParams/appSecret",strTemp);
     }
-     ui->EM_options_setArg_Port_LnEdit->setText(strTemp);
-
-    strTemp =configIniRead->value("Oracle/UserName").toString();
-    if(strTemp.isEmpty())
-    {
-       strTemp=QString::fromUtf8("sxykjd");
-       writeIni("Oracle/UserName",strTemp);
-    }
-    ui->EM_options_setArg_UserName_LnEdit->setText(strTemp);
-
-    strTemp =configIniRead->value("Oracle/PassWord").toString();
-    if(strTemp.isEmpty())
-    {
-       strTemp=QString::fromUtf8("sxykjd@jd");
-       writeIni("Oracle/Password",strTemp);
-    }
-    ui->EM_options_setArg_PassWord_LnEdit->setText(strTemp);
-
-    strTemp =configIniRead->value("Oracle/SID").toString();
-    if(strTemp.isEmpty())
-    {
-       strTemp=QString::fromUtf8("pmcpdp2");
-       writeIni("Oracle/SID",strTemp);
-    }
-    ui->EM_options_setArg_SID_LnEdit->setText(strTemp);
-
+     ui->EM_options_appSecret_LnEdit->setText(strTemp);
 
     strTemp =configIniRead->value("localSql/DETECT_QEUIP_NO").toString();
     if(strTemp.isEmpty())
@@ -287,6 +267,3 @@ QString MainWindow::compare_DateTime(QString str1,QString str2)
     qDebug()<<QString::number(dateTime.toTime_t());
 #endif
 }
-
-
-

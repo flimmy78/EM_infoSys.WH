@@ -39,12 +39,12 @@ bool MainWindow:: fill_STARTING(int index)
     ui->EM_STARTING_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                 //检定单元编号
     ui->EM_STARTING_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                 //表位编号
     ui->EM_STARTING_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));                 //设备条形码
-    ui->EM_STARTING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(currentTime()));     //检定时间
+    ui->EM_STARTING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(strArray[3][0]));     //检定时间
     ui->EM_STARTING_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));//序号
     ui->EM_STARTING_TblWidget->setItem(rowCount,9, new QTableWidgetItem("1"));//检定点序号
 
     ui->EM_STARTING_TblWidget->setItem(rowCount,10, new QTableWidgetItem("1"));//是否有效
-    ui->EM_STARTING_TblWidget->setItem(rowCount,11, new QTableWidgetItem(DYDM_index("100%Un")));//电压负载 100%
+    ui->EM_STARTING_TblWidget->setItem(rowCount,11, new QTableWidgetItem("100%Un"));//电压负载 100%
 
     str2 = indexOfTable(strArray[1][index],QString::fromUtf8("校验圈数"));
 
@@ -64,7 +64,7 @@ bool MainWindow:: fill_STARTING(int index)
 
     if(str2.indexOf("-")>0)
     {
-        ui->EM_STARTING_TblWidget->setItem(rowCount,13, new QTableWidgetItem("2"));//功率方向
+        ui->EM_STARTING_TblWidget->setItem(rowCount,13, new QTableWidgetItem("2"));//功率方向 默认有功正向暂时只要一个
     }
     else
     {
@@ -72,7 +72,7 @@ bool MainWindow:: fill_STARTING(int index)
     }
 
 
-    ui->EM_STARTING_TblWidget->setItem(rowCount,14, new QTableWidgetItem(FZDLDM_index(str2)));//电流负载
+    ui->EM_STARTING_TblWidget->setItem(rowCount,14, new QTableWidgetItem(str2));//电流负载
     strLoadCurrent=str2;
 
     str2=str1.left(str1.indexOf(QString::fromUtf8("秒")));

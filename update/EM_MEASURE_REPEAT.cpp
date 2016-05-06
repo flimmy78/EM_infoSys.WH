@@ -11,21 +11,21 @@
  *
  *****************************************************************************************/
 //通过任务单号获取基本误差信息
-bool MainWindow::fill_MEASURE_REPEAT(int index)
+bool MainWindow::fill_MEASURE_REPEAT(QString ID)
 {
-    get_MEASURE_REPEAT_checkError("'"+strArray[0][index]+"'");
+    get_MEASURE_REPEAT_checkError("'"+ID+"'");
     for(int i =0;i<20000;i++)
     {
         //延时
     }
-    get_MEASURE_REPEAT_checkParameter("'"+strArray[0][index]+"'");
+    get_MEASURE_REPEAT_checkParameter("'"+ID+"'");
     return true;
 }
 
 //获取checkParameter相关内容
 int MainWindow:: get_MEASURE_REPEAT_checkParameter(QString strID)
 {
-    QString strExec,str2,str3;
+    QString strExec;
     int rowCount;
 
     strExec=QString("select * from checkParameter where id =%1").arg(strID);

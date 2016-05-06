@@ -43,13 +43,14 @@ public:
 
     int   sql_exec(const char *);
     void  get_checkParameter_detectTaskNo();
+    bool  get_ID_from_checkParameter(QString  sampleNo,QString ID);
     bool  SqlTempToQstring(QString strExec,int ItemCount);
 
     int get_BASICERR_checkParameter(QString strID);
     int get_BASICERR_checkError(QString strID);
 
 
-    bool fill_MEASURE_REPEAT(int index);
+
     int get_MEASURE_REPEAT_checkError(QString strID);
     int  get_MEASURE_REPEAT_checkParameter(QString strID);
     bool update_MEASURE_REPEAT();
@@ -108,11 +109,12 @@ public:
     QString compare_DateTime(QString str1,QString str2);
 
     void fill_INTUIT();
-    bool fill_BASICERR(int index);
+    bool fill_BASICERR(QString ID);
     bool fill_STARTING(int index);
     bool fill_CREEPING(int index);
     bool fill_INFLUENCE_QTY(int index);
-    bool fill_DETECT_RSLT(int index);
+    bool fill_DETECT_RSLT(QString ID);
+    bool fill_MEASURE_REPEAT(QString ID);
     void fill_DETECT_OUT_EQUIP();
     void fill_DETECT_TASK();
 
@@ -120,13 +122,9 @@ public:
 
     QString get_RSLT_CONC();
 
-
-
     bool  appendNode(const QString &strFilePath, const QString &strNodeName, const QMap<QString,QString> &nodeMap);
     bool  prependNode(const QString &strFilePath, const QString &strNodeName, const QMap<QString,QString> &nodeMap);
-
     bool  removeNodeByTag(const QString &strFilePath, const QString &strTagName, const QString &strText);
-
     bool  load_xmlFile(const QString &strFilePath,  QDomDocument &domDoc);
     bool  save_xmlFile(const QString &strFilePath, const QDomDocument domDoc);
    QStringList get_errList(const QString strTemp );
@@ -198,6 +196,8 @@ private slots:
 
     void on_EM_creat_xml_PsBtn_clicked();
 
+    void on_EM_update_searchBarCode_LnEdit_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 
@@ -217,7 +217,7 @@ private:
     QMap<QString,QString>  g_map;
 public:
 //    char localSqlArrayTemp[1000][1000];
-    int  LocalSqlSum;
+    int  LocalSqlSum;//每次执行sql_exec所产生的数目
 };
 
 #endif // MAINWINDOW_H

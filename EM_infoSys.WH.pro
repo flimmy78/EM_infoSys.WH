@@ -32,7 +32,6 @@ SOURCES += main.cpp\
     update/EM_localSql_Options.cpp \
     update/get_localSqlData.cpp \
     options/EM_setArgOptions.cpp \
-    update/EM_update_DETECT_TASK_NO.cpp \
     down/EM_BASICERR.cpp \
     down/EM_INFLUENCE_QTY.cpp \
     down/EM_STARTING.cpp \
@@ -51,7 +50,8 @@ SOURCES += main.cpp\
     update/xml_measRepeat.cpp \
     update/xml_intuit.cpp \
     update/xml_creeping.cpp \
-    xml/xml_ctl.cpp
+    xml/xml_ctl.cpp \
+    update/EM_update_loadLocalSql.cpp
 
 HEADERS  += mainwindow.h \
     gsoap/stdsoap2.h \

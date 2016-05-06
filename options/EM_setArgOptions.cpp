@@ -5,28 +5,16 @@
 #include "QSqlRecord"
 #include "QMessageBox"
 #include "QSqlError"
-//链接MDS的中间库
+//不用链接MDS的中间库
 void MainWindow::on_EM_options_cnt_RdBtn_clicked()
 {
    setCursor(QCursor(Qt::WaitCursor));
-   QString sIp,iPort,sDbNm,sUserNm,sPwd;
+   QString appKey,appSecret;
 
-   sIp      = ui->EM_options_setArg_IP_LnEdit->text();
-   iPort    = ui->EM_options_setArg_Port_LnEdit->text();
-   sUserNm  = ui->EM_options_setArg_UserName_LnEdit->text();
-   sPwd     = ui->EM_options_setArg_PassWord_LnEdit->text();
-   sDbNm    = ui->EM_options_setArg_SID_LnEdit->text();
+   appKey       = ui->EM_options_appKey_Lable->text();
+   appSecret    = ui->EM_options_appSecret_LnEdit->text();
 
-
-//WH
-//  connect_destSql("10.229.255.180", 1521,  "pmcpdp", "sxykjd", "sxykjd");//cs库
-//  connect_destSql("10.229.255.178", 1521,  "pmcpdp2", "sxykjd", "sxykjd@jd");//zs库
-
-//JN
-//  connect_destSql("10.158.249.97", 1521,"jldjz", "sxykjd", "sxykjd");//cs库
-//  connect_destSql("10.158.244.87", 1521,"jldb1", "sxykjd", "SXYKJD2014");//zs库
-
-   connect_destSql(sIp, iPort.toInt(0,10),sDbNm,sUserNm,sPwd);//zs库
+   //connect_destSql(sIp, iPort.toInt(0,10),sDbNm,sUserNm,sPwd);//zs库
 
    setCursor(QCursor(Qt::ArrowCursor));
 }
@@ -92,16 +80,10 @@ void MainWindow::on_EM_options_setArg_Oracle_PsBtn_clicked()
        {
           case QMessageBox::Yes:
          {
-            strTemp = ui->EM_options_setArg_IP_LnEdit->text();
-            writeIni("Oracle/IP",strTemp);
-            strTemp = ui->EM_options_setArg_Port_LnEdit->text();
-            writeIni("Oracle/Port",strTemp);
-            strTemp = ui->EM_options_setArg_UserName_LnEdit->text();
-            writeIni("Oracle/UserName",strTemp);
-            strTemp = ui->EM_options_setArg_PassWord_LnEdit->text();
-            writeIni("Oracle/Password",strTemp);
-            strTemp = ui->EM_options_setArg_SID_LnEdit->text();
-            writeIni("Oracle/SID",strTemp);
+            strTemp = ui->EM_options_appKey_LnEdit->text();
+            writeIni("sysParams/appKey",strTemp);
+            strTemp = ui->EM_options_appSecret_LnEdit->text();
+            writeIni("sysParams/appSecret",strTemp);
             showInformationBox(QString::fromUtf8("已经修改,重新启动软件生效"));
             break;
          }

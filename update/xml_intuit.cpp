@@ -45,7 +45,7 @@ void MainWindow::addNode_INTUIT(QString nodeName, QDomDocument &domDoc)
 
         domElement.setAttribute("curr","");
         domElement.setAttribute("conclusion",ui->EM_INTUIT_MET_TblWidget->item(i,12)->text());
-        domElement.setAttribute("refTime","");
+        domElement.setAttribute("refTime",ui->EM_INTUIT_MET_TblWidget->item(i,7)->text());
         domElement.setAttribute("strSampleID","");
     }
 }

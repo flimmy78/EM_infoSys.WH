@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>944</width>
+    <width>1000</width>
     <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>EM_infoSys.WH</string>
+   <string>信息化平台.电能表.WH</string>
   </property>
   <property name="windowIcon">
    <iconset resource="pic/pic.qrc">
@@ -216,7 +216,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="EM_sampleInfo_tab">
            <attribute name="title">
@@ -1727,13 +1727,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>38</width>
-            <height>0</height>
+            <width>245</width>
+            <height>302</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>208</width>
+            <width>245</width>
             <height>16777215</height>
            </size>
           </property>
@@ -1757,11 +1757,23 @@
            <string/>
           </property>
           <layout class="QGridLayout" name="gridLayout_21">
-           <property name="margin">
+           <property name="leftMargin">
             <number>0</number>
            </property>
-           <property name="spacing">
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
             <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="horizontalSpacing">
+            <number>0</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>6</number>
            </property>
            <item row="0" column="0">
             <widget class="QFrame" name="EM_update_loadDetectTaskNo_Frame">
@@ -1783,7 +1795,47 @@
               <property name="spacing">
                <number>0</number>
               </property>
+              <item row="2" column="2">
+               <widget class="QPushButton" name="EM_update_loadLocalSql_PsBtn">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>导入</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <spacer name="EM_update_searchBarCode_HlSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1" colspan="2">
+               <widget class="QLineEdit" name="EM_update_searchBarCode_LnEdit">
+                <property name="text">
+                 <string>3730001000000133259896</string>
+                </property>
+               </widget>
+              </item>
               <item row="0" column="0">
+               <widget class="QLabel" name="EM_update_searchBarCode_Label">
+                <property name="text">
+                 <string>查看条形码</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
                <widget class="QPushButton" name="EM_update_loadDetectTaskNo_PsBtn">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1795,32 +1847,22 @@
                  <string notr="true"/>
                 </property>
                 <property name="text">
-                 <string>查看任务单号</string>
+                 <string>查看全部</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="2">
-               <widget class="QPushButton" name="EM_update_loadLocalSql_PsBtn">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>添加</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <spacer name="horizontalSpacer_2">
+              <item row="1" column="0">
+               <spacer name="EM_update_searchBarCode_VlSpacer">
                 <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
                 </property>
                 <property name="sizeHint" stdset="0">
                  <size>
-                  <width>40</width>
-                  <height>20</height>
+                  <width>20</width>
+                  <height>10</height>
                  </size>
                 </property>
                </spacer>
@@ -1838,15 +1880,21 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>56</width>
+               <width>240</width>
                <height>1</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>240</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="verticalScrollBarPolicy">
               <enum>Qt::ScrollBarAlwaysOn</enum>
              </property>
              <attribute name="horizontalHeaderDefaultSectionSize">
-              <number>176</number>
+              <number>201</number>
              </attribute>
              <attribute name="horizontalHeaderMinimumSectionSize">
               <number>14</number>
@@ -1856,7 +1904,12 @@
              </attribute>
              <column>
               <property name="text">
-               <string>检定任务编号</string>
+               <string>电能表条形码</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>ID</string>
               </property>
              </column>
             </widget>
@@ -1924,27 +1977,14 @@
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
-              <item row="0" column="4">
-               <widget class="QPushButton" name="EM_update_updateRSLT_PsBtn">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>综合录入MDS</string>
-                </property>
-               </widget>
-              </item>
               <item row="0" column="3">
-               <widget class="QPushButton" name="EM_update_insertDestSql_PsBtn">
+               <widget class="QPushButton" name="EM_update_results_PsBtn">
                 <property name="text">
-                 <string>添加到中间库</string>
+                 <string>录入系统</string>
                 </property>
                </widget>
               </item>
-              <item row="0" column="2">
+              <item row="0" column="1">
                <spacer name="horizontalSpacer_3">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -1956,13 +1996,6 @@
                  </size>
                 </property>
                </spacer>
-              </item>
-              <item row="0" column="1">
-               <widget class="QPushButton" name="EM_update_results_PsBtn">
-                <property name="text">
-                 <string>录入系统</string>
-                </property>
-               </widget>
               </item>
               <item row="0" column="0">
                <widget class="QPushButton" name="EM_creat_xml_PsBtn">
@@ -1986,7 +2019,7 @@
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>6</number>
+              <number>2</number>
              </property>
              <widget class="QWidget" name="EM_INTUIT_MET_tab">
               <attribute name="title">
@@ -2003,82 +2036,82 @@
                 <widget class="QTableWidget" name="EM_INTUIT_MET_TblWidget">
                  <column>
                   <property name="text">
-                   <string>1.DETECT_TASK_NO</string>
+                   <string>1.检定任务单</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>EQUIP_CATEG</string>
+                   <string>设备类别</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>SYS_NO</string>
+                   <string>系统编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_EQUIP_NO</string>
+                   <string>检定线台编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_UNIT_NO</string>
+                   <string>检定单元编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>POSITION_NO</string>
+                   <string>表位编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>BAR_CODE</string>
+                   <string>设备条形码</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_DATE</string>
+                   <string>检定时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>PARA_INDEX</string>
+                   <string>检定序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>10.DETECT_ITEM_POINT</string>
+                   <string>10.检定点序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>IS_VALID</string>
+                   <string>有效标志</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_CONTENT</string>
+                   <string>检查内容 </string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>13CONC_CODE</string>
+                   <string>13检查结论</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>WRITE_DATE</string>
+                   <string>检定线写入时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>HANDLE_FLAG</string>
+                   <string>处理标记</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>HANDLE_DATE</string>
+                   <string>处理时间</string>
                   </property>
                  </column>
                 </widget>
@@ -2105,17 +2138,17 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>2设备类别</string>
+                   <string>设备类别</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>3系统编号</string>
+                   <string>系统编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>4检定线台编号</string>
+                   <string>检定线台编号</string>
                   </property>
                  </column>
                  <column>
@@ -2125,22 +2158,22 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>6表位编号</string>
+                   <string>表位编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>7设备条形码</string>
+                   <string>设备条形码</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>8检定时间</string>
+                   <string>检定时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>9序号(第几次检定)</string>
+                   <string>序号(第几次检定)</string>
                   </property>
                  </column>
                  <column>
@@ -2150,22 +2183,22 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>11有效标志</string>
+                   <string>有效标志</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>12功率方向</string>
+                   <string>功率方向</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>13电流相别</string>
+                   <string>电流相别</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>14电流负载</string>
+                   <string>电流负载</string>
                   </property>
                  </column>
                  <column>
@@ -2175,22 +2208,22 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>16频率</string>
+                   <string>频率</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>17功率因数</string>
+                   <string>功率因数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>18检验脉冲数（圈数）</string>
+                   <string>检验脉冲数（圈数）</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>19采样次数</string>
+                   <string>采样次数</string>
                   </property>
                  </column>
                  <column>
@@ -2200,37 +2233,37 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>21误差平均值</string>
+                   <string>误差平均值</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>22误差化整值</string>
+                   <string>误差化整值</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>23结论</string>
+                   <string>结论</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>24检定线写入时间</string>
+                   <string>检定线写入时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>25处理标记</string>
+                   <string>处理标记</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>26处理时间</string>
+                   <string>处理时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>27误差上限</string>
+                   <string>误差上限</string>
                   </property>
                  </column>
                  <column>
@@ -2268,112 +2301,112 @@
                  </property>
                  <column>
                   <property name="text">
-                   <string>1.DETECT_TASK_NO</string>
+                   <string>1.检定任务编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>EQUIP_CATEG</string>
+                   <string>设备类别</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>SYS_NO</string>
+                   <string>系统编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_EQUIP_NO</string>
+                   <string>检定线台编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_UNIT_NO</string>
+                   <string>检定单元编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>POSITION_NO</string>
+                   <string>表位编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>BAR_CODE</string>
+                   <string>设备条形码</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_DATE</string>
+                   <string>检定时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>PARA_INDEX</string>
+                   <string>序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>10.DETECT_ITEM_POINT</string>
+                   <string>10.检定点序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>IS_VALID</string>
+                   <string>有效标志</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>LOAD_VOLTAGE</string>
+                   <string>电压负载</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>PULES</string>
+                   <string>圈数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>BOTH_WAY_POWER_FLAG</string>
+                   <string>功率方向</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>LOAD_CURRENT</string>
+                   <string>电流负载</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>TEST_TIME</string>
+                   <string>测试时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>REAL_TEST_TIME</string>
+                   <string>实际时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>18CONC_CODE</string>
+                   <string>18结论</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>WRITE_DATE</string>
+                   <string>检定线写入时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>20.HANDLE_FLAG</string>
+                   <string>20.处理标记</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>HANDLE_DATE</string>
+                   <string>处理时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>START_CURRENT</string>
+                   <string>起动电流</string>
                   </property>
                  </column>
                  <column>
@@ -2400,107 +2433,107 @@
                 <widget class="QTableWidget" name="EM_CREEPING_TblWidget">
                  <column>
                   <property name="text">
-                   <string>1.DETECT_TASK_NO</string>
+                   <string>1.检定任务编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>EQUIP_CATEG</string>
+                   <string>设备类别</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>SYS_NO</string>
+                   <string>系统编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_EQUIP_NO</string>
+                   <string>检定线台编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_UNIT_NO</string>
+                   <string>检定单元编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>POSITION_NO</string>
+                   <string>表位编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>BAR_CODE</string>
+                   <string>设备条形码</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_DATE</string>
+                   <string>检定时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>PARA_INDEX</string>
+                   <string>序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>10.DETECT_ITEM_POINT</string>
+                   <string>10.检定点序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>IS_VALID</string>
+                   <string>有效标志</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>LOAD_VOLTAGE</string>
+                   <string>电压负载</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>PULES</string>
+                   <string>圈数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>BOTH_WAY_POWER_FLAG</string>
+                   <string>功率方向</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>BOTH_WAY_POWER_FLAG</string>
+                   <string>电流负载</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>TEST_TIME</string>
+                   <string>测试时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>REAL_TEST_TIME</string>
+                   <string>实际时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>18CONC_CODE</string>
+                   <string>18结论</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>WRITE_DATE</string>
+                   <string>检定线写入时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>20.HANDLE_FLAG</string>
+                   <string>20.处理标记</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>HANDLE_DATE</string>
+                   <string>处理时间</string>
                   </property>
                  </column>
                  <column>
@@ -2527,117 +2560,117 @@
                 <widget class="QTableWidget" name="EM_MEASURE_REPEAT_TblWidget">
                  <column>
                   <property name="text">
-                   <string>1DETECT_TASK_NO</string>
+                   <string>1检定任务编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>2EQUIP_CATEG</string>
+                   <string>设备类别</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>3SYS_NO</string>
+                   <string>系统编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>4DETECT_EQUIP_NO</string>
+                   <string>检定线台编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>5DETECT_UNIT_NO</string>
+                   <string>检定单元编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>6POSITION_NO</string>
+                   <string>表位编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>7BAR_CODE</string>
+                   <string>设备条形码</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>8DETECT_DATE</string>
+                   <string>检定时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>9PARA_INDEX</string>
+                   <string>序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>10DETECT_ITEM_POINT</string>
+                   <string>10检定点序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>11IS_VALID</string>
+                   <string>有效标志</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>12VOLT</string>
+                   <string>电压负载</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>13BOTH_WAY_POWER_FLAG</string>
+                   <string>功率方向</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>14LOAD_CURRENT</string>
+                   <string>电流负载</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>15PF</string>
+                   <string>15功率因数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>16SIMPLING</string>
+                   <string>16采样次数</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>17DEVIATION_LIMT</string>
+                   <string>17标准偏差</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>18WRITE_DATE</string>
+                   <string>18检定线写入时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>19HANDLE_FLAG</string>
+                   <string>19处理标记</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>20HANDLE_DATE</string>
+                   <string>20处理时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>21CONC_CODE</string>
+                   <string>21结论</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>22LOAD_VOLTAGE</string>
+                   <string>22电压</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>23FREQ</string>
+                   <string>23频率</string>
                   </property>
                  </column>
                  <column>
@@ -2675,82 +2708,82 @@
                  </property>
                  <column>
                   <property name="text">
-                   <string>1.DETECT_TASK_NO</string>
+                   <string>1检定任务编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>EQUIP_CATEG</string>
+                   <string>设备类别</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>SYS_NO</string>
+                   <string>系统编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_EQUIP_NO</string>
+                   <string>检定线台编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_UNIT_NO</string>
+                   <string>检定表位编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>POSITION_NO</string>
+                   <string>表位编号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>BAR_CODE</string>
+                   <string>设备条形码</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>DETECT_DATE</string>
+                   <string>检定时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>PARA_INDEX</string>
+                   <string>序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>10.DETECT_ITEM_POINT</string>
+                   <string>10.检定点序号</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>IS_VALID</string>
+                   <string>有效标志</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>12CHK_CONC_CODE</string>
+                   <string>12结论</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>EFFECT_TEST_ITEM</string>
+                   <string>影响量试验项目</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>WRITE_DATE</string>
+                   <string>写入时间</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>HANDLE_FLAG</string>
+                   <string>处理标志</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>HANDLE_DATE</string>
+                   <string>处理时间</string>
                   </property>
                  </column>
                  <column>
@@ -3012,6 +3045,9 @@
            </item>
            <item row="0" column="2">
             <widget class="QLineEdit" name="EM_options_check_LnEdit">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
              <property name="text">
               <string>select * from MT_DETECT_OUT_EQUIP where BAR_CODE ='4230001001000016254452'</string>
              </property>
@@ -3059,67 +3095,14 @@ p, li { white-space: pre-wrap; }
            <property name="spacing">
             <number>5</number>
            </property>
-           <item row="1" column="3">
-            <widget class="QLineEdit" name="EM_options_setArg_IP_LnEdit"/>
-           </item>
-           <item row="1" column="2">
-            <widget class="QLabel" name="EM_options_setArg_IP_Label">
-             <property name="text">
-              <string>IP:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="4">
-            <widget class="QLabel" name="EM_options_setArg_Port_Label">
-             <property name="text">
-              <string>Port:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="5">
-            <widget class="QLineEdit" name="EM_options_setArg_Port_LnEdit"/>
-           </item>
-           <item row="1" column="6">
-            <widget class="QLabel" name="EM_options_setArg_UserName_Label">
-             <property name="text">
-              <string>UserName:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="7">
-            <widget class="QLineEdit" name="EM_options_setArg_UserName_LnEdit"/>
-           </item>
-           <item row="1" column="8">
-            <widget class="QLabel" name="EM_options_setArg_PassWord_Label">
-             <property name="text">
-              <string>PassWord:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="9">
-            <widget class="QLineEdit" name="EM_options_setArg_PassWord_LnEdit"/>
-           </item>
-           <item row="1" column="10">
-            <widget class="QLabel" name="EM_options_setArg_SID_Label">
-             <property name="text">
-              <string>SID:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="11">
-            <widget class="QLineEdit" name="EM_options_setArg_SID_LnEdit"/>
-           </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="EM_options_appKey_Lable">
+            <widget class="QPushButton" name="EM_options_setArg_Oracle_PsBtn">
              <property name="text">
-              <string>appKey:</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <string>修改配置</string>
              </property>
             </widget>
            </item>
-           <item row="6" column="0">
+           <item row="4" column="0">
             <widget class="QPushButton" name="EM_options_setArg_localSqlPath_PsBtn">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -3138,45 +3121,36 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="EM_options_setArg_Oracle_PsBtn">
+           <item row="0" column="1">
+            <widget class="QLabel" name="EM_options_appKey_Lable">
              <property name="text">
-              <string>修改配置</string>
+              <string>appKey:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
-           <item row="2" column="0">
-            <widget class="QPushButton" name="EM_options_detectEquipNo_PsBtn">
-             <property name="text">
-              <string>检定线台编号</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="3">
+           <item row="0" column="2">
             <widget class="QLineEdit" name="EM_options_appKey_LnEdit">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>100</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="text">
               <string>169827</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="3">
-            <widget class="QLineEdit" name="EM_options_detectEquipNo_LnEdit">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="3" colspan="5">
-            <widget class="QLineEdit" name="EM_options_setArg_localSqlPath_LnEdit">
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="text">
-              <string>D:\EM_infoSys.WH\DBUpdate\检定数据保存数据库.db</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="4">
+           <item row="0" column="3">
             <widget class="QLabel" name="EM_options_appSecret_Lable">
              <property name="text">
               <string>appSecret:</string>
@@ -3186,10 +3160,65 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="0" column="5" colspan="3">
+           <item row="0" column="5">
+            <widget class="QPushButton" name="EM_options_detectEquipNo_PsBtn">
+             <property name="text">
+              <string>检定线台编号</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="13">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="6">
+            <widget class="QLineEdit" name="EM_options_detectEquipNo_LnEdit">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
             <widget class="QLineEdit" name="EM_options_appSecret_LnEdit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>220</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>220</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="text">
               <string>2e33edf32o34492uf58f233ksl3er60f</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1" colspan="3">
+            <widget class="QLineEdit" name="EM_options_setArg_localSqlPath_LnEdit">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="text">
+              <string>D:\EM_infoSys.WH\DBUpdate\检定数据保存数据库.db</string>
              </property>
             </widget>
            </item>
@@ -3581,6 +3610,38 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="checkable">
          <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="EM_update_insertDestSql_PsBtn">
+        <property name="geometry">
+         <rect>
+          <x>654</x>
+          <y>110</y>
+          <width>80</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>添加到中间库</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="EM_update_updateRSLT_PsBtn">
+        <property name="geometry">
+         <rect>
+          <x>740</x>
+          <y>110</y>
+          <width>75</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>综合录入MDS</string>
         </property>
        </widget>
       </widget>

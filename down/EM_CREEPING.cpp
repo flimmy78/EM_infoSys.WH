@@ -39,12 +39,12 @@ bool MainWindow:: fill_CREEPING(int index)
     ui->EM_CREEPING_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                 //检定单元编号
     ui->EM_CREEPING_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                 //表位编号
     ui->EM_CREEPING_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));                 //设备条形码
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(currentTime()));     //检定时间
+    ui->EM_CREEPING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(strArray[3][0]));     //检定时间
     ui->EM_CREEPING_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));//序号
     ui->EM_CREEPING_TblWidget->setItem(rowCount,9, new QTableWidgetItem("1"));//检定点序号
 
     ui->EM_CREEPING_TblWidget->setItem(rowCount,10, new QTableWidgetItem("1"));//是否有效
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,11, new QTableWidgetItem(DYDM_index("115%Un")));//电压负载 115%
+    ui->EM_CREEPING_TblWidget->setItem(rowCount,11, new QTableWidgetItem("115%Un"));//电压负载 115%
 
     str2 = indexOfTable(strArray[1][index],QString::fromUtf8("校验圈数"));
 
@@ -63,7 +63,7 @@ bool MainWindow:: fill_CREEPING(int index)
 
     if(str2.indexOf("-")>0)
     {
-        ui->EM_CREEPING_TblWidget->setItem(rowCount,13, new QTableWidgetItem("2"));//功率方向
+        ui->EM_CREEPING_TblWidget->setItem(rowCount,13, new QTableWidgetItem("2"));//功率方向 默认有功正向暂时只要一个
     }
     else
     {
@@ -71,7 +71,7 @@ bool MainWindow:: fill_CREEPING(int index)
     }
 
 
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,14, new QTableWidgetItem(FZDLDM_index(str2)));//电流负载
+    ui->EM_CREEPING_TblWidget->setItem(rowCount,14, new QTableWidgetItem(str2));//电流负载
     strLoadCurrent=str2;
 
     str2=str1.left(str1.indexOf(QString::fromUtf8("秒")));
@@ -91,9 +91,6 @@ bool MainWindow:: fill_CREEPING(int index)
     ui->EM_CREEPING_TblWidget->setItem(rowCount,19, new QTableWidgetItem("0"));
 
     ui->EM_CREEPING_TblWidget->setItem(rowCount,20, new QTableWidgetItem(currentTime()));//handle date
-
-
-
 
     return true;
 }

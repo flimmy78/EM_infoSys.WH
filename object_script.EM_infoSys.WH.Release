@@ -21,7 +21,6 @@ INPUT(
 ./release\EM_localSql_Options.o
 ./release\get_localSqlData.o
 ./release\EM_setArgOptions.o
-./release\EM_update_DETECT_TASK_NO.o
 ./release\EM_BASICERR.o
 ./release\EM_INFLUENCE_QTY.o
 ./release\EM_STARTING.o
@@ -41,6 +40,7 @@ INPUT(
 ./release\xml_intuit.o
 ./release\xml_creeping.o
 ./release\xml_ctl.o
+./release\EM_update_loadLocalSql.o
 ./release\moc_mainwindow.o
 ./release\qrc_pic.o
 );

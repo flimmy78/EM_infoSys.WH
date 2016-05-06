@@ -47,7 +47,7 @@ void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
 
         domElement.setAttribute("curr","");
         domElement.setAttribute("conclusion",ui->EM_STARTING_TblWidget->item(i,17)->text());
-        domElement.setAttribute("refTime","");
+        domElement.setAttribute("refTime",ui->EM_STARTING_TblWidget->item(i,7)->text());
         domElement.setAttribute("strSampleID","");
     }
 

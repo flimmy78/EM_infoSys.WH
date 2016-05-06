@@ -21,7 +21,6 @@ INPUT(
 ./debug\EM_localSql_Options.o
 ./debug\get_localSqlData.o
 ./debug\EM_setArgOptions.o
-./debug\EM_update_DETECT_TASK_NO.o
 ./debug\EM_BASICERR.o
 ./debug\EM_INFLUENCE_QTY.o
 ./debug\EM_STARTING.o
@@ -41,6 +40,7 @@ INPUT(
 ./debug\xml_intuit.o
 ./debug\xml_creeping.o
 ./debug\xml_ctl.o
+./debug\EM_update_loadLocalSql.o
 ./debug\moc_mainwindow.o
 ./debug\qrc_pic.o
 );

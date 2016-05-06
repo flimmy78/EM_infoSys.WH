@@ -10,7 +10,7 @@ char sqlTemp[4000][100][3000];//1.数目；2.内容个数3.长度
 int  sqlite_RowCnt;  //一个表的行数
 int  sqlite_tableCal;//表的数目
 
-////将数据库数据读取出来到表格
+//将数据库数据读取出来到表格
 void MainWindow::getDataFromLocalSqlToTblWidget(QString strExec,QTableWidget * tblWidget,int columnCount)
 {
     int intResult,rowCount;
@@ -42,7 +42,7 @@ bool MainWindow::isLocalBarCodeExist(QString strExec,QString strBarCode)
        return false;
     }
 
-    for(int i=0;i<sqlite_tableCal;i++)
+    for(int i=0;i<sqlite_tableCal;i++)//查找到了才返回正确
     {
         if(strBarCode ==QString(sqlTemp[i][0])) 
          return true;
@@ -50,7 +50,48 @@ bool MainWindow::isLocalBarCodeExist(QString strExec,QString strBarCode)
 
 return false;
 }
-//获取检定任务编号
+
+/*
+id VARCHAR,				    // id，每个表同一次检定为同一个id
+manufactoryNumber VARCHAR,	//出厂编号
+checkDate VARCHAR,			//检定日期
+nextCheckDate VARCHAr,		//下一次检定日期，即有效期
+conclusion VARCHAR,			//总结论
+
+voltageView VARCHAR,		//电压量程
+currentView VARCHAR,		//电流量程
+phaseCount INTERGER,		//未使用
+maxCurrent VARCHAR,		    //最大电流倍数
+otherText TEXT,				//其它测试数据,先不理。只上传基本误差数据看下先。
+otherInformation TEXT);		//其它信息,
+*/
+
+//通过匹配信息监测信息里面的条形码获取条形码存放数据库的ID(条形码，返回值)
+bool MainWindow::get_ID_from_checkParameter(QString  sampleNo,QString ID)
+{
+    QString str1;
+
+    str1=QString("select * from checkParameter where id ='%1'").arg(ID);
+    sql_exec(str1.toLatin1().data());
+
+    for(int i=0;i<LocalSqlSum;i++)
+    {
+        strArray[0][0]=QString(sqlTemp[i][0]);  //ID
+        strArray[1][0]=QString(sqlTemp[i][10]); //检测信息(电能表检测数据 条形码 厂家 这类信息)
+        strArray[2][0]=QString(sqlTemp[i][9]);  //其它测试信息(重复性测试之类的)
+        strArray[3][0]=QString(sqlTemp[i][2]);  //检定日期
+
+        if(strArray[1][0].contains(sampleNo,Qt::CaseInsensitive))
+        {
+             //qDebug()<<strArray[2][0];
+             return true;
+        }
+     }
+
+    return false;
+}
+
+//获取本地数据库相关信息
 void MainWindow:: get_checkParameter_detectTaskNo()
 {
     memset(sqlTemp, 0,sizeof(0x4fff*3000));
@@ -60,7 +101,9 @@ void MainWindow:: get_checkParameter_detectTaskNo()
 #if 1
         strArray[0][i]=QString(sqlTemp[i][0]);//key
         strArray[1][i]=QString(sqlTemp[i][10]);//任务编号
+
         strArray[2][i]=QString(sqlTemp[i][9]);//其它测试信息
+        //qDebug()<<QString::number(i)<<strArray[1][i];
         //qDebug()<<QString::fromUtf8(sqlTemp[i][10]);
 #endif
 #if 0
@@ -90,6 +133,7 @@ bool MainWindow::SqlTempToQstring(QString strExec,int ItemCount)
     for(int i=0;i<ItemCount;i++)
     {
         strArray[15][i]=QString(sqlTemp[0][i]);
+        //qDebug()<<QString::number(i)<<QString(sqlTemp[0][i]);
     }
 
     return true;
@@ -110,10 +154,11 @@ int MainWindow:: get_MEASURE_REPEAT_checkError(QString strID)
     {
         rowCount = ui->EM_MEASURE_REPEAT_TblWidget->rowCount();
 
-        str1=QString::fromLocal8Bit(sqlTemp[j][4]);
+        //str1=QString::fromLocal8Bit(sqlTemp[j][4]);
         str2=str1.left(str1.indexOf("_",3));
         str1.remove(0,str1.indexOf("_",3)+1);
 
+        //qDebug()<<str1;
         if(str1.startsWith("standard")==false)
         {
              continue;
@@ -305,7 +350,7 @@ int MainWindow:: get_DETECT_RSLT_checkParameter(QString strID)
         ui->EM_RSLT_TabWidget->setItem(rowCount,1, new QTableWidgetItem(get_RSLT_CONC()));
         ui->EM_RSLT_TabWidget->setItem(rowCount,2, new QTableWidgetItem(QString(sqlTemp[0][2])));     //检定时间
 
-        ui->EM_RSLT_TabWidget->setItem(rowCount,9, new QTableWidgetItem("50Hz"));     //检定时间
+        ui->EM_RSLT_TabWidget->setItem(rowCount,9, new QTableWidgetItem("50Hz"));
         str2 = QString::fromLocal8Bit(sqlTemp[0][10]);
 
         str3=get_itemFromSql(str2,QString::fromUtf8("fTemperature"),QString::fromUtf8("温度"));
