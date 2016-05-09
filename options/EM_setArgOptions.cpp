@@ -5,51 +5,6 @@
 #include "QSqlRecord"
 #include "QMessageBox"
 #include "QSqlError"
-//不用链接MDS的中间库
-void MainWindow::on_EM_options_cnt_RdBtn_clicked()
-{
-   setCursor(QCursor(Qt::WaitCursor));
-   QString appKey,appSecret;
-
-   appKey       = ui->EM_options_appKey_Lable->text();
-   appSecret    = ui->EM_options_appSecret_LnEdit->text();
-
-   //connect_destSql(sIp, iPort.toInt(0,10),sDbNm,sUserNm,sPwd);//zs库
-
-   setCursor(QCursor(Qt::ArrowCursor));
-}
-
-void MainWindow::connect_destSql(QString sIp, int iPort,  QString sDbNm, QString sUserNm, QString sPwd)
-{
-  // qDebug()<<sPwd;
-#if 1
-    QSqlDatabase db  = QSqlDatabase::addDatabase("QOCI");
-    db.setHostName(sIp);
-    db.setPort(iPort);
-    db.setDatabaseName(sDbNm);
-    db.setUserName(sUserNm);
-    db.setPassword(sPwd);
-
-    //qDebug()<<sIp<<iPort<<sDbNm<<sUserNm<<sPwd;
-    if (db.open())
-    {
-         ui->EM_options_cnt_RdBtn->setChecked(true);
-    }
-    else
-    {
-         //qDebug()<<db.lastError().text();
-         ui->stackedWidget->setCurrentIndex(2);
-         on_EM_options_Act_triggered();
-         showInformationBox(QString(db.lastError().text()));
-         ui->EM_options_cnt_RdBtn->setChecked(false);
-
-         //sqlQuery.lastError().databaseText()
-    }
-#endif
-
- //  db.close();
-}
-
 
 //查看中间库的数据，需要将中间库链接
 void MainWindow::on_EM_options_check_PsBtn_clicked()
@@ -90,8 +45,6 @@ void MainWindow::on_EM_options_setArg_Oracle_PsBtn_clicked()
           case QMessageBox::No: break;
           default:   break;
        }
-
-
 }
 //检定线台编号
 void MainWindow::on_EM_options_detectEquipNo_PsBtn_clicked()
@@ -129,9 +82,7 @@ void MainWindow::on_EM_options_setArg_localSqlPath_PsBtn_clicked()
        }
 }
 
-
 //清除 所有数据：MT_P_CODE
-
 void MainWindow::on_EM_options_deleteLocalSqlAll_PsBtn_clicked()
 {
     switch(QMessageBox::question(this,QString::fromUtf8("信息提醒"),QString::fromUtf8("是否清空从电能表获取的数据库？"),

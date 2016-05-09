@@ -22,7 +22,7 @@ static const uint qt_meta_data_MainWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      25,   14, // methods
+      19,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -36,25 +36,19 @@ static const uint qt_meta_data_MainWindow[] = {
       98,   11,   11,   11, 0x08,
      134,   11,   11,   11, 0x08,
      184,   11,   11,   11, 0x08,
-     218,   11,   11,   11, 0x08,
-     260,   11,   11,   11, 0x08,
-     300,   11,   11,   11, 0x08,
-     333,   11,   11,   11, 0x08,
-     373,   11,   11,   11, 0x08,
-     416,   11,   11,   11, 0x08,
-     457,   11,   11,   11, 0x08,
-     497,   11,   11,   11, 0x08,
-     540,   11,   11,   11, 0x08,
-     588,   11,   11,   11, 0x08,
-     634,   11,   11,   11, 0x08,
-     676,   11,   11,   11, 0x08,
-     722,   11,   11,   11, 0x08,
-     766,   11,   11,   11, 0x08,
-     810,   11,   11,   11, 0x08,
-     841,   11,   11,   11, 0x08,
-     879,   11,   11,   11, 0x08,
-     916,   11,   11,   11, 0x08,
-     953,  948,   11,   11, 0x08,
+     224,   11,   11,   11, 0x08,
+     257,   11,   11,   11, 0x08,
+     297,   11,   11,   11, 0x08,
+     345,   11,   11,   11, 0x08,
+     391,   11,   11,   11, 0x08,
+     433,   11,   11,   11, 0x08,
+     479,   11,   11,   11, 0x08,
+     523,   11,   11,   11, 0x08,
+     567,   11,   11,   11, 0x08,
+     598,   11,   11,   11, 0x08,
+     636,   11,   11,   11, 0x08,
+     673,   11,   11,   11, 0x08,
+     710,  705,   11,   11, 0x08,
 
        0        // eod
 };
@@ -65,15 +59,9 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "on_EM_options_Act_triggered()\0"
     "on_EM_options_check_PsBtn_clicked()\0"
     "on_EM_options_setArg_localSqlPath_PsBtn_clicked()\0"
-    "on_EM_options_cnt_RdBtn_clicked()\0"
-    "on_EM_down_insertLocalSql_PsBtn_clicked()\0"
     "on_EM_down_loadLocalSql_PsBtn_clicked()\0"
     "on_EM_down_clean_PsBtn_clicked()\0"
     "on_EM_down_saveLocalSql_PsBtn_clicked()\0"
-    "on_EM_update_insertDestSql_PsBtn_clicked()\0"
-    "on_EM_update_updateItems_PsBtn_clicked()\0"
-    "on_EM_update_updateRSLT_PsBtn_clicked()\0"
-    "on_EM_update_deleteDestSql_PsBtn_clicked()\0"
     "on_EM_options_deleteLocalSqlAll_PsBtn_clicked()\0"
     "on_EM_down_deleteLocalSqlItem_PsBtn_clicked()\0"
     "on_EM_update_loadLocalSql_PsBtn_clicked()\0"
@@ -98,26 +86,20 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->on_EM_options_Act_triggered(); break;
         case 3: _t->on_EM_options_check_PsBtn_clicked(); break;
         case 4: _t->on_EM_options_setArg_localSqlPath_PsBtn_clicked(); break;
-        case 5: _t->on_EM_options_cnt_RdBtn_clicked(); break;
-        case 6: _t->on_EM_down_insertLocalSql_PsBtn_clicked(); break;
-        case 7: _t->on_EM_down_loadLocalSql_PsBtn_clicked(); break;
-        case 8: _t->on_EM_down_clean_PsBtn_clicked(); break;
-        case 9: _t->on_EM_down_saveLocalSql_PsBtn_clicked(); break;
-        case 10: _t->on_EM_update_insertDestSql_PsBtn_clicked(); break;
-        case 11: _t->on_EM_update_updateItems_PsBtn_clicked(); break;
-        case 12: _t->on_EM_update_updateRSLT_PsBtn_clicked(); break;
-        case 13: _t->on_EM_update_deleteDestSql_PsBtn_clicked(); break;
-        case 14: _t->on_EM_options_deleteLocalSqlAll_PsBtn_clicked(); break;
-        case 15: _t->on_EM_down_deleteLocalSqlItem_PsBtn_clicked(); break;
-        case 16: _t->on_EM_update_loadLocalSql_PsBtn_clicked(); break;
-        case 17: _t->on_EM_update_loadDetectTaskNo_PsBtn_clicked(); break;
-        case 18: _t->on_EM_options_setArg_Oracle_PsBtn_clicked(); break;
-        case 19: _t->on_EM_options_detectEquipNo_PsBtn_clicked(); break;
-        case 20: _t->on_EM_save_XML_PsBtn_clicked(); break;
-        case 21: _t->on_EM_down_sampleInfo_PsBtn_clicked(); break;
-        case 22: _t->on_EM_update_results_PsBtn_clicked(); break;
-        case 23: _t->on_EM_creat_xml_PsBtn_clicked(); break;
-        case 24: _t->on_EM_update_searchBarCode_LnEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 5: _t->on_EM_down_loadLocalSql_PsBtn_clicked(); break;
+        case 6: _t->on_EM_down_clean_PsBtn_clicked(); break;
+        case 7: _t->on_EM_down_saveLocalSql_PsBtn_clicked(); break;
+        case 8: _t->on_EM_options_deleteLocalSqlAll_PsBtn_clicked(); break;
+        case 9: _t->on_EM_down_deleteLocalSqlItem_PsBtn_clicked(); break;
+        case 10: _t->on_EM_update_loadLocalSql_PsBtn_clicked(); break;
+        case 11: _t->on_EM_update_loadDetectTaskNo_PsBtn_clicked(); break;
+        case 12: _t->on_EM_options_setArg_Oracle_PsBtn_clicked(); break;
+        case 13: _t->on_EM_options_detectEquipNo_PsBtn_clicked(); break;
+        case 14: _t->on_EM_save_XML_PsBtn_clicked(); break;
+        case 15: _t->on_EM_down_sampleInfo_PsBtn_clicked(); break;
+        case 16: _t->on_EM_update_results_PsBtn_clicked(); break;
+        case 17: _t->on_EM_creat_xml_PsBtn_clicked(); break;
+        case 18: _t->on_EM_update_searchBarCode_LnEdit_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -155,9 +137,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 25)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 25;
+        _id -= 19;
     }
     return _id;
 }

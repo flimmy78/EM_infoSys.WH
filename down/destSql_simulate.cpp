@@ -6,8 +6,9 @@
 #include <QObject>
 #include "unistd.h"
 #include "QSqlError"
-
 #include "QDateTime"
+
+//模拟测试用的
 bool MainWindow:: create_localDatabase()
 {
 
@@ -76,29 +77,6 @@ void MainWindow:: init_localDatabase()
     SGEE_SqlTablemodel_ptl->setEditStrategy(QSqlTableModel::OnManualSubmit);
     SGEE_SqlTablemodel_ptl->select();
 }
-
-#if  0
-void MainWindow::on_electricMeter_localSql_check_PsBtn_clicked()
-{
-
-//qDebug()<<my_DETECT_OUT_EQUIP.BDDL;
-//    GSE_SCL_ctlBlock_insert();
-//    GSE_SCL_ctlBlock_delete();
-
-//    QString strTemp;
-//    int rowCount=SGEE_SqlTablemodel_ptl->rowCount();
-
-//    qDebug()<<QString::number(rowCount);
-
-//    for(int i =0;i<rowCount;i++)
-//    {
-//      strTemp=SGEE_SqlTablemodel_ptl->data(SGEE_SqlTablemodel_ptl->index(i,1)).toString();
-//      qDebug()<<strTemp;
-//    }
-
-}
-#endif
-
 
 #if 1
 void MainWindow::GSE_SCL_ctlBlock_insert()

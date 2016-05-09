@@ -1,9 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "QSqlQuery"
 #include "QDebug"
-#include "QSqlRecord"
-#include "QSqlError"
+#include "QDomComment"
 
 /******************************************************************************************
  *C4起动试验*
@@ -104,15 +102,18 @@ bool MainWindow:: fill_STARTING(int index)
     return true;
 }
 
-
-bool MainWindow::update_STARTING()
+void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
 {
-    bool IsSuccessful;
-    QString strExec;
-    int rowCount,columnCount;
+    QDomElement  domElement,projectsElement,projectElement;
 
+    int rowCount,columnCount;
     rowCount = ui->EM_STARTING_TblWidget->rowCount();
     columnCount = ui->EM_STARTING_TblWidget->columnCount();
+
+    if(rowCount <= 0)
+    {
+        return ;
+    }
 
     for(int j=0;j<rowCount;j++)
     {
@@ -123,47 +124,30 @@ bool MainWindow::update_STARTING()
         }
     }
 
+    projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
+    projectElement = domDoc.createElement(nodeName);
+    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectName",QString::fromUtf8("启动试验"));
+    //projectElement.setAttribute("testResult",my_CONC_CODE.STARTING);
+    projectsElement.appendChild( projectElement );
 
     for(int i =0;i<rowCount;i++)//
     {
-            strExec = QString("INSERT INTO MT_STARTING_MET_CONC values(  '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21','%22')")
-                    .arg(ui->EM_STARTING_TblWidget->item(i,0)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,1)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,2)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,3)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,4)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,5)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,6)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,7)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,8)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,9)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,10)->text())
+        projectElement.setAttribute("testResult",ui->EM_STARTING_TblWidget->item(i,17)->text());
+        domElement = domDoc.createElement("testData");
+        projectElement.appendChild( domElement );
 
-                    .arg(ui->EM_STARTING_TblWidget->item(i,11)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,12)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,13)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,14)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,15)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,16)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,17)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,18)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,19)->text())
-                    .arg(ui->EM_STARTING_TblWidget->item(i,20)->text())
+        domElement.setAttribute("testPhase","");
+        domElement.setAttribute("testGroup","");
+        domElement.setAttribute("freq","");
+        domElement.setAttribute("PF","");
+        domElement.setAttribute("volt","");
 
-                    .arg(ui->EM_STARTING_TblWidget->item(i,21)->text());
-
-
-        IsSuccessful =sqlQueryExec("MT_STARTING_MET_CONC",ui->EM_STARTING_TblWidget->item(i,6)->text()+" Num:"+QString::number(i), strExec,QString::fromUtf8("成功添加"));
-
-        if(IsSuccessful==false)
-        {
-            showInformationBox(QString::fromUtf8("出错,请查看当前log.txt记录"));
-            return false;
-        }
+        domElement.setAttribute("curr","");
+        domElement.setAttribute("conclusion",ui->EM_STARTING_TblWidget->item(i,17)->text());
+        domElement.setAttribute("refTime",ui->EM_STARTING_TblWidget->item(i,7)->text());
+        domElement.setAttribute("strSampleID","");
     }
-     return true;
+
 }
-
-
-
 

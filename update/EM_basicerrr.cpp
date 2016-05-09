@@ -4,6 +4,56 @@
 #include "QDomComment"
 
 //基本误差
+
+//通过任务单号获取基本误差信息
+bool MainWindow::fill_BASICERR(QString ID)
+{
+    get_BASICERR_checkError("'"+ID+"'");
+    for(int i =0;i<20000;i++)
+    {
+        //延时
+    }
+    get_BASICERR_checkParameter("'"+ID+"'");
+    return true;
+}
+
+//获取checkParameter相关内容
+int MainWindow:: get_BASICERR_checkParameter(QString strID)
+{
+    QString strExec,str2,str3;
+    int rowCount;
+
+    strExec=QString("select * from checkParameter where id =%1").arg(strID);
+
+    if(!SqlTempToQstring(strExec,11))
+    {
+        return 0;
+    }
+
+    rowCount =ui->EM_BASICERR_TblWidget->rowCount();
+    for(int i=0;i<rowCount;i++)
+    {
+        if(strArray[15][0]==ui->EM_BASICERR_TblWidget->item(i,28)->text())//strArray[15][0]为本地localsql key标识符号
+        {
+            ui->EM_BASICERR_TblWidget->setItem(i,7,new QTableWidgetItem(strArray[15][2]));                //检定日期
+            ui->EM_BASICERR_TblWidget->setItem(i,14,new QTableWidgetItem("100%Un"));//(DYDM_index("100%Un")          //电压百分百
+
+            str2 = strArray[15][10];
+            str3 = indexOfTable(str2,QString::fromUtf8("校验圈数"));
+            //qDebug()<<str2;
+            if(str3=="")
+            {
+                ui->EM_BASICERR_TblWidget->setItem(i,17,new QTableWidgetItem("5"));                      //校验圈数
+            }
+            else
+            {
+                 ui->EM_BASICERR_TblWidget->setItem(i,17,new QTableWidgetItem(str3));                     //校验圈数
+            }
+        }
+    }
+    return 0;
+}
+
 void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
 {
     QDomElement  domElement,projectsElement,projectElement,testDataElement;
@@ -50,7 +100,6 @@ void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
         testDataElement.setAttribute("conclusion",ui->EM_BASICERR_TblWidget->item(i,22)->text());
         testDataElement.setAttribute("refTime",ui->EM_BASICERR_TblWidget->item(i,7)->text());
         testDataElement.setAttribute("strSampleID","");
-
 
         str1= ui->EM_BASICERR_TblWidget->item(i,19)->text(); //误差次数
         int simplingCount = str1.count("|")+1;

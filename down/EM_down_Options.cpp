@@ -8,15 +8,6 @@
 #include "QDateTime"
 #include "QMessageBox"
 
-
-//通过条形码到MDS下载到的信息
-void MainWindow::on_EM_down_insertLocalSql_PsBtn_clicked()
-{
-
-    down_MT_METER(ui->EM_down_barCode_LnEdit->text());
-
-}
-
 //清除表格
 void MainWindow::on_EM_down_clean_PsBtn_clicked()
 {

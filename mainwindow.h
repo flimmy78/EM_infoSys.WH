@@ -25,7 +25,7 @@ public:
 
     //orical
     void  init_TblWidget();
-    void  connect_destSql(QString sIp, int iPort,QString sDbNm, QString sUserNm, QString sPwd);
+
     QString  get_DB_FileName();
     //mds
     void  writeIni(QString path,QString arg);
@@ -53,8 +53,6 @@ public:
 
     int get_MEASURE_REPEAT_checkError(QString strID);
     int  get_MEASURE_REPEAT_checkParameter(QString strID);
-    bool update_MEASURE_REPEAT();
-
     QString indexOfTable(QString strSou,QString strKey);
     QString get_itemFromSql(QString strSou,QString strKey,QString strName);
     QString indexOfotherText(QString strSou,QString strKey);
@@ -86,16 +84,6 @@ public:
     void save_MT_DETECT_OUT_EQUIP();
 
     void getDataFromLocalSqlToTblWidget(QString strExec,QTableWidget * tblWidget,int columnCount);
-
-    //更新表格
-    bool update_INTUIT();//C1
-    bool update_BASICERR();//C2
-    bool update_CONST();//C3
-    bool update_STARTING();//C4
-    bool update_CREEPING();//C5
-    void update_DAYERR();//C7
-    bool update_INFLUENCE_QTY();//C25
-    bool update_DETECT_RSLT();//C34
 
     bool update_getDETedTestData(QString SYS_NO,QString DETECT_TASK_NO);
     bool update_setResults(QString SYS_NO,QString DETECT_TASK_NO,QString VALID_QTY);
@@ -161,23 +149,11 @@ private slots:
 
     void on_EM_options_setArg_localSqlPath_PsBtn_clicked();
 
-    void on_EM_options_cnt_RdBtn_clicked();
-
-    void on_EM_down_insertLocalSql_PsBtn_clicked();
-
     void on_EM_down_loadLocalSql_PsBtn_clicked();
 
     void on_EM_down_clean_PsBtn_clicked();
 
     void on_EM_down_saveLocalSql_PsBtn_clicked();
-
-    void on_EM_update_insertDestSql_PsBtn_clicked();
-
-    void on_EM_update_updateItems_PsBtn_clicked();
-
-    void on_EM_update_updateRSLT_PsBtn_clicked();
-
-    void on_EM_update_deleteDestSql_PsBtn_clicked();
 
     void on_EM_options_deleteLocalSqlAll_PsBtn_clicked();
 

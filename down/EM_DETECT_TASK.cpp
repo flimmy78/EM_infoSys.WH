@@ -42,7 +42,6 @@ void MainWindow::down_MT_DETECT_TASK(QString barCode,QString detectTaskNo)
     }
 }
 
-
 void MainWindow:: save_MT_DETECT_TASK()
 {
     QString strExec;

@@ -2,9 +2,7 @@
 #include "ui_mainwindow.h"
 #include "QDebug"
 
-
-
-//解析下载到的信息
+//解析下载到的信息,和四线一库不一样
 void MainWindow::analyze_sampleInfo(const QDomDocument domDoc)
 {
     QString tagName ="sample";

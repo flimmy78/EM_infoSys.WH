@@ -47,13 +47,9 @@ void MainWindow::down_MT_METER(QString strBarCode)
             down_MT_P_CODE(strBarCode, my_DOWN_INFO.VALUE );
             dwon_DETECT_OUT_EQUIP(strBarCode);
             down_MT_DETECT_TASK(strBarCode, my_DOWN_INFO.DETECT_TASK_NO);
-
         }
     }
-
 }
-
-
 
 void MainWindow:: save_MT_METER()
 {

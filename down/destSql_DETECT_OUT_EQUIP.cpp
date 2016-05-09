@@ -46,8 +46,6 @@ void MainWindow::dwon_DETECT_OUT_EQUIP(QString strBarCode)
             {
                 ui->EM_DETECT_OUT_EQUIP_TblWidget->setItem(rowCount,i,new QTableWidgetItem(sqlQuery.value(i).toString()));
             }
-
-
             return;//因为任务单最新是唯一的，所以返回
          }
     }

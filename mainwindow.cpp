@@ -22,7 +22,6 @@ MainWindow::MainWindow(QWidget *parent) :
     init_TblWidget();
     set_localSqlPath();
     open_localSql();
-    //on_EM_options_cnt_RdBtn_clicked();
     on_EM_down_clean_PsBtn_clicked();
 
 //   create_localDatabase(); //测试用
@@ -73,7 +72,6 @@ void MainWindow:: init_TblWidget()
 }
 
 //设置本地数据的路径
-//  connect_destSql("10.158.244.87", 1521,"jldb1", "sxykjd", "SXYKJD2014");//zs库
 
 void MainWindow:: set_localSqlPath()
 {
@@ -267,3 +265,4 @@ QString MainWindow::compare_DateTime(QString str1,QString str2)
     qDebug()<<QString::number(dateTime.toTime_t());
 #endif
 }
+
