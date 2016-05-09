@@ -30,7 +30,6 @@ void MainWindow::on_EM_update_searchBarCode_LnEdit_textChanged(const QString &ar
             ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,0, new QTableWidgetItem(sampleNo));
             ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,1, new QTableWidgetItem(ID));
             ui->EM_update_loadDetectTaskNo_TblWidget->item(rowCount,0)->setCheckState(Qt::Unchecked);
-
         }
     }
 }

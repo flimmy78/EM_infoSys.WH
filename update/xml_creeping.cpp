@@ -139,5 +139,3 @@ void MainWindow::addNode_CREEPING(QString nodeName, QDomDocument &domDoc)
         domElement.setAttribute("strSampleID","");
     }
 }
-
-

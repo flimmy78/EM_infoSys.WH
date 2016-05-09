@@ -91,5 +91,3 @@ void MainWindow::addNode_MEASURE_REPEAT(QString nodeName, QDomDocument &domDoc)
     }
 
 }
-
-

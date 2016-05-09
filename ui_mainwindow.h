@@ -1697,8 +1697,8 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
-        EM_down_TabWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(1);
+        EM_down_TabWidget->setCurrentIndex(3);
         EM_update_TabWidget->setCurrentIndex(3);
 
 

@@ -55,8 +55,6 @@ bool MainWindow:: fill_STARTING(int index)
          ui->EM_STARTING_TblWidget->setItem(rowCount,12,new QTableWidgetItem(str2));                      //校验圈数
     }
 
-
-
     str2=str1.left(str1.indexOf("_"));
     str1.remove(0,str1.indexOf("_")+1);
 
@@ -68,7 +66,6 @@ bool MainWindow:: fill_STARTING(int index)
     {
         ui->EM_STARTING_TblWidget->setItem(rowCount,13, new QTableWidgetItem("0"));
     }
-
 
     ui->EM_STARTING_TblWidget->setItem(rowCount,14, new QTableWidgetItem(str2));//电流负载
     strLoadCurrent=str2;
@@ -92,11 +89,6 @@ bool MainWindow:: fill_STARTING(int index)
 
     str1 = indexOfTable(strArray[1][index],QString::fromUtf8("电流量程"));
 
-
-    //str1.remove("A");
-   // str3 = strLoadCurrent.remove("Ib");
-    //qDebug()<<strLoadCurrent;
-    //int intTemp =str1.remove("A").toInt(0,10)*1000*str3.toInt();
     ui->EM_STARTING_TblWidget->setItem(rowCount,21, new QTableWidgetItem(strLoadCurrent));//启动电流
 
     return true;
@@ -148,6 +140,4 @@ void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
         domElement.setAttribute("refTime",ui->EM_STARTING_TblWidget->item(i,7)->text());
         domElement.setAttribute("strSampleID","");
     }
-
 }
-

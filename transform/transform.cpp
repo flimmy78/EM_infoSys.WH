@@ -19,11 +19,6 @@ QString MainWindow:: indexOfTable(QString strSou,QString strKey)
     return strRe.remove("\t");
 }
 
-//str3 = indexOfTable(str2,QString::fromUtf8("fHumidity"));
-//str3.remove(QString::fromUtf8("相对湿度"));
-//str3.remove(QString::fromUtf8("\t"));
-//str3.remove(QString::fromUtf8("%"));
-
 QString MainWindow:: get_itemFromSql(QString strSou,QString strKey,QString strName)
 {
     QString strRe;
@@ -86,9 +81,7 @@ QString MainWindow:: indexOfInfluence (QString strSou,QString strKey)
     return strRe;
 }
 
-
 //0：正向有功，1：反向有功，2：正向无功，3：反向无功
-
 QString MainWindow::GLFXDM_index(QString strTemp)
 {
     if (strTemp ==QString::fromUtf8("有功_正向"))
@@ -108,8 +101,6 @@ QString MainWindow::GLFXDM_index(QString strTemp)
         return  "3";
     }
 }
-
-
 
 QString MainWindow::GLYSDM_index(QString strTemp)
 {
@@ -159,10 +150,7 @@ QString MainWindow::GLYSDM_index(QString strTemp)
     }
 }
 
-
-
 //1	0.05Ib  2	0.1Ib  3	0.2Ib  4	0.5Ib  5	Ib   6	Imax   7	0.5Imax    8	4Ib   9	3Ib  10	2Ib  11	0.02Ib   12	0.01Ib
-
 QString MainWindow::FZDLDM_index(QString strTemp)
 {
 
@@ -238,9 +226,8 @@ QString MainWindow::FZDLDM_index(QString strTemp)
     }
 
 }
+
 //01合元
-
-
 //测试元组（A：A相，B：B相，C：C相，L：合组）
 QString MainWindow::FYDM_index(QString strTemp)
 {
@@ -294,11 +281,6 @@ QString MainWindow::JBWCSYJLDM_index(QString strTemp)
     }
 }
 #if 1
-//武汉
-//电能表测试频率	meterTestFreq	01	49
-//电能表测试频率	meterTestFreq	02	50
-//电能表测试频率	meterTestFreq	03	51
-//电能表测试频率	meterTestFreq	04	100
 
 QString MainWindow::PLDM_index(QString strTemp)
 {
@@ -320,35 +302,6 @@ QString MainWindow::PLDM_index(QString strTemp)
     }
 }
 #endif
-#if 0
-//济南
-QString MainWindow::PLDM_index(QString strTemp)
-{
-    if (strTemp ==QString::fromUtf8("49"))
-    {
-        return  "01";
-    }
-    else if (strTemp ==QString::fromUtf8("50"))
-    {
-        return  "02";
-    }
-    else if (strTemp ==QString::fromUtf8("51"))
-    {
-        return  "03";
-    }
-    else
-    {
-        return "04";
-    }
-}
-#endif
-
-
-//电能表电压	meterVolt	01	220V
-//电能表电压	meterVolt	02	3x380V
-//电能表电压	meterVolt	03	3x220V/380V
-//电能表电压	meterVolt	04	3x100V
-//电能表电压	meterVolt	05	3x57.7V/100V
 
 #if 1
 QString MainWindow::DYDM_index(QString strTemp)
@@ -394,61 +347,6 @@ QString MainWindow::DYDM_index(QString strTemp)
 }
 #endif
 
-#if 0
-QString MainWindow::DYDM_index(QString strTemp)
-{
-    if (strTemp ==QString::fromUtf8("50%Un"))
-    {
-        return  "00";
-    }
-    else if (strTemp ==QString::fromUtf8("60%Un"))
-    {
-        return  "01";
-    }
-    else if (strTemp ==QString::fromUtf8("70%Un"))
-    {
-        return  "02";
-    }
-    else if (strTemp ==QString::fromUtf8("80%Un"))
-    {
-        return  "03";
-    }
-    else if (strTemp ==QString::fromUtf8("100%Un"))
-    {
-        return  "04";
-    }
-    else if (strTemp ==QString::fromUtf8("110%Un"))
-    {
-        return  "05";
-    }
-    else if (strTemp ==QString::fromUtf8("115%Un"))
-    {
-        return  "06";
-    }
-    else if (strTemp ==QString::fromUtf8("120%Un"))
-    {
-        return  "07";
-    }
-    else
-    {
-        return "08";
-    }
-}
-#endif
-
-/******************************************************************************
-01	电压影响试验
-02	频率影响试验
-03	逆相序影响试验
-04	电压不平衡试验
-05	电流线路和电压线路中谐波分量试验
-06	交流电流线路中直流和偶次谐波试验
-07	交流电流线路中奇次谐波试验
-08	交流电流线路中次谐波试验
-09	外磁场影响试验
-10	0.5mT工频磁场带负载影响试验（电流Ib或In下的误差测试）
-11	0.5mT工频磁场无负载影响试验
-*********************************************************************************/
 
 QString MainWindow::EFFECT_index(QString strTemp)
 {
