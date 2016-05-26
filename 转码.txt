@@ -1,0 +1,88 @@
+#if 0
+    Qstring  str;
+    char*  ch;
+    QByteArray ba = str.toLatin1();
+    ch=ba.data();
+#endif
+
+    if(!load_xmlFile("e:/update.xml",domDoc)) //e:/update.xml
+    {
+        setCursor(QCursor(Qt::ArrowCursor));
+        showInformationBox(QString::fromUtf8("当前目录找不到XML结论信息"));
+        return;
+    }
+
+//    QTextCodec *tc=QTextCodec::codecForName("UTF-8");
+//    strTemp = domDoc.toString();
+//    QByteArray ba=strTemp.toLatin1();
+//QString str=tc->toUnicode(ba);
+
+//qDebug()<<domDoc.toString();
+// s =str;
+
+//string = std::string((const char *)str.toLocal8Bit());
+//std::cout<<string<<std::endl;
+
+ //main 用GBK.GB2312可以
+#if 0
+    QString strQ =QString::fromUtf8("软件");
+    QTextCodec *code = QTextCodec::codecForName("GB2312");         //GBK  UTF-8 GB2312
+//  strStd= code->fromUnicode(strQ.toLocal8Bit()).data();//可以
+    strStd= code->fromUnicode(strQ.toLocal8Bit().data()).data();//可以
+    qDebug()<<strQ;
+    std::cout<<"1"<<strStd<<std::endl;//正常
+    std::cout<<"2"<<std::string(strQ.toStdString())<<std::endl;//正常
+   // std::cout<<"3"<strQ.toStdString().data()<<std::endl;//错误
+      sendProjectResults.projects=std::string(strQ.toStdString());
+
+#endif
+
+#if 0
+    QString strQ =domDoc.toString();//QString::fromUtf8("软件");
+    QTextCodec *code = QTextCodec::codecForName("GB2312");         //GBK  UTF-8 GB2312
+  strStd= code->fromUnicode(strQ.toLocal8Bit()).data();
+    //strStd= code->fromUnicode(strQ.toLocal8Bit().data()).data();
+    qDebug()<<strQ;
+    //std::cout<<"1"<<strStd<<std::endl;//乱码
+    std::cout<<"2"<<std::string(strQ.toStdString())<<std::endl;//正常
+    sendProjectResults.projects=strStd;
+#endif
+
+#if 0
+    QString ::fromUtf8(domDoc.toString().toLatin1().data());
+    //QString strQ = QObject::trUtf8("软件");  //QString::fromUtf8("软件");
+    //QString strQ = QString::fromUtf8("软件");
+    //QString strQ =domDoc.toString().toUtf8();
+    QTextCodec *code = QTextCodec::codecForName("GBK");                   //GBK  UTF-8 GB2312
+    strStd= code->fromUnicode(strQ.toLocal8Bit()).data();                 //QString::fromUtf8("软件");GBK GB2312格式为正常
+    //strStd= code->fromUnicode(strQ.toLocal8Bit().data()).data();
+    qDebug()<<strQ;
+    std::cout<<"1"<<strStd<<std::endl;//乱码
+    std::cout<<"2"<<std::string(strQ.toStdString())<<std::endl;//正常;
+#endif
+
+#if 0
+    QString strQ = QString::fromUtf8(domDoc.toString(1).toLocal8Bit().data());//QString::fromUtf8("软件");
+    QTextCodec *code = QTextCodec::codecForName("UTF-8");         //GBK  UTF-8 GB2312
+//  strStd= code->fromUnicode(strQ.toLocal8Bit()).data();
+    strStd= code->fromUnicode(strQ.toLocal8Bit().data()).data();
+    qDebug()<<strQ;
+    //std::cout<<strStd<<std::string(strQ.toUtf8())<<std::endl;
+    std::cout<<"1"<<strStd<<std::endl;//乱码
+//    std::cout<<"2"<<std::string(strQ.toStdString())<<std::endl;//正常
+   // std::cout<<"3"<strQ.toStdString().data()<<std::endl;//错误
+#endif
+
+//传递成功main.c 需要转成UTF-8格式
+#if 1
+    strTemp = domDoc.toString();
+    sendProjectResults.projects=std::string(strTemp.toUtf8());
+    std::cout<<"1"<<std::string(strTemp.toUtf8())<<std::endl;//乱码
+#endif
+
+
+//main.c(GBK)传递成功但是，中文乱码
+#if 0
+    strTemp = QString::fromUtf8(domDoc.toString().toLocal8Bit().data());
+    sendProjectResults.projects=std::string(strTemp.toUtf8());
+#endif

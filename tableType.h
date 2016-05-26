@@ -61,6 +61,7 @@ struct STRUCT_CONC_CODE
     QString INFLUENCE;
     QString MEASURE_REPEAT;
     QString DETECT_EQUIP_NO;
+    QString TIME;
 } ;
 
 struct STRUCT_DOWN_INFO

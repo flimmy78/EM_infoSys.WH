@@ -21,9 +21,10 @@ void MainWindow::on_EM_down_clean_PsBtn_clicked()
 //保存数据到当前数据库
 void MainWindow::on_EM_down_saveLocalSql_PsBtn_clicked()
 {
-    setCursor(QCursor(Qt::WaitCursor));
+    setCursor(QCursor(Qt::BusyCursor));
     QString strExec ,strBarCode;
     strBarCode = ui->EM_down_barCode_LnEdit->text();
+
     strExec = QString("select * from  sampleInfo where sampleNo = '%1'").arg(strBarCode);
 
     if(isLocalBarCodeExist(strExec,strBarCode))
@@ -47,37 +48,17 @@ void MainWindow::on_EM_down_saveLocalSql_PsBtn_clicked()
 void MainWindow::on_EM_down_loadLocalSql_PsBtn_clicked()
 {
     QString  strExec,strBarCode;
-    setCursor(QCursor(Qt::WaitCursor));
+    setCursor(QCursor(Qt::BusyCursor));
     on_EM_down_clean_PsBtn_clicked();
     strBarCode = ui->EM_down_barCode_LnEdit->text();
 
-    #if 0
-    //查看全部
-    getDataFromLocalSqlToTblWidget("select * from  MT_P_CODE;",ui->EM_P_CODE_TblWidget,ui->EM_P_CODE_TblWidget->columnCount());
-    getDataFromLocalSqlToTblWidget("select * from  MT_METER;",ui->EM_METER_TblWidget,ui->EM_METER_TblWidget->columnCount());
-    getDataFromLocalSqlToTblWidget("select * from  MT_DETECT_TASK;",ui->EM_DETECT_TASK_TblWidget,ui->EM_DETECT_TASK_TblWidget->columnCount());
-    getDataFromLocalSqlToTblWidget("select * from  MT_DETECT_OUT_EQUIP;",ui->EM_DETECT_OUT_EQUIP_TblWidget,ui->EM_DETECT_OUT_EQUIP_TblWidget->columnCount());
-    #endif
-
-
     strExec = QString("select * from  sampleInfo where sampleNo = '%1'").arg(strBarCode);
+
     getDataFromLocalSqlToTblWidget(strExec,ui->EM_sampleInfo_TblWidget,ui->EM_sampleInfo_TblWidget->columnCount());
 
     strExec = QString("select * from  MT_METER where BAR_CODE = '%1'").arg(strBarCode);
+
     getDataFromLocalSqlToTblWidget(strExec,ui->EM_METER_TblWidget,ui->EM_METER_TblWidget->columnCount());
-
-    #if 0
-    //查看某条记录
-    strExec = QString("select * from  MT_P_CODE where BAR_CODE = '%1'").arg(strBarCode);
-    getDataFromLocalSqlToTblWidget(strExec,ui->EM_P_CODE_TblWidget,ui->EM_P_CODE_TblWidget->columnCount());
-
-
-    strExec = QString("select * from  MT_DETECT_TASK where BAR_CODE = '%1'").arg(strBarCode);
-    getDataFromLocalSqlToTblWidget(strExec,ui->EM_DETECT_TASK_TblWidget,ui->EM_DETECT_TASK_TblWidget->columnCount());
-
-    strExec = QString("select * from  MT_DETECT_OUT_EQUIP where BAR_CODE = '%1'").arg(strBarCode);
-    getDataFromLocalSqlToTblWidget(strExec,ui->EM_DETECT_OUT_EQUIP_TblWidget,ui->EM_DETECT_OUT_EQUIP_TblWidget->columnCount());
-    #endif
 
     setCursor(QCursor(Qt::ArrowCursor));
 }
@@ -98,19 +79,6 @@ void MainWindow::on_EM_down_deleteLocalSqlItem_PsBtn_clicked()
     byteArray = strExec.toLocal8Bit();
     sql_exec(byteArray.data());
 
-#if 0
-    strExec=QString("delete  from MT_P_CODE where BAR_CODE ='%1'").arg(strBarCode);
-    byteArray = strExec.toLocal8Bit();
-    sql_exec(byteArray.data());
-
-    strExec=QString("delete  from MT_DETECT_TASK where BAR_CODE ='%1'").arg(strBarCode);
-    byteArray = strExec.toLocal8Bit();
-    sql_exec(byteArray.data());
-
-    strExec=QString("delete from MT_DETECT_OUT_EQUIP where BAR_CODE ='%1'").arg(strBarCode);
-    byteArray = strExec.toLocal8Bit();
-    sql_exec(byteArray.data());
-#endif
     showInformationBox(QString::fromUtf8("删除成功，请读查看以确认"));
     //on_EM_down_loadLocalSql_PsBtn_clicked();
 

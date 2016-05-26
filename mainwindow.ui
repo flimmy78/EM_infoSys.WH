@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>信息化平台.电能表.WH</string>
+   <string>信息化平台.电能表.WH.0523</string>
   </property>
   <property name="windowIcon">
    <iconset resource="pic/pic.qrc">
@@ -71,7 +71,7 @@
            <item row="1" column="1">
             <widget class="QLineEdit" name="EM_down_barCode_LnEdit">
              <property name="text">
-              <string>JLXC-160425-1</string>
+              <string/>
              </property>
             </widget>
            </item>
@@ -190,20 +190,6 @@
              </property>
             </spacer>
            </item>
-           <item row="0" column="5">
-            <widget class="QPushButton" name="EM_save_XML_PsBtn">
-             <property name="text">
-              <string>测试</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="6">
-            <widget class="QPushButton" name="EM_options_deleteLocalSqlAll_PsBtn">
-             <property name="text">
-              <string>删除所有下载历史信息</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </widget>
         </item>
@@ -216,7 +202,7 @@
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="EM_sampleInfo_tab">
            <attribute name="title">
@@ -233,102 +219,107 @@
              <widget class="QTableWidget" name="EM_sampleInfo_TblWidget">
               <column>
                <property name="text">
-                <string>1sampleNo</string>
+                <string>1.条形码</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>tableType</string>
+                <string>类型</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>phaseType</string>
+                <string>相线</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>nominalVoltage</string>
+                <string>电压</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>5nominalCurrent</string>
+                <string>5电流</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>sampleType</string>
+                <string>样品类型</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>nominalConstant</string>
+                <string>有功常数</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>reactiveConstant</string>
+                <string>无功常数</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>activeLevel</string>
+                <string>有功等级</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>10reactiveLevel</string>
+                <string>10.无功等级</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>freq</string>
+                <string>频率</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>inputMode</string>
+                <string>接入方式</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>isEmulator</string>
+                <string>是否止逆器</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>measurementDirection</string>
+                <string>可计量的方向</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>15sampleName</string>
+                <string>15.表名称</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>redSeal</string>
+                <string>铅封号</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>producer</string>
+                <string>生产厂家</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>sampleUserName</string>
+                <string>送检单位</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>sampleManuNo</string>
+                <string>出厂编号</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>20sampleSeal</string>
+                <string>20.资产号</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>isUpdate</string>
                </property>
               </column>
              </widget>
@@ -355,477 +346,477 @@
               </row>
               <column>
                <property name="text">
-                <string>1METER_ID</string>
+                <string>1.METER_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>2ERP_BATCH_NO</string>
+                <string>ERP_BATCH_NO</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>3条形码</string>
+                <string>条形码</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>4资产编号</string>
+                <string>资产编号</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>5出厂编号</string>
+                <string>5.出厂编号</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>6LOT_NO</string>
+                <string>LOT_NO</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>7ORG_NO</string>
+                <string>ORG_NO</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>8ORG_TYPE</string>
+                <string>ORG_TYPE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>9PR_ORG</string>
+                <string>PR_ORG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>10BELONG_DEPT</string>
+                <string>10.BELONG_DEPT</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>11CONTRACT_ID</string>
+                <string>CONTRACT_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>12CONTRACT_NO</string>
+                <string>CONTRACT_NO</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>13RCV_ID</string>
+                <string>RCV_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>14ARRIVE_BATCH_NO</string>
+                <string>ARRIVE_BATCH_NO</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>15AREA_CODE</string>
+                <string>AREA_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>16STORE_AREA_SORT</string>
+                <string>STORE_AREA_SORT</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>17WH_ID</string>
+                <string>WH_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>18WH_AREA_ID</string>
+                <string>WH_AREA_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>19STORE_AREA_ID</string>
+                <string>STORE_AREA_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>20STORE_LOC_ID</string>
+                <string>20.STORE_LOC_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>21PALLET_BAR_CODE</string>
+                <string>PALLET_BAR_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>22BOX_BAR_CODE</string>
+                <string>BOX_BAR_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>23SORT_CODE</string>
+                <string>SORT_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>24TYPE_CODE</string>
+                <string>TYPE_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>25MODEL_CODE</string>
+                <string>25.MODEL_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>26WIRING_MODE</string>
+                <string>WIRING_MODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>27VOLT_CODE</string>
+                <string>VOLT_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>28RATED_CURRENT</string>
+                <string>RATED_CURRENT</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>29OVERLOAD_FACTOR</string>
+                <string>OVERLOAD_FACTOR</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>30AP_PRE_LEVEL_CODE</string>
+                <string>30.AP_PRE_LEVEL_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>31RP_PRE_LEVEL_CODE</string>
+                <string>RP_PRE_LEVEL_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>32METER_DIGITS</string>
+                <string>METER_DIGITS</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>33TS_DIGITS</string>
+                <string>TS_DIGITS</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>34CONST_CODE</string>
+                <string>CONST_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>35RP_CONSTANT</string>
+                <string>35.RP_CONSTANT</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>36MANUFACTURER</string>
+                <string>MANUFACTURER</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>37MADE_DATE</string>
+                <string>MADE_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>38EQIP_PRC</string>
+                <string>EQIP_PRC</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>39SELF_FACTOR</string>
+                <string>SELF_FACTOR</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>40BOTH_WAY_CALC</string>
+                <string>40.BOTH_WAY_CALC</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>41PREPAY_FLAG</string>
+                <string>PREPAY_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>42MULTIRATE_FALG</string>
+                <string>MULTIRATE_FALG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>43DEMAND_METER_FLAG</string>
+                <string>DEMAND_METER_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>44HARMONIC_MEAS_FALG</string>
+                <string>HARMONIC_MEAS_FALG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>45CC_PREVENT_FLAG</string>
+                <string>45.CC_PREVENT_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>46PULSE_CONSTANT_CODE</string>
+                <string>PULSE_CONSTANT_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>47PULSE_AMPLITUDE_CODE</string>
+                <string>PULSE_AMPLITUDE_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>48PULSE_SORT_CODE</string>
+                <string>PULSE_SORT_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>49FREQ_CODE</string>
+                <string>FREQ_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>50CON_MODE</string>
+                <string>50.CON_MODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>51READING_TYPE_CODE</string>
+                <string>READING_TYPE_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>52METER_USAGE</string>
+                <string>METER_USAGE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>53MEAS_THEORY</string>
+                <string>MEAS_THEORY</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>54BEARING_STRUC</string>
+                <string>BEARING_STRUC</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>55CI</string>
+                <string>55.CI</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>56RELAY_JOINT</string>
+                <string>RELAY_JOINT</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>57ELEC_MEAS_DISP_FLAG</string>
+                <string>ELEC_MEAS_DISP_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>58VL_FLAG</string>
+                <string>VL_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>59CL_FLAG</string>
+                <string>CL_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>60ANTI_PHASE_FLAG</string>
+                <string>60.ANTI_PHASE_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>61SUPER_POWER_FLAG</string>
+                <string>SUPER_POWER_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>62LOAD_CURVE_FLAG</string>
+                <string>LOAD_CURVE_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>63POWEROFF_MR_FLAG</string>
+                <string>POWEROFF_MR_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>64INFRARED_FLAG</string>
+                <string>INFRARED_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>65DOC_TYPE_CODE</string>
+                <string>65.DOC_TYPE_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>66LATEST_CHK_DATE</string>
+                <string>LATEST_CHK_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>67INST_DATE</string>
+                <string>INST_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>68RMV_DATE</string>
+                <string>RMV_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>69ROTATE_CYCLE</string>
+                <string>ROTATE_CYCLE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>70DISCARD_REASON</string>
+                <string>70.DISCARD_REASON</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>71DESCARD_DATE</string>
+                <string>DESCARD_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>72PR_CODE</string>
+                <string>PR_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>73HANDOVER_DEPT</string>
+                <string>HANDOVER_DEPT</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>74HANDOVER_DATE</string>
+                <string>HANDOVER_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>75CUR_STATUS_CODE</string>
+                <string>75.CUR_STATUS_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>76BORROW_FLAG</string>
+                <string>BORROW_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>77NEW_FLAG</string>
+                <string>NEW_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>78DOC_CREATOR_NO</string>
+                <string>DOC_CREATOR_NO</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>79DOC_CREATE_DATE</string>
+                <string>DOC_CREATE_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>80BAUDRATE_CODE</string>
+                <string>80.BAUDRATE_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>81METER_CLOSE_MODE</string>
+                <string>METER_CLOSE_MODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>82REGISTER_MODE</string>
+                <string>2REGISTER_MODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>83DISP_MODE</string>
+                <string>DISP_MODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>84HARD_VER</string>
+                <string>HARD_VER</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>85SOFT_VER</string>
+                <string>85.SOFT_VER</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>86RS485_ROUTE_QTY</string>
+                <string>RS485_ROUTE_QTY</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>87COMM_PROT_CODE</string>
+                <string>COMM_PROT_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>88COMM_MODE</string>
+                <string>COMM_MODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>89ATTACHEQUIP_TYPE_CODE</string>
+                <string>ATTACHEQUIP_TYPE_CODE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>90CARRIER_WAVE_ID</string>
+                <string>90.CARRIER_WAVE_ID</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>91REMARK</string>
+                <string>REMARK</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>92WRITE_DATE</string>
+                <string>WRITE_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>93HANDLE_FLAG</string>
+                <string>HANDLE_FLAG</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>94HANDLE_DATE</string>
+                <string>HANDLE_DATE</string>
                </property>
               </column>
               <column>
                <property name="text">
-                <string>95LATEST_DETECT_DATE</string>
+                <string>95.LATEST_DETECT_DATE</string>
                </property>
               </column>
               <column>
@@ -1824,7 +1815,7 @@
               <item row="0" column="1" colspan="2">
                <widget class="QLineEdit" name="EM_update_searchBarCode_LnEdit">
                 <property name="text">
-                 <string>3730001000000133259896</string>
+                 <string/>
                 </property>
                </widget>
               </item>
@@ -1904,7 +1895,12 @@
              </attribute>
              <column>
               <property name="text">
-               <string>电能表条形码</string>
+               <string>状态</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>条形码</string>
               </property>
              </column>
              <column>
@@ -1977,13 +1973,6 @@
               <enum>QFrame::Raised</enum>
              </property>
              <layout class="QGridLayout" name="gridLayout_7">
-              <item row="0" column="3">
-               <widget class="QPushButton" name="EM_update_results_PsBtn">
-                <property name="text">
-                 <string>录入系统</string>
-                </property>
-               </widget>
-              </item>
               <item row="0" column="1">
                <spacer name="horizontalSpacer_3">
                 <property name="orientation">
@@ -1998,9 +1987,9 @@
                </spacer>
               </item>
               <item row="0" column="0">
-               <widget class="QPushButton" name="EM_creat_xml_PsBtn">
+               <widget class="QPushButton" name="EM_update_results_PsBtn">
                 <property name="text">
-                 <string>创建XML</string>
+                 <string>录入系统</string>
                 </property>
                </widget>
               </item>
@@ -2019,7 +2008,7 @@
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>6</number>
              </property>
              <widget class="QWidget" name="EM_INTUIT_MET_tab">
               <attribute name="title">
@@ -2600,17 +2589,17 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>序号</string>
+                   <string>化整误差</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>10检定点序号</string>
+                   <string>10.标准偏差</string>
                   </property>
                  </column>
                  <column>
                   <property name="text">
-                   <string>有效标志</string>
+                   <string>多次误差</string>
                   </property>
                  </column>
                  <column>
@@ -2640,7 +2629,7 @@
                  </column>
                  <column>
                   <property name="text">
-                   <string>17标准偏差</string>
+                   <string>17.平均误差</string>
                   </property>
                  </column>
                  <column>
@@ -3076,35 +3065,10 @@ p, li { white-space: pre-wrap; }
            <string>选项</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_12">
-           <property name="margin">
-            <number>5</number>
-           </property>
-           <property name="spacing">
-            <number>5</number>
-           </property>
            <item row="0" column="0">
             <widget class="QPushButton" name="EM_options_setArg_Oracle_PsBtn">
              <property name="text">
               <string>修改配置</string>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QPushButton" name="EM_options_setArg_localSqlPath_PsBtn">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>5</width>
-               <height>4</height>
-              </size>
-             </property>
-             <property name="text">
-              <string>修改路径:</string>
              </property>
             </widget>
            </item>
@@ -3147,33 +3111,6 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="0" column="5">
-            <widget class="QPushButton" name="EM_options_detectEquipNo_PsBtn">
-             <property name="text">
-              <string>检定线台编号</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="13">
-            <spacer name="horizontalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="0" column="6">
-            <widget class="QLineEdit" name="EM_options_detectEquipNo_LnEdit">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
            <item row="0" column="4">
             <widget class="QLineEdit" name="EM_options_appSecret_LnEdit">
              <property name="sizePolicy">
@@ -3199,13 +3136,73 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="4" column="1" colspan="3">
+           <item row="0" column="5" colspan="2">
+            <widget class="QPushButton" name="EM_options_detectEquipNo_PsBtn">
+             <property name="text">
+              <string>检定线台编号</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7">
+            <widget class="QLineEdit" name="EM_options_detectEquipNo_LnEdit">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="EM_options_setArg_localSqlPath_PsBtn">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>5</width>
+               <height>4</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>修改路径:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1" colspan="6">
             <widget class="QLineEdit" name="EM_options_setArg_localSqlPath_LnEdit">
              <property name="layoutDirection">
               <enum>Qt::LeftToRight</enum>
              </property>
              <property name="text">
               <string>D:\EM_infoSys.WH\DBUpdate\检定数据保存数据库.db</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="10">
+            <widget class="QPushButton" name="EM_options_deleteLocalSqlAll_PsBtn">
+             <property name="text">
+              <string>删除所有下载历史信息</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="8">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="10">
+            <widget class="QPushButton" name="EM_save_XML_PsBtn">
+             <property name="text">
+              <string>测试</string>
              </property>
             </widget>
            </item>

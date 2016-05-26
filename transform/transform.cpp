@@ -16,7 +16,8 @@ QString MainWindow:: indexOfTable(QString strSou,QString strKey)
         return "";
     }
     //qDebug()<<QString::number(intStart);
-    return strRe.remove("\t");
+    //qDebug()<<strRe;
+    return strRe;
 }
 
 QString MainWindow:: get_itemFromSql(QString strSou,QString strKey,QString strName)
@@ -39,7 +40,7 @@ QString MainWindow:: get_itemFromSql(QString strSou,QString strKey,QString strNa
     strRe.remove(QString::fromUtf8("度"));
 
     //qDebug()<<QString::number(intStart);
-    return strRe;
+    return strRe.simplified();
 }
 
 //启动测试
@@ -71,8 +72,7 @@ QString MainWindow:: indexOfInfluence (QString strSou,QString strKey)
     intStart=strSou.indexOf(strKey);
     intEnd=strSou.indexOf(strEnd,intStart);
 
-    //strRe=strSou.mid(intStart+strKey.length(),intEnd-intStart-strKey.length()+strEnd.length());
-     strRe=strSou.mid(intStart,intEnd-intStart+strEnd.length());
+    strRe=strSou.mid(intStart,intEnd-intStart+strEnd.length());
     if(intStart<0)
     {
         return "0";

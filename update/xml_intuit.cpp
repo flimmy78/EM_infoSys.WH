@@ -13,20 +13,13 @@ void MainWindow:: fill_INTUIT()
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,1, new QTableWidgetItem(my_MT_DETECT_TASK.EQUIP_CATEG));            //设备类别
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,2, new QTableWidgetItem(my_MT_DETECT_TASK.SYS_NO));                 //系统编号
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,3, new QTableWidgetItem(my_CONC_CODE.DETECT_EQUIP_NO));                                    //检定线台编号
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                                            //检定单元编号
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                                            //表位编号
 
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));               //设备条形码
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,7, new QTableWidgetItem(strArray[3][0]));                                 //检定时间
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));                                           //第几次检定(序号)
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,9, new QTableWidgetItem("1"));                                           //检定点序号
+    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,7, new QTableWidgetItem(my_CONC_CODE.TIME));                                 //检定时间
 
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,10, new QTableWidgetItem("1"));                                          //见附录I：有效标志 0：否、1：是                                           //
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,11, new QTableWidgetItem("#"));
     my_CONC_CODE.INTUIT="1";
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,12, new QTableWidgetItem(my_CONC_CODE.INTUIT));
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,13, new QTableWidgetItem(currentTime()));
-    ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,14, new QTableWidgetItem("0"));
     ui->EM_INTUIT_MET_TblWidget->setItem(rowCount,15, new QTableWidgetItem(currentTime()));
 
 }
@@ -38,33 +31,25 @@ void MainWindow::addNode_INTUIT(QString nodeName, QDomDocument &domDoc)
     int rowCount,columnCount;
     rowCount = ui->EM_INTUIT_MET_TblWidget->rowCount();
     columnCount = ui->EM_INTUIT_MET_TblWidget->columnCount();
-    if(rowCount <= 0)
+
+    if(!avoid_readVoidErr_TblWdiget(ui->EM_INTUIT_MET_TblWidget))
     {
         return ;
     }
-    for(int j=0;j<rowCount;j++)
-    {
-        for(int i=0;i<columnCount;i++)
-        {
-            if(!ui->EM_INTUIT_MET_TblWidget->item(j,i))
-            ui->EM_INTUIT_MET_TblWidget->setItem(j,i, new QTableWidgetItem(""));
-        }
-    }
 
     projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
-    projectElement = domDoc.createElement(nodeName);
-    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement  = domDoc.createElement(nodeName);
+    projectElement.setAttribute("projectNo","PJ0194");
     projectElement.setAttribute("projectName",QString::fromUtf8("外观试验"));
-   // projectElement.setAttribute("testResult",my_CONC_CODE.INTUIT);
+    projectElement.setAttribute("result",my_CONC_CODE.INTUIT);
     projectsElement.appendChild( projectElement );
 
-    for(int i =0;i<rowCount;i++)//
+    for(int i =0;i<rowCount;i++)
     {
-        projectElement.setAttribute("testResult",ui->EM_INTUIT_MET_TblWidget->item(i,12)->text());
-
         domElement = domDoc.createElement("testData");
         projectElement.appendChild( domElement );
 
+        domElement.setAttribute("testNum","0");
         domElement.setAttribute("testPhase","");
         domElement.setAttribute("testGroup","");
         domElement.setAttribute("freq","");

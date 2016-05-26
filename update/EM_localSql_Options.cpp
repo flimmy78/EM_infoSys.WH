@@ -31,7 +31,7 @@ void  MainWindow::open_localSql()
 
 //武汉MDS 创建表格
 
-     strExec ="CREATE TABLE if  not exists sampleInfo(sampleNo char(128) primary key,tableType char(128),phaseType char(128),nominalVoltage char(128),nominalCurrent char(128),sampleType char(128),nominalConstant char(128),reactiveConstant char(128),activeLevel char(128),reactiveLevel char(128),freq char(128),inputMode char(128),isEmulator char(128),measurementDirection char(128),sampleName char(128),redSeal char(128),producer char(128),sampleUserName char(128),sampleManuNo char(128),sampleSeal char(128));";
+     strExec ="CREATE TABLE if  not exists sampleInfo(sampleNo char(128) primary key,tableType char(128),phaseType char(128),nominalVoltage char(128),nominalCurrent char(128),sampleType char(128),nominalConstant char(128),reactiveConstant char(128),activeLevel char(128),reactiveLevel char(128),freq char(128),inputMode char(128),isEmulator char(128),measurementDirection char(128),sampleName char(128),redSeal char(128),producer char(128),sampleUserName char(128),sampleManuNo char(128),sampleSeal char(128),isUpdate char(128));";
      intResult= sql_exec(strExec.toLatin1().data());
      if(intResult!=SQLITE_OK)
      {
@@ -39,33 +39,7 @@ void  MainWindow::open_localSql()
          return;
      }
 
-
-    strExec ="CREATE TABLE if not exists MT_DETECT_OUT_EQUIP( DETECT_TASK_NO char(128),IO_TASK_NO char(128),EQUIP_CATEG char(128),BAR_CODE char(128) primary key,BOX_BAR_CODE char(128),PILE_NO char(128),PLATFORM_NO char(128),SYS_NO char(128),WRITE_DATE char(128),HANDLE_FLAG char(128),HANDLE_DATE char(128),ARRIVE_BATCH_NO char(128),REDETECT_FLAG char(128),EMP_NO char(128),PLATFORM_TYPE char(128));";
-    intResult= sql_exec(strExec.toLatin1().data());
-
-    if(intResult!=SQLITE_OK)
-    {
-        showInformationBox(QString::fromUtf8("create MT_DETECT_OUT_EQUIP error"));
-        return;
-    }
-
-    strExec ="CREATE TABLE if  not exists MT_DETECT_TASK(BAR_CODE char(128) primary key,DETECT_TASK_NO char(128),TASK_PRIO char(128),DETECT_MODE char(128),SYS_NO char(128),ARRIVE_BATCH_NO char(128),EQUIP_CATEG char(128),MODEL_CODE char(128),SCHEMA_ID char(128),REDETECT_SCHEMA char(128),REDETECT_FLAG char(128),REDETECT_QTY char(128),EQUIP_QTY char(128),PILE_QTY char(128),TASK_STATUS char(128),HANDLE_DATE char(128),HANDLE_FLAG char(128),WRITE_DATE char(128),ERP_BATCH_NO char(128),TASK_TYPE char(128),EQUIP_STATUS_CODE char(128),EXEC_RESP_NAME char(128),APPR_NAME char(128),IS_AUTO_SEAL char(128),EQUIP_CODE_NEW char(128),PARAM_TYPE char(128));";
-    intResult= sql_exec(strExec.toLatin1().data());
-    if(intResult!=SQLITE_OK)
-    {
-        showInformationBox(QString::fromUtf8("create MT_DETECT_TASK error"));
-        return;
-    }
-
-    strExec ="CREATE TABLE if  not exists MT_P_CODE(BAR_CODE char(128) primary key, CODE_ID char(128),CODE_SORT_ID char(128),P_CODE char(128),CODE_TYPE char(128),ORG_NO char(128),VALUE char(128),NAME char(128),DISP_SN char(128),CONTENT1 char(128),CONTENT2 char(128),CONTENT3 char(128),CONTENT4 char(128),CONTENT5 char(128),PROVINCE char(128),HANDLE_PROVINCE char(128),HANDLE_TYPE char(128),CONTENT9 char(128),CONTENT6 char(128),CONTENT7 char(128),CONTENT8 char(128));";
-    intResult= sql_exec(strExec.toLatin1().data());
-    if(intResult!=SQLITE_OK)
-    {
-        showInformationBox(QString::fromUtf8("create MT_P_CODE error"));
-        return;
-    }
-
-    strExec ="CREATE TABLE if not exists MT_METER( METER_ID char(128),ERP_BATCH_NO char(128),BAR_CODE char(128) primary key,ASSET_NO char(128),MADE_NO char(128),LOT_NO char(128),ORG_NO char(128),ORG_TYPE char(128),PR_ORG char(128),BELONG_DEPT char(128),\n"
+     strExec ="CREATE TABLE if not exists MT_METER( METER_ID char(128),ERP_BATCH_NO char(128),BAR_CODE char(128) primary key,ASSET_NO char(128),MADE_NO char(128),LOT_NO char(128),ORG_NO char(128),ORG_TYPE char(128),PR_ORG char(128),BELONG_DEPT char(128),\n"
                     "CONTRACT_ID char(128),CONTRACT_NO char(128),RCV_ID char(128),ARRIVE_BATCH_NO char(128),AREA_CODE char(128),STORE_AREA_SORT char(128),WH_ID char(128),WH_AREA_ID char(128),STORE_AREA_ID char(128),\n"
                     "STORE_LOC_ID char(128),PALLET_BAR_CODE char(128),BOX_BAR_CODE char(128),SORT_CODE char(128),TYPE_CODE char(128),MODEL_CODE char(128),WIRING_MODE char(128),VOLT_CODE char(128),RATED_CURRENT char(128),OVERLOAD_FACTOR char(128),AP_PRE_LEVEL_CODE char(128),\n"
                     "RP_PRE_LEVEL_CODE char(128),METER_DIGITS char(128),TS_DIGITS char(128),CONST_CODE char(128),RP_CONSTANT char(128),MANUFACTURER char(128),MADE_DATE char(128),EQIP_PRC char(128),SELF_FACTOR char(128),BOTH_WAY_CALC char(128),\n"

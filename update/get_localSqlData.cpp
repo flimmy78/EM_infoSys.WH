@@ -71,6 +71,7 @@ bool MainWindow::get_ID_from_checkParameter(QString  sampleNo,QString ID)
 {
     QString str1;
 
+    clear_sqlTemp();
     str1=QString("select * from checkParameter where id ='%1'").arg(ID);
     sql_exec(str1.toLatin1().data());
 
@@ -79,7 +80,7 @@ bool MainWindow::get_ID_from_checkParameter(QString  sampleNo,QString ID)
         strArray[0][0]=QString(sqlTemp[i][0]);  //ID
         strArray[1][0]=QString(sqlTemp[i][10]); //检测信息(电能表检测数据 条形码 厂家 这类信息)
         strArray[2][0]=QString(sqlTemp[i][9]);  //其它测试信息(重复性测试之类的)
-        strArray[3][0]=QString(sqlTemp[i][2]);  //检定日期
+        my_CONC_CODE.TIME=QString(sqlTemp[i][2]);  //检定日期
 
         if(strArray[1][0].contains(sampleNo,Qt::CaseInsensitive))
         {
@@ -91,23 +92,29 @@ bool MainWindow::get_ID_from_checkParameter(QString  sampleNo,QString ID)
     return false;
 }
 
-//获取本地数据库相关信息
-void MainWindow:: get_checkParameter_detectTaskNo()
+QString MainWindow::get_isUpdate_from_sampleInfo(QString  sampleNo)
 {
-    memset(sqlTemp, 0,sizeof(0x4fff*3000));
+    QString strExec;
+    sqlTemp[0][20][0] = '0';
+    strExec = QString("select * from  sampleInfo where sampleNo = '%1'").arg(sampleNo);
+    sql_exec(strExec.toLatin1().data());
+
+    return QString(sqlTemp[0][20]);
+}
+
+//获取本地数据库相关信息
+void MainWindow::   get_checkParameter_detectTaskNo()
+{
+    clear_sqlTemp();
     sql_exec("select * from checkParameter");
+
     for(int i=0;i<LocalSqlSum;i++)
     {
-#if 1
-        strArray[0][i]=QString(sqlTemp[i][0]);//key
+        strArray[0][i]=QString(sqlTemp[i][0]);//ID
         strArray[1][i]=QString(sqlTemp[i][10]);//任务编号
-
         strArray[2][i]=QString(sqlTemp[i][9]);//其它测试信息
-        //qDebug()<<QString::number(i)<<strArray[1][i];
-        //qDebug()<<QString::fromUtf8(sqlTemp[i][10]);
-#endif
 #if 0
-        strArray[0][i]=QString(sqlTemp[i][0]);//key
+        strArray[0][i]=QString(sqlTemp[i][0]);//ID
         strArray[1][i]=QString(sqlTemp[i][1]);//
         strArray[2][i]=QString(sqlTemp[i][2]);//
         strArray[3][i]=QString(sqlTemp[i][3]);//
@@ -120,6 +127,8 @@ void MainWindow:: get_checkParameter_detectTaskNo()
         strArray[10][i]=QString(sqlTemp[i][10]);//任务编号
 #endif
     }
+
+
 }
 
 
@@ -140,99 +149,119 @@ bool MainWindow::SqlTempToQstring(QString strExec,int ItemCount)
 }
 
 //
+//PF="功率因数"
+//testPhase="测试方向
+//testDataElement.setAttribute("aveErr",ui->EM_BASICERR_TblWidget->item(i,20)->text());//平均误差
+//testDataElement.setAttribute("intErr",ui->EM_BASICERR_TblWidget->item(i,21)->text());//化整误差
+//testDataElement.setAttribute("stdErr",ui->EM_BASICERR_TblWidget->item(i,21)->text());//化整误差
+//0：正向有功，1：反向有功，2：正向无功，3：反向无功
 
-int MainWindow:: get_MEASURE_REPEAT_checkError(QString strID)
+void MainWindow:: get_MEASURE_REPEAT_checkError(QString strID)
 {
-    QString str1 ,str2;
+    QString str1 ,str2,PF,testPhase;
     int rowCount;
 
+    clear_sqlTemp();
     str1= QString("select * from checkError where id =%1;").arg(strID);
     sql_exec(str1.toLatin1().data());
 
-
-    for(int j=0;j<sqlite_tableCal;j++)
+    for(int j=0;j<LocalSqlSum;j++)
     {
         rowCount = ui->EM_MEASURE_REPEAT_TblWidget->rowCount();
 
-        //str1=QString::fromLocal8Bit(sqlTemp[j][4]);
-        str2=str1.left(str1.indexOf("_",3));
-        str1.remove(0,str1.indexOf("_",3)+1);
+        str1=QString::fromLocal8Bit(sqlTemp[j][4]);
 
-        //qDebug()<<str1;
-        if(str1.startsWith("standard")==false)
+        if(!str1.startsWith(QString::fromUtf8("测量重复性")))//过滤不是测量重复性
         {
              continue;
         }
-         //qDebug()<<str1;
 
+        if(str1==QString::fromUtf8("测量重复性_正向有功_0.5L"))
+        {
+            PF = "0.5L";
+            testPhase ="0";
+        }else if(str1==QString::fromUtf8("测量重复性_正向有功_1.0"))
+        {
+            PF = "1.0";
+            testPhase ="0";
+        }else if(str1==QString::fromUtf8("测量重复性_反向有功_0.5L"))
+        {
+            PF = "0.5L";
+            testPhase ="1";
+        }else if(str1==QString::fromUtf8("测量重复性_反向有功_1.0"))
+        {
+            PF = "1.0";
+            testPhase ="1";
+        }else if(str1==QString::fromUtf8("测量重复性_正向无功_0.5L"))
+        {
+            PF = "0.5L";
+            testPhase ="2";
+        }else if(str1==QString::fromUtf8("测量重复性_正向无功_1.0"))
+        {
+            PF = "1.0";
+            testPhase ="2";
+        }
+        else if(str1==QString::fromUtf8("测量重复性_反向无功_0.5L"))
+        {
+            PF = "0.5L";
+            testPhase ="3";
+        }else if(str1==QString::fromUtf8("测量重复性_反向无功_1.0"))
+        {
+            PF = "1.0";
+            testPhase ="3";
+        }
+
+         //qDebug()<<str1;
+ #if 1
         ui->EM_MEASURE_REPEAT_TblWidget->insertRow(rowCount);//ID
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,0, new QTableWidgetItem(my_MT_DETECT_TASK.DETECT_TASK_NO));//检定任务单
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,1, new QTableWidgetItem(my_MT_DETECT_TASK.EQUIP_CATEG));                 //设备类别
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,2, new QTableWidgetItem(my_MT_DETECT_TASK.SYS_NO));                 //系统编号
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,3, new QTableWidgetItem(my_CONC_CODE.DETECT_EQUIP_NO));          //检定线台编号
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                 //检定单元编号
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                 //表位编号
+
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));                 //设备条形码
-       // ui->EM_BASICERR_TblWidget->setItem(j,7, new QTableWidgetItem(currentTime()));                 //检定时间
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,7, new QTableWidgetItem(my_CONC_CODE.TIME));
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,9, new QTableWidgetItem(QString(sqlTemp[j][2])));//平均误差
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,8, new QTableWidgetItem(QString(sqlTemp[j][3])));//化整误差
 
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));                 //第几次检定(序号)
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,9, new QTableWidgetItem(QString::number(j)));  //序号
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,10,new QTableWidgetItem("1"));                //见附录I：有效标志 0：否、1：是
-
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,22,new QTableWidgetItem("01"));     //频率代码//PLDM_index("50")
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,24, new QTableWidgetItem(QString(sqlTemp[j][0])));//KEY
 
-
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,17,new QTableWidgetItem(currentTime()));            //检定线写入时间
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,18,new QTableWidgetItem("0"));                //见附录I：处理标记(0：未处理（默认）、1：处理中、2：已处理)
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,19,new QTableWidgetItem(currentTime()));             //处理时间
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,12,new QTableWidgetItem("0"));             //功率方向
-//        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,11,new QTableWidgetItem("0"));             //电压负载
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,12,new QTableWidgetItem(testPhase));             //功率方向
 
-
- #if 1
-        str2=str1.left(str1.indexOf("_"));
-
-        if(str2.endsWith("."))//末尾是.
-        {
-            str2=str2.left(str2.indexOf('.',2));
-        }
-        str2.remove("standardWarp");
-        str1.remove(0,str1.indexOf("_")+1);
-
-//        qDebug()<<str2;
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,14,new QTableWidgetItem(GLYSDM_index(str2)));  //功率因素
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,13,new QTableWidgetItem("Ib"));
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,14,new QTableWidgetItem(PF));  //功率因素
 
         str1 = QString::fromLocal8Bit(sqlTemp[j][1]);
         str1 = str1.replace("\t","|");
         str1.remove(QString::fromUtf8("\r"));
         str1.remove(QString::fromUtf8("\n"));
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,15,new QTableWidgetItem(QString::number(str1.count("|")+1)));  //采样次数
-//        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,19,new QTableWidgetItem(str1));  //实际误差
-
-//        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,20,new QTableWidgetItem(QString::fromLocal8Bit(sqlTemp[j][2])));  //误差平均值
-        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,16,new QTableWidgetItem(QString::fromLocal8Bit(sqlTemp[j][3])));  //误差化整值
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,10,new QTableWidgetItem(str1));  //实际误差
+        ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,20,new QTableWidgetItem(QString::fromLocal8Bit(sqlTemp[j][2])));  //误差平均值
 
         str1=QString::fromLocal8Bit(sqlTemp[j][6]);
 
         ui->EM_MEASURE_REPEAT_TblWidget->setItem(rowCount,20,new QTableWidgetItem(JBWCSYJLDM_index(str1)));  //结论 JBWCSYJLDM_index(str1)
 
-         my_CONC_CODE.MEASURE_REPEAT=JBWCSYJLDM_index(str1);
+        if(JBWCSYJLDM_index(str1)== "0")
+        {
+            my_CONC_CODE.MEASURE_REPEAT = "0";
+        }
 #endif
-
-
     }
-
-    return 0;
 }
 /**************************************************************************
  *根据找出所有ID相同的项目
+ 条件就是testPhase="测试方向、 testGroup="测试元组(/)、 PF="功率因数"、 curr="测试电流"(/)，要传的数据就是五个误差加上标准偏差值和化整值
  *************************************************************************/
-int MainWindow:: get_BASICERR_checkError(QString strID)
+void MainWindow:: get_BASICERR_checkError(QString strID)
 {
     QString str1 ,str2;
     float floatTemp;
 
+    clear_sqlTemp();
     str1= QString("select * from checkError where id =%1;").arg(strID);
     sql_exec(str1.toLatin1().data());
     int rowCount ;
@@ -240,37 +269,26 @@ int MainWindow:: get_BASICERR_checkError(QString strID)
     for(int j=0;j<sqlite_tableCal;j++)
     {
         str1=QString::fromLocal8Bit(sqlTemp[j][4]);
-        str2=str1.left(str1.indexOf("_",3));
-        str1.remove(0,str1.indexOf("_",3)+1);
-
-        //qDebug()<<str1;
-        if(str1.startsWith("standardWarp"))
+        if(str1.startsWith("standardWarp")||str1.startsWith(QString::fromUtf8("测量重复性")))////过滤测量重复性
         {
               continue;
         }
 
         rowCount = ui->EM_BASICERR_TblWidget->rowCount();
-       // qDebug()<<QStrowCount<<j;
         ui->EM_BASICERR_TblWidget->insertRow(rowCount);//ID
         ui->EM_BASICERR_TblWidget->setItem(rowCount,0, new QTableWidgetItem(my_MT_DETECT_TASK.DETECT_TASK_NO));//检定任务单
         ui->EM_BASICERR_TblWidget->setItem(rowCount,1, new QTableWidgetItem(my_MT_DETECT_TASK.EQUIP_CATEG));                 //设备类别
         ui->EM_BASICERR_TblWidget->setItem(rowCount,2, new QTableWidgetItem(my_MT_DETECT_TASK.SYS_NO));                 //系统编号
         ui->EM_BASICERR_TblWidget->setItem(rowCount,3, new QTableWidgetItem(my_CONC_CODE.DETECT_EQUIP_NO));          //检定线台编号
-        ui->EM_BASICERR_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                 //检定单元编号
+        ui->EM_BASICERR_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));
         ui->EM_BASICERR_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                 //表位编号
         ui->EM_BASICERR_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));                 //设备条形码
-       // ui->EM_BASICERR_TblWidget->setItem(j,7, new QTableWidgetItem(currentTime()));                 //检定时间
 
-      //  ui->EM_BASICERR_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));                 //第几次检定(序号)
         ui->EM_BASICERR_TblWidget->setItem(rowCount,9, new QTableWidgetItem(QString::number(j)));  //序号
-     //   ui->EM_BASICERR_TblWidget->setItem(rowCount,10,new QTableWidgetItem("1"));                //见附录I：有效标志 0：否、1：是
 
-
-        ui->EM_BASICERR_TblWidget->setItem(rowCount,15,new QTableWidgetItem("50Hz"));     //频率代码 //PLDM_index("50")
+        ui->EM_BASICERR_TblWidget->setItem(rowCount,15,new QTableWidgetItem("50Hz"));
         ui->EM_BASICERR_TblWidget->setItem(rowCount,23,new QTableWidgetItem(currentTime()));            //检定线写入时间
-    //    ui->EM_BASICERR_TblWidget->setItem(rowCount,24,new QTableWidgetItem("0"));                //见附录I：处理标记(0：未处理（默认）、1：处理中、2：已处理)
         ui->EM_BASICERR_TblWidget->setItem(rowCount,25,new QTableWidgetItem(currentTime()));             //处理时间
-
 
         str1=QString::fromLocal8Bit(sqlTemp[j][4]);
         str2=str1.left(str1.indexOf("_",3));
@@ -284,6 +302,11 @@ int MainWindow:: get_BASICERR_checkError(QString strID)
 
         str2=str1.left(str1.indexOf("_"));
         str1.remove(0,str1.indexOf("_")+1);
+        if(str2.isEmpty())
+        {
+            str2 = "/";
+        }
+
         ui->EM_BASICERR_TblWidget->setItem(rowCount,13,new QTableWidgetItem(str2));  //电流负载FZDLDM_index(str2)
 
         str2=str1.left(str1.indexOf("_"));
@@ -294,6 +317,11 @@ int MainWindow:: get_BASICERR_checkError(QString strID)
         }
         str1.remove(0,str1.indexOf("_")+1);
 
+        if(str2.isEmpty())
+        {
+            str2 = "/";
+        }
+
         ui->EM_BASICERR_TblWidget->setItem(rowCount,16,new QTableWidgetItem(str2));  //功率因素GLYSDM_index(str2)
 
         str1 = QString::fromLocal8Bit(sqlTemp[j][1]);
@@ -301,10 +329,23 @@ int MainWindow:: get_BASICERR_checkError(QString strID)
         str1.remove(QString::fromUtf8("\r"));
         str1.remove(QString::fromUtf8("\n"));
         ui->EM_BASICERR_TblWidget->setItem(rowCount,18,new QTableWidgetItem(QString::number(str1.count("|")+1)));  //采样次数
+
         ui->EM_BASICERR_TblWidget->setItem(rowCount,19,new QTableWidgetItem(str1));  //实际误差
 
-        ui->EM_BASICERR_TblWidget->setItem(rowCount,20,new QTableWidgetItem(QString::fromLocal8Bit(sqlTemp[j][2])));  //误差平均值
-        ui->EM_BASICERR_TblWidget->setItem(rowCount,21,new QTableWidgetItem(QString::fromLocal8Bit(sqlTemp[j][3])));  //误差化整值
+        str2 = QString::fromLocal8Bit(sqlTemp[j][2]);
+        if(str2.isEmpty())
+        {
+            str2 ="/";
+        }
+        ui->EM_BASICERR_TblWidget->setItem(rowCount,20,new QTableWidgetItem(str2));  //误差平均值
+
+        str2 = QString::fromLocal8Bit(sqlTemp[j][3]);
+        if(str2.isEmpty())
+        {
+            str2 ="/";
+        }
+
+        ui->EM_BASICERR_TblWidget->setItem(rowCount,21,new QTableWidgetItem(str2));  //误差化整值
 
         str1=QString::fromLocal8Bit(sqlTemp[j][6]);
 
@@ -324,8 +365,6 @@ int MainWindow:: get_BASICERR_checkError(QString strID)
         }
 
     }
-
-    return 0;
 }
 #if 1
 int MainWindow:: get_DETECT_RSLT_checkParameter(QString strID)
@@ -354,7 +393,10 @@ int MainWindow:: get_DETECT_RSLT_checkParameter(QString strID)
         str2 = QString::fromLocal8Bit(sqlTemp[0][10]);
 
         str3=get_itemFromSql(str2,QString::fromUtf8("fTemperature"),QString::fromUtf8("温度"));
-        ui->EM_RSLT_TabWidget->setItem(rowCount,5,new QTableWidgetItem(str3));
+        ui->EM_RSLT_TabWidget->setItem(rowCount,5,new QTableWidgetItem(str3.simplified()));
+
+//        qDebug()<<str3; //   strRe.simplified();
+//        qDebug()<<str3.simplified();
 
         str3=get_itemFromSql(str2,QString::fromUtf8("fHumidity"),QString::fromUtf8("相对湿度"));
         ui->EM_RSLT_TabWidget->setItem(rowCount,6,new QTableWidgetItem(str3));
@@ -380,16 +422,19 @@ int MainWindow:: get_DETECT_RSLT_checkParameter(QString strID)
 
 #endif
 
+void MainWindow:: clear_sqlTemp()
+{
+    memset(sqlTemp, 0,sizeof(sqlTemp));
+   // qDebug()<< QString::number(sizeof(sqlTemp));
+}
+
 int MainWindow::sql_exec(const char *sql)
 {
     char *zErr;
     int intResult;
     sqlite_tableCal=0;
-    memset(sqlTemp, 0,sizeof(1000*1000));
     intResult = sqlite3_exec(localsqliteDB,sql,callback,NULL,&zErr);
-
     LocalSqlSum = sqlite_tableCal;
-
     return intResult;
 
 }

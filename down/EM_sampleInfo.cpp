@@ -68,7 +68,7 @@ void  MainWindow:: save_sampleInfo()
 
     for(int i=0;i<rowCount;i++)
     {
-        strExec =  QString("INSERT INTO sampleInfo values( '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20')")
+        strExec =  QString("INSERT INTO sampleInfo values( '%1','%2','%3','%4','%5','%6','%7','%8','%9','%10','%11','%12','%13','%14','%15','%16','%17','%18','%19','%20','%21')")
                     .arg(ui->EM_sampleInfo_TblWidget->item(i,0)->text())//bar_code;
                     .arg(ui->EM_sampleInfo_TblWidget->item(i,1)->text())
                     .arg(ui->EM_sampleInfo_TblWidget->item(i,2)->text())
@@ -88,7 +88,8 @@ void  MainWindow:: save_sampleInfo()
                     .arg(ui->EM_sampleInfo_TblWidget->item(i,16)->text())
                     .arg(ui->EM_sampleInfo_TblWidget->item(i,17)->text())
                     .arg(ui->EM_sampleInfo_TblWidget->item(i,18)->text())
-                    .arg(ui->EM_sampleInfo_TblWidget->item(i,19)->text());
+                    .arg(ui->EM_sampleInfo_TblWidget->item(i,19)->text())
+                    .arg("0");
 
         byteArray = strExec.toLocal8Bit();
         intResult= sql_exec(byteArray.data());

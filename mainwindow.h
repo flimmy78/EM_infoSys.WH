@@ -22,12 +22,10 @@ public:
     ~MainWindow();
     void  showInformationBox(QString strTemp);
     void  remove_TblWdiget_Row(QTableWidget *TblWiget);
-
-    //orical
+    bool  avoid_readVoidErr_TblWdiget(QTableWidget *TblWiget);
     void  init_TblWidget();
-
     QString  get_DB_FileName();
-    //mds
+
     void  writeIni(QString path,QString arg);
     bool  create_localDatabase();
     void  init_localDatabase();
@@ -41,18 +39,18 @@ public:
     void  open_localSql();
     void  set_localSqlPath();
 
+    void  clear_sqlTemp();
     int   sql_exec(const char *);
     void  get_checkParameter_detectTaskNo();
+    QString get_isUpdate_from_sampleInfo(QString  sampleNo);
     bool  get_ID_from_checkParameter(QString  sampleNo,QString ID);
     bool  SqlTempToQstring(QString strExec,int ItemCount);
 
-    int get_BASICERR_checkParameter(QString strID);
-    int get_BASICERR_checkError(QString strID);
+    void get_BASICERR_checkParameter(QString strID);
+    void get_BASICERR_checkError(QString strID);
+    void get_MEASURE_REPEAT_checkError(QString strID);
+    void get_MEASURE_REPEAT_checkParameter(QString strID);
 
-
-
-    int get_MEASURE_REPEAT_checkError(QString strID);
-    int  get_MEASURE_REPEAT_checkParameter(QString strID);
     QString indexOfTable(QString strSou,QString strKey);
     QString get_itemFromSql(QString strSou,QString strKey,QString strName);
     QString indexOfotherText(QString strSou,QString strKey);
@@ -84,10 +82,6 @@ public:
     void save_MT_DETECT_OUT_EQUIP();
 
     void getDataFromLocalSqlToTblWidget(QString strExec,QTableWidget * tblWidget,int columnCount);
-
-    bool update_getDETedTestData(QString SYS_NO,QString DETECT_TASK_NO);
-    bool update_setResults(QString SYS_NO,QString DETECT_TASK_NO,QString VALID_QTY);
-
     bool sqlQueryExec(QString tabelName,QString BarCode,QString strExec,QString strImfo);
     bool delete_destSql_tableItem(QString tabelName,QString barCode);
 
@@ -126,6 +120,7 @@ public:
 
     bool  open_xml(QString filename);
     bool  search_domNode(QString,const QDomDocument );
+    bool  MU_creat_xml();
 
     void   addNode_sample(QString nodeName,QDomDocument &domDoc);
     void   addNode_MEASURE_REPEAT(QString nodeName, QDomDocument &domDoc);
@@ -165,14 +160,15 @@ private slots:
     void on_EM_options_setArg_Oracle_PsBtn_clicked();
 
     void on_EM_options_detectEquipNo_PsBtn_clicked();
+
     void on_EM_save_XML_PsBtn_clicked();
 
     void on_EM_down_sampleInfo_PsBtn_clicked();
+
     void on_EM_update_results_PsBtn_clicked();
 
-    void on_EM_creat_xml_PsBtn_clicked();
-
     void on_EM_update_searchBarCode_LnEdit_textChanged(const QString &arg1);
+
 
 private:
     Ui::MainWindow *ui;
@@ -189,11 +185,13 @@ private:
     STRUCT_CONC_CODE           my_CONC_CODE;
     STRUCT_DOWN_INFO           my_DOWN_INFO;
 
-    QDomDocument g_domDoc;
+    QDomDocument g_domDoc;   //导入的数据
     QMap<QString,QString>  g_map;
 public:
 //    char localSqlArrayTemp[1000][1000];
     int  LocalSqlSum;//每次执行sql_exec所产生的数目
+
+    QString strUpdatePath,strDownPath;
 };
 
 #endif // MAINWINDOW_H

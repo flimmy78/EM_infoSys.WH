@@ -9,15 +9,25 @@
 int main(int argc, char *argv[])
 {
 
-#if 1
+
     QApplication a(argc, argv);
     MainWindow w;
+
+#if 0
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));   //linux 用GBK  GB2312
+    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));       //UTF-8 //GBK //GB2312
+    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
+#endif
+
+#if 1
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("GBK"));   //linux 用GBK  GB2312
     QTextCodec::setCodecForTr(QTextCodec::codecForName("GBK"));       //UTF-8 //GBK //GB2312
     QTextCodec::setCodecForCStrings(QTextCodec::codecForName("GBK"));
+#endif
+
     w.show();
     
     return a.exec();
-#endif
+
 
 }

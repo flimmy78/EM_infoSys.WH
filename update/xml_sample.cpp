@@ -9,23 +9,14 @@
 void MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
 {
     QDomElement  domElement,sampleElement,projectsElement;
-
     int rowCount,columnCount;
+
     rowCount = ui->EM_RSLT_TabWidget->rowCount();
     columnCount = ui->EM_RSLT_TabWidget->columnCount();
 
-    if(rowCount <= 0)
+    if(!avoid_readVoidErr_TblWdiget(ui->EM_RSLT_TabWidget))
     {
-        return  ;
-    }
-
-    for(int j=0;j<rowCount;j++)
-    {
-        for(int i=0;i<columnCount;i++)
-        {
-            if(!ui->EM_RSLT_TabWidget->item(j,i))
-            ui->EM_RSLT_TabWidget->setItem(j,i, new QTableWidgetItem(""));
-        }
+        return ;
     }
 
     sampleElement = domDoc.createElement( nodeName );
@@ -35,8 +26,7 @@ void MainWindow::addNode_sample(QString nodeName, QDomDocument &domDoc)
     domElement = domDoc.createElement("projects");
     projectsElement.appendChild( domElement );
 
-    //qDebug()<<domDoc.toString();
-    for(int i =0;i<rowCount;i++)//
+    for(int i =0;i<rowCount;i++)
     {
     #if 1
         sampleElement.setAttribute("sampleNo",ui->EM_RSLT_TabWidget->item(i,0)->text());

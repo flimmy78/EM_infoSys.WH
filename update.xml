@@ -1,588 +1,588 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <samples>
-    <sample metClass="" secondCurr="5A&#xd;" checkClass="0.5s级&#xd;" sampleNo="3730001000000133259896" checkWet="58&#xd;" testMan="" pf="" metVarClass="" checkRate="50Hz" checkTemp="20.3&#xd;" checkDate="2015-09-16" checkMan="" metConst="20000&#xd;" metVarConst="20000&#xd;" checkCurr="" factory="深圳市科陆电子科技股份有限公司&#xd;" firstCurr="" metPhase="三相四线&#xd;" checkVolt="" securityFactor="" redSeal="" checkResult="1" ratedLoad="">
+    <sample metClass="" secondCurr="5A&#xd;" checkClass="0.5s级&#xd;" sampleNo="4230009000000001510980" checkWet="58&#xd;" testMan="" pf="" metVarClass="" checkRate="50Hz" checkTemp="20.3&#xd;" checkDate="2015-09-10" checkMan="" metConst="20000&#xd;" metVarConst="20000&#xd;" checkCurr="" factory="深圳市科陆电子科技股份有限公司&#xd;" firstCurr="" metPhase="三相四线&#xd;" checkVolt="" securityFactor="" redSeal="" checkResult="1" ratedLoad="">
         <projects>
-            <project projectName="外观试验" testResult="1" sampleNo="3730001000000133259896">
-                <testData conclusion="1" volt="" curr="" testPhase="" refTime="2015-09-16" freq="" PF="" strSampleID="" testGroup=""/>
+            <project projectName="外观试验" testResult="1" sampleNo="4230009000000001510980">
+                <testData conclusion="1" volt="" curr="" testPhase="" refTime="2015-09-10" freq="" PF="" strSampleID="" testGroup=""/>
             </project>
-            <project projectName="基本误差" testResult="1" sampleNo="3730001000000133259896">
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001644</error>
-                    <error>-0.001041</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>0.000140</error>
-                    <error>0.000736</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.000881</error>
-                    <error>-0.000873</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.01Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001103</error>
-                    <error>-0.000944</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001117</error>
-                    <error>-0.001117</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001028</error>
-                    <error>-0.000533</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.000960</error>
-                    <error>-0.000270</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001093</error>
-                    <error>-0.001083</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>-0.000539</error>
-                    <error>-0.001135</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>0.001142</error>
-                    <error>-0.001142</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>-0.001131</error>
-                    <error>-0.001071</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>-0.000973</error>
-                    <error>-0.000973</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.001571</error>
-                    <error>-0.001571</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.001380</error>
-                    <error>0.001028</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.000643</error>
-                    <error>-0.000893</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>0.000819</error>
-                    <error>0.000828</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.001390</error>
-                    <error>0.000514</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.000905</error>
-                    <error>-0.000905</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.001009</error>
-                    <error>-0.001009</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.000581</error>
-                    <error>-0.000095</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.001119</error>
-                    <error>-0.001119</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.001599</error>
-                    <error>-0.001609</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>0.001285</error>
-                    <error>-0.001609</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.000916</error>
-                    <error>-0.000868</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.001028</error>
-                    <error>-0.001028</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.000619</error>
-                    <error>-0.000619</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.001143</error>
-                    <error>-0.001143</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.001514</error>
-                    <error>0.000381</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.001723</error>
-                    <error>-0.001714</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.000857</error>
-                    <error>-0.000571</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001206</error>
-                    <error>-0.001206</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001206</error>
-                    <error>-0.001206</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001008</error>
-                    <error>-0.001159</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.01Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001232</error>
-                    <error>-0.001123</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001802</error>
-                    <error>-0.001809</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001536</error>
-                    <error>0.000368</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.000516</error>
-                    <error>-0.000365</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001252</error>
-                    <error>-0.001103</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>-0.000619</error>
-                    <error>-0.001214</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>0.001658</error>
-                    <error>-0.001222</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>-0.001200</error>
-                    <error>-0.001200</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
-                    <error>-0.001035</error>
-                    <error>-0.001035</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>0.001114</error>
-                    <error>-0.001637</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.001152</error>
-                    <error>-0.001152</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.000952</error>
-                    <error>-0.001000</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>0.000257</error>
-                    <error>0.000771</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>0.000457</error>
-                    <error>-0.001942</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.000857</error>
-                    <error>-0.000809</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.001057</error>
-                    <error>-0.001057</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.003046</error>
-                    <error>-0.000143</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.001166</error>
-                    <error>-0.001155</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>0.000371</error>
-                    <error>-0.002047</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.001742</error>
-                    <error>-0.001238</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.000643</error>
-                    <error>-0.000702</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.001066</error>
-                    <error>-0.001057</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.000647</error>
-                    <error>-0.000638</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.001178</error>
-                    <error>-0.001178</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>0.000257</error>
-                    <error>-0.001637</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.001447</error>
-                    <error>-0.001942</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.000654</error>
-                    <error>-0.000654</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>0.001663</error>
-                    <error>-0.001828</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001828</error>
-                    <error>-0.002431</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.002087</error>
-                    <error>-0.002079</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.01Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001143</error>
-                    <error>-0.001074</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>0.001650</error>
-                    <error>-0.001231</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>0.000349</error>
-                    <error>-0.002063</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.002166</error>
-                    <error>-0.001587</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.005538</error>
-                    <error>-0.005538</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>-0.001212</error>
-                    <error>-0.001225</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>0.000850</error>
+            <project projectName="基本误差" testResult="1" sampleNo="4230009000000001510980">
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000958</error>
+                    <error>-0.001574</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>0.000844</error>
                     <error>-0.002044</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>-0.002166</error>
-                    <error>-0.001436</error>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000619</error>
+                    <error>-0.000611</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>-0.005538</error>
-                    <error>-0.005531</error>
+                <testData conclusion="1" volt="100%Un" curr="0.01Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000636</error>
+                    <error>-0.000795</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.25L" strSampleID="" testGroup="L">
-                    <error>-0.003300</error>
-                    <error>-0.001491</error>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>0.001948</error>
+                    <error>-0.000933</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.25C" strSampleID="" testGroup="L">
-                    <error>-0.001504</error>
-                    <error>-0.001130</error>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.000267</error>
+                    <error>-0.000260</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.000029</error>
-                    <error>0.000543</error>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>0.000063</error>
+                    <error>-0.000658</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.000743</error>
-                    <error>-0.000248</error>
+                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.000725</error>
+                    <error>-0.000735</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.002297</error>
-                    <error>-0.002297</error>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.000317</error>
+                    <error>-0.000912</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.002161</error>
-                    <error>-0.002152</error>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.001515</error>
+                    <error>0.001968</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>0.000447</error>
-                    <error>-0.001952</error>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.000774</error>
+                    <error>0.000377</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.001928</error>
-                    <error>-0.001881</error>
+                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.000608</error>
+                    <error>-0.000849</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
-                    <error>0.001257</error>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>0.001466</error>
+                    <error>-0.001285</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>0.001380</error>
+                    <error>-0.000514</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.000524</error>
+                    <error>-0.000536</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.000704</error>
+                    <error>-0.000695</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>0.000885</error>
+                    <error>-0.001523</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.000488</error>
+                    <error>-0.000488</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>0.002037</error>
+                    <error>-0.000704</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>0.000286</error>
+                    <error>-0.000219</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.000702</error>
+                    <error>-0.000655</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>0.001171</error>
+                    <error>0.001180</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.000724</error>
+                    <error>0.001171</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.000452</error>
+                    <error>-0.000476</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>0.002028</error>
+                    <error>-0.000724</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>0.000276</error>
+                    <error>-0.000228</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000417</error>
+                    <error>-0.000702</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.001637</error>
                     <error>0.000762</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
-                    <error>0.000457</error>
-                    <error>-0.001952</error>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.000828</error>
+                    <error>-0.000828</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
-                    <error>-0.002047</error>
-                    <error>-0.002059</error>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="0" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.000190</error>
+                    <error>-0.000131</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.001066</error>
-                    <error>-0.001066</error>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.001523</error>
+                    <error>-0.000920</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.000647</error>
-                    <error>-0.000647</error>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000920</error>
+                    <error>-0.000920</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.002071</error>
-                    <error>-0.002071</error>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000571</error>
+                    <error>-0.000722</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.001542</error>
-                    <error>-0.002056</error>
+                <testData conclusion="1" volt="100%Un" curr="0.01Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000636</error>
+                    <error>-0.000755</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>0.000152</error>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.000914</error>
+                    <error>-0.000920</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.001136</error>
+                    <error>-0.001136</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.000793</error>
+                    <error>-0.000793</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.000656</error>
+                    <error>-0.000805</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.000889</error>
+                    <error>-0.000294</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.000889</error>
+                    <error>-0.001491</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.000764</error>
+                    <error>-0.000516</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.8C" strSampleID="" testGroup="L">
+                    <error>-0.000589</error>
+                    <error>-0.000589</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.001266</error>
+                    <error>0.001485</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.000704</error>
+                    <error>-0.000695</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.000464</error>
+                    <error>-0.000500</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>0.001200</error>
+                    <error>0.001200</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.001504</error>
+                    <error>0.001400</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.000369</error>
+                    <error>-0.000321</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.000685</error>
+                    <error>-0.000676</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.000190</error>
+                    <error>-0.000200</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.000667</error>
+                    <error>-0.000667</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>0.000714</error>
+                    <error>0.001314</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.001285</error>
+                    <error>-0.000790</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.000381</error>
+                    <error>-0.000381</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000695</error>
+                    <error>-0.000685</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000209</error>
+                    <error>-0.000200</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000702</error>
+                    <error>-0.000631</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>0.001180</error>
+                    <error>-0.001219</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>0.001380</error>
+                    <error>-0.001028</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="1" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.000428</error>
+                    <error>-0.000428</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>0.001390</error>
+                    <error>-0.000984</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.001504</error>
+                    <error>0.001377</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.001603</error>
+                    <error>-0.001754</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.01Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000408</error>
+                    <error>-0.000606</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.000292</error>
+                    <error>-0.000292</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.001104</error>
+                    <error>0.000800</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.001095</error>
+                    <error>-0.000944</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.005031</error>
+                    <error>-0.005031</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>0.002602</error>
+                    <error>-0.000279</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>-0.001104</error>
+                    <error>0.000812</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>-0.001809</error>
+                    <error>-0.000944</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>-0.005031</error>
+                    <error>-0.005102</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.25L" strSampleID="" testGroup="L">
+                    <error>-0.000920</error>
+                    <error>-0.002729</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.25C" strSampleID="" testGroup="L">
+                    <error>-0.000546</error>
+                    <error>-0.000920</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>0.000933</error>
+                    <error>-0.002390</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.000295</error>
+                    <error>-0.000286</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.001833</error>
+                    <error>-0.001785</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>0.001219</error>
+                    <error>0.001219</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.001485</error>
+                    <error>0.000914</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.001428</error>
+                    <error>-0.001178</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
+                    <error>-0.000695</error>
+                    <error>-0.001200</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
+                    <error>-0.001000</error>
+                    <error>0.000895</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
+                    <error>-0.001535</error>
+                    <error>-0.001571</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.000704</error>
+                    <error>-0.000704</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>0.000286</error>
+                    <error>-0.000219</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.001559</error>
+                    <error>-0.001559</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>0.000771</error>
+                    <error>-0.001133</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.001323</error>
+                    <error>-0.001828</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.000988</error>
+                    <error>-0.000988</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
+                    <error>-0.000704</error>
+                    <error>-0.000714</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
+                    <error>0.001380</error>
+                    <error>0.000876</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
+                    <error>-0.001630</error>
+                    <error>-0.001630</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000133</error>
+                    <error>-0.000704</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000209</error>
+                    <error>-0.000209</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.001583</error>
+                    <error>-0.001285</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.000200</error>
+                    <error>-0.000695</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.001552</error>
+                    <error>-0.001000</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.001606</error>
+                    <error>-0.001380</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
+                    <error>0.001304</error>
+                    <error>-0.001171</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
+                    <error>0.001114</error>
+                    <error>0.001104</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
+                    <error>-0.001083</error>
+                    <error>-0.000845</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.001479</error>
+                    <error>-0.000876</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.002551</error>
+                    <error>0.000330</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.001571</error>
+                    <error>-0.001571</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
+                    <error>-0.000695</error>
+                    <error>-0.000974</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.001479</error>
+                    <error>-0.000876</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>0.001200</error>
+                    <error>-0.001206</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.001254</error>
+                    <error>-0.001976</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
+                    <error>-0.005054</error>
+                    <error>-0.005046</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>-0.001498</error>
+                    <error>-0.001491</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>0.001193</error>
+                    <error>0.001688</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>-0.001278</error>
+                    <error>-0.001270</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
+                    <error>-0.005062</error>
+                    <error>-0.005062</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.25L" strSampleID="" testGroup="L">
+                    <error>-0.000958</error>
+                    <error>-0.002754</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.25C" strSampleID="" testGroup="L">
+                    <error>-0.000958</error>
+                    <error>-0.002386</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.000152</error>
+                    <error>-0.000152</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>0.001371</error>
+                    <error>-0.001533</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
+                    <error>-0.001595</error>
+                    <error>-0.001595</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.000724</error>
+                    <error>-0.001228</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>0.000876</error>
+                    <error>0.000876</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
+                    <error>-0.001535</error>
+                    <error>-0.001595</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
+                    <error>-0.001219</error>
+                    <error>-0.001219</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
+                    <error>0.000876</error>
+                    <error>-0.001523</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
+                    <error>-0.001393</error>
+                    <error>-0.001143</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>0.002056</error>
+                    <error>-0.000695</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.000209</error>
+                    <error>0.000295</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
+                    <error>-0.001524</error>
+                    <error>-0.001583</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.002199</error>
+                    <error>-0.002323</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.000305</error>
+                    <error>-0.000800</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
+                    <error>-0.001250</error>
+                    <error>-0.001488</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
+                    <error>0.001304</error>
+                    <error>0.001304</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
+                    <error>-0.001438</error>
+                    <error>-0.001304</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
+                    <error>-0.000988</error>
+                    <error>-0.001250</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000704</error>
+                    <error>-0.000695</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.000219</error>
+                    <error>-0.000228</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
+                    <error>-0.001309</error>
+                    <error>-0.001607</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.001637</error>
+                    <error>0.001276</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>0.001076</error>
+                    <error>0.001076</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
+                    <error>-0.000845</error>
+                    <error>-0.000833</error>
+                </testData>
+                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
+                    <error>-0.001752</error>
                     <error>-0.001742</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.001452</error>
-                    <error>-0.001464</error>
+                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
+                    <error>-0.000333</error>
+                    <error>-0.000333</error>
                 </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
-                    <error>-0.001647</error>
-                    <error>-0.001647</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
-                    <error>-0.001952</error>
-                    <error>-0.001952</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
-                    <error>-0.002117</error>
-                    <error>-0.002117</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.001066</error>
-                    <error>-0.001066</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.000647</error>
-                    <error>-0.000647</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.001833</error>
-                    <error>-0.002071</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.001161</error>
-                    <error>-0.000647</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.001961</error>
-                    <error>-0.001457</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.001868</error>
-                    <error>-0.001879</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
-                    <error>-0.002056</error>
-                    <error>-0.002056</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
-                    <error>-0.001752</error>
-                    <error>-0.001723</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="2" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
-                    <error>-0.001595</error>
-                    <error>-0.001345</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001231</error>
-                    <error>-0.001238</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.002907</error>
-                    <error>-0.000019</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.002238</error>
-                    <error>-0.002087</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.02Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="L">
-                    <error>-0.001093</error>
-                    <error>-0.001222</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001834</error>
-                    <error>0.001047</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001657</error>
-                    <error>-0.001657</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.001619</error>
-                    <error>-0.002484</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="L">
-                    <error>-0.005538</error>
-                    <error>-0.005538</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>-0.001847</error>
-                    <error>0.001047</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>-0.001657</error>
-                    <error>-0.001663</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>-0.001770</error>
-                    <error>-0.001762</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="L">
-                    <error>-0.005618</error>
-                    <error>-0.005181</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.25L" strSampleID="" testGroup="L">
-                    <error>-0.001136</error>
-                    <error>-0.001504</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.25C" strSampleID="" testGroup="L">
-                    <error>-0.001504</error>
-                    <error>-0.002926</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.001076</error>
-                    <error>-0.000505</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>0.000447</error>
-                    <error>-0.001447</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="A">
-                    <error>-0.002309</error>
-                    <error>-0.002309</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.001647</error>
-                    <error>-0.001657</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.001952</error>
-                    <error>-0.002466</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="A">
-                    <error>-0.002071</error>
-                    <error>-0.001821</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
-                    <error>-0.001666</error>
-                    <error>-0.001657</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
-                    <error>-0.001961</error>
-                    <error>0.000447</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="A">
-                    <error>-0.001690</error>
-                    <error>-0.001893</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.001076</error>
-                    <error>-0.001066</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.003066</error>
-                    <error>-0.000647</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="B">
-                    <error>-0.001845</error>
-                    <error>-0.002071</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.000257</error>
-                    <error>-0.002666</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.001266</error>
-                    <error>-0.001257</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="B">
-                    <error>-0.001988</error>
-                    <error>-0.002000</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
-                    <error>-0.002056</error>
-                    <error>0.000847</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
-                    <error>-0.002256</error>
-                    <error>-0.002256</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="B">
-                    <error>-0.001762</error>
-                    <error>-0.001512</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.001647</error>
-                    <error>-0.001076</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.000657</error>
-                    <error>-0.000590</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.05Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="1.0" strSampleID="" testGroup="C">
-                    <error>-0.002035</error>
-                    <error>-0.002083</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.002056</error>
-                    <error>-0.002066</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>0.000152</error>
-                    <error>0.000657</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5L" strSampleID="" testGroup="C">
-                    <error>-0.001595</error>
-                    <error>-0.001595</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Imax" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
-                    <error>-0.000248</error>
-                    <error>-0.000257</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
-                    <error>-0.000752</error>
-                    <error>-0.001257</error>
-                </testData>
-                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-16" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
-                    <error>-0.001655</error>
-                    <error>-0.001655</error>
+                <testData conclusion="1" volt="100%Un" curr="0.1Ib" testPhase="3" refTime="2015-09-10" freq="50Hz" PF="0.5C" strSampleID="" testGroup="C">
+                    <error>-0.001393</error>
+                    <error>-0.001381</error>
                 </testData>
             </project>
-            <project projectName="潜动试验" testResult="1" sampleNo="3730001000000133259896">
-                <testData conclusion="1" volt="115%Un" curr="" testPhase="" refTime="2015-09-16" freq="" PF="" strSampleID="" testGroup=""/>
+            <project projectName="潜动试验" testResult="1" sampleNo="4230009000000001510980">
+                <testData conclusion="1" volt="115%Un" curr="" testPhase="" refTime="2015-09-10" freq="" PF="" strSampleID="" testGroup=""/>
             </project>
-            <project projectName="启动试验" testResult="1" sampleNo="3730001000000133259896">
-                <testData conclusion="1" volt="" curr="" testPhase="" refTime="2015-09-16" freq="" PF="" strSampleID="" testGroup=""/>
+            <project projectName="启动试验" testResult="1" sampleNo="4230009000000001510980">
+                <testData conclusion="1" volt="" curr="" testPhase="" refTime="2015-09-10" freq="" PF="" strSampleID="" testGroup=""/>
             </project>
-            <project projectName="影响量试验" testResult="1" sampleNo="3730001000000133259896">
-                <testData conclusion="1" volt="" curr="" testPhase="" refTime="2015-09-16" freq="" PF="" strSampleID="" testGroup=""/>
+            <project projectName="影响量试验" testResult="1" sampleNo="4230009000000001510980">
+                <testData conclusion="1" volt="" curr="" testPhase="" refTime="2015-09-10" freq="" PF="" strSampleID="" testGroup=""/>
             </project>
         </projects>
     </sample>

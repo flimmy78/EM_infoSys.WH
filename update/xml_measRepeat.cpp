@@ -7,16 +7,16 @@
 bool MainWindow::fill_MEASURE_REPEAT(QString ID)
 {
     get_MEASURE_REPEAT_checkError("'"+ID+"'");
-    for(int i =0;i<20000;i++)
-    {
-        //延时
-    }
-    get_MEASURE_REPEAT_checkParameter("'"+ID+"'");
+//    for(int i =0;i<20000;i++)
+//    {
+//        //延时
+//    }
+//    get_MEASURE_REPEAT_checkParameter("'"+ID+"'");
     return true;
 }
 
 //获取checkParameter相关内容
-int MainWindow:: get_MEASURE_REPEAT_checkParameter(QString strID)
+void MainWindow:: get_MEASURE_REPEAT_checkParameter(QString strID)
 {
     QString strExec;
     int rowCount;
@@ -25,7 +25,7 @@ int MainWindow:: get_MEASURE_REPEAT_checkParameter(QString strID)
 
     if(!SqlTempToQstring(strExec,11))
     {
-        return 0;
+        return ;
     }
 
     rowCount =ui->EM_MEASURE_REPEAT_TblWidget->rowCount();
@@ -38,56 +38,78 @@ int MainWindow:: get_MEASURE_REPEAT_checkParameter(QString strID)
         }
     }
 
-    return 0;
 }
 
 //测量重复性
 void MainWindow::addNode_MEASURE_REPEAT(QString nodeName, QDomDocument &domDoc)
 {
-    QDomElement  domElement,projectsElement,projectElement;
-
-    int rowCount,columnCount;
+    QDomElement  domElement,projectsElement,projectElement,testDataElement;
+    QString str1 ,str2;
+    QDomText textNode;
+    int index, rowCount,columnCount,simplingCount;
     rowCount = ui->EM_MEASURE_REPEAT_TblWidget->rowCount();
     columnCount = ui->EM_MEASURE_REPEAT_TblWidget->columnCount();
 
-    if(rowCount <= 0)
+    if(!avoid_readVoidErr_TblWdiget(ui->EM_MEASURE_REPEAT_TblWidget))
     {
         return ;
     }
 
-    for(int j=0;j<rowCount;j++)
-    {
-        for(int i=0;i<columnCount;i++)
-        {
-            if(!ui->EM_MEASURE_REPEAT_TblWidget->item(j,i))
-            ui->EM_MEASURE_REPEAT_TblWidget->setItem(j,i, new QTableWidgetItem(""));
-        }
-    }
-
     projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
     projectElement = domDoc.createElement(nodeName);
-    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectNo","PJ0197");
     projectElement.setAttribute("projectName",QString::fromUtf8("测量重复性"));
-//    projectElement.setAttribute("testResult",my_CONC_CODE.MEASURE_REPEAT);
+    projectElement.setAttribute("result",my_CONC_CODE.MEASURE_REPEAT);
     projectsElement.appendChild( projectElement );
 
-    for(int i =0;i<rowCount;i++)//
+    for(int i =0;i<rowCount;i++)
     {
-        projectElement.setAttribute("testResult",ui->EM_MEASURE_REPEAT_TblWidget->item(i,17)->text());
+        testDataElement  = domDoc.createElement("testData");
+        projectElement.appendChild(testDataElement);
 
-        domElement = domDoc.createElement("testData");
-        projectElement.appendChild( domElement );
+        testDataElement.setAttribute("testNum","0");
+        testDataElement.setAttribute("testPhase",ui->EM_MEASURE_REPEAT_TblWidget->item(i,12)->text());
+        testDataElement.setAttribute("testGroup","");
+        testDataElement.setAttribute("freq","");
+        testDataElement.setAttribute("PF",ui->EM_MEASURE_REPEAT_TblWidget->item(i,14)->text());
+        testDataElement.setAttribute("volt","");
+        testDataElement.setAttribute("curr",ui->EM_MEASURE_REPEAT_TblWidget->item(i,13)->text());
+        testDataElement.setAttribute("conclusion",ui->EM_MEASURE_REPEAT_TblWidget->item(i,20)->text());
+        testDataElement.setAttribute("refTime",ui->EM_MEASURE_REPEAT_TblWidget->item(i,7)->text());
+        testDataElement.setAttribute("strSampleID","");
+        testDataElement.setAttribute("stdErr",ui->EM_MEASURE_REPEAT_TblWidget->item(i,9)->text());//标准偏差
+        testDataElement.setAttribute("intErr",ui->EM_MEASURE_REPEAT_TblWidget->item(i,8)->text());//化整误差
 
-        domElement.setAttribute("testPhase","");
-        domElement.setAttribute("testGroup","");
-        domElement.setAttribute("freq","");
-        domElement.setAttribute("PF","");
-        domElement.setAttribute("volt","");
+        str1= ui->EM_MEASURE_REPEAT_TblWidget->item(i,10)->text(); //误差次数
 
-        domElement.setAttribute("curr","");
-        domElement.setAttribute("conclusion",ui->EM_MEASURE_REPEAT_TblWidget->item(i,17)->text());
-        domElement.setAttribute("refTime",ui->EM_MEASURE_REPEAT_TblWidget->item(i,7)->text());
-        domElement.setAttribute("strSampleID","");
+        simplingCount = str1.count("|")+1;
+        for(int j =0;j<simplingCount;j++)
+        {
+            index=str1.indexOf("|");
+
+            if(index>0)
+            {
+               str2 = str1.left(index);
+            }
+            else
+            {
+               str2 = str1;
+            }
+
+            str1.remove(0,(index+1));
+            textNode = domDoc.createTextNode(str2);
+            domElement = domDoc.createElement("error");
+            domElement.appendChild(textNode);
+            testDataElement.appendChild( domElement );
+        }
+
+        for(int j =simplingCount;j<5;j++)//默认至少5个,小于则补充为'/'
+        {
+            QDomText textNodeTemp = domDoc.createTextNode("/");
+            QDomElement DomElementTemp = domDoc.createElement("error");
+            DomElementTemp.appendChild(textNodeTemp);
+            testDataElement.appendChild( DomElementTemp );
+        }
     }
 
 }

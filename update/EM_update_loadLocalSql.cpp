@@ -8,27 +8,27 @@
 //加载当前数据库里面的下载的条形码
 void MainWindow::on_EM_update_searchBarCode_LnEdit_textChanged(const QString &arg1)
 {
-    QString sampleNo,ID;
-
+    QString sampleNo,ID,isUpdate;
+    int rowCount,sqlItemCount;
     remove_TblWdiget_Row(ui->EM_update_loadDetectTaskNo_TblWidget);
     get_checkParameter_detectTaskNo();
-    int rowCount;
 
-    for(int i=0;i<LocalSqlSum;i++)
+    sqlItemCount = LocalSqlSum;
+    for(int i=0;i<sqlItemCount;i++)
     {
         sampleNo = indexOfTable(strArray[1][i],QString::fromUtf8("BAR_CODE"));
         sampleNo.remove(QString::fromUtf8("条形码"));
-        sampleNo.remove(QString::fromUtf8("\t"));
-        sampleNo.remove(QString::fromUtf8("\r"));
-        sampleNo.remove(QString::fromUtf8(" "));
-        ID =strArray[0][i];
+        sampleNo =sampleNo.simplified();
 
+        ID       = strArray[0][i];
+        isUpdate = get_isUpdate_from_sampleInfo(sampleNo);
         if(arg1==sampleNo)
         {
             rowCount=ui->EM_update_loadDetectTaskNo_TblWidget->rowCount();
             ui->EM_update_loadDetectTaskNo_TblWidget->insertRow(rowCount);
-            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,0, new QTableWidgetItem(sampleNo));
-            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,1, new QTableWidgetItem(ID));
+            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,0, new QTableWidgetItem(isUpdate));
+            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,1, new QTableWidgetItem(sampleNo));
+            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,2, new QTableWidgetItem(ID));
             ui->EM_update_loadDetectTaskNo_TblWidget->item(rowCount,0)->setCheckState(Qt::Unchecked);
         }
     }
@@ -37,28 +37,31 @@ void MainWindow::on_EM_update_searchBarCode_LnEdit_textChanged(const QString &ar
 //加载当前数据库里面的下载的所有条形码
 void MainWindow::on_EM_update_loadDetectTaskNo_PsBtn_clicked()
 {
-    QString str1,ID;
-
+    QString sampleNo,isUpdate,ID;
+    int sqlItemCount,rowCount;
     remove_TblWdiget_Row(ui->EM_update_loadDetectTaskNo_TblWidget);
+
     get_checkParameter_detectTaskNo();
-    int rowCount=ui->EM_update_loadDetectTaskNo_TblWidget->rowCount();
-    int sqlItemCount=LocalSqlSum;
+
+    rowCount=ui->EM_update_loadDetectTaskNo_TblWidget->rowCount();
+    sqlItemCount =LocalSqlSum;
+    //qDebug()<<QString::number(LocalSqlSum);
     for(int i=0;i<sqlItemCount;i++)
     {
-        str1 = indexOfTable(strArray[1][i],QString::fromUtf8("BAR_CODE"));
-        ID   = strArray[0][i];
-        //qDebug()<<strArray[1][i];
-        str1.remove(QString::fromUtf8("条形码"));
-        str1.remove(QString::fromUtf8("\t"));
-        str1.remove(QString::fromUtf8("\r"));
-        str1.remove(QString::fromUtf8(" "));
-        //qDebug()<<str1;
-        if(isTaskNoExist(str1,ui->EM_update_loadDetectTaskNo_TblWidget,0))
+        ID       = strArray[0][i];
+        sampleNo = indexOfTable(strArray[1][i],QString::fromUtf8("BAR_CODE"));
+        sampleNo.remove(QString::fromUtf8("条形码"));
+        sampleNo =sampleNo.simplified();
+//      qDebug()<<sampleNo;
+        isUpdate = get_isUpdate_from_sampleInfo(sampleNo);
+
+        if(isTaskNoExist(sampleNo,ui->EM_update_loadDetectTaskNo_TblWidget,0))
         {
            //qDebug()<<str1;
             ui->EM_update_loadDetectTaskNo_TblWidget->insertRow(rowCount);
-            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,0, new QTableWidgetItem(str1));
-            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,1, new QTableWidgetItem(ID));
+            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,0, new QTableWidgetItem(isUpdate));
+            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,1, new QTableWidgetItem(sampleNo));
+            ui->EM_update_loadDetectTaskNo_TblWidget->setItem(rowCount,2, new QTableWidgetItem(ID));
             ui->EM_update_loadDetectTaskNo_TblWidget->item(rowCount,0)->setCheckState(Qt::Unchecked);
         }
     }
@@ -69,7 +72,8 @@ void MainWindow::on_EM_update_loadLocalSql_PsBtn_clicked()
 {
     QString sampleNo,ID,strExec;
     char intCheckCount =0;
-    setCursor(QCursor(Qt::WaitCursor));
+    int rowCount;
+    setCursor(QCursor(Qt::BusyCursor));
 
     remove_TblWdiget_Row(ui->EM_INTUIT_MET_TblWidget);
     remove_TblWdiget_Row(ui->EM_BASICERR_TblWidget);
@@ -79,7 +83,7 @@ void MainWindow::on_EM_update_loadLocalSql_PsBtn_clicked()
     remove_TblWdiget_Row(ui->EM_MEASURE_REPEAT_TblWidget);
     remove_TblWdiget_Row(ui->EM_INFLUENCE_QTY_TblWidget); //
 
-    int rowCount=ui->EM_update_loadDetectTaskNo_TblWidget->rowCount();
+    rowCount=ui->EM_update_loadDetectTaskNo_TblWidget->rowCount();
 
     for(int i =0;i<rowCount;i++)//查找出勾选的条形码
     {
@@ -92,8 +96,8 @@ void MainWindow::on_EM_update_loadLocalSql_PsBtn_clicked()
                 return;
             }
 
-            sampleNo = ui->EM_update_loadDetectTaskNo_TblWidget->item(i,0)->text();
-            ID       = ui->EM_update_loadDetectTaskNo_TblWidget->item(i,1)->text();
+            sampleNo = ui->EM_update_loadDetectTaskNo_TblWidget->item(i,1)->text();
+            ID       = ui->EM_update_loadDetectTaskNo_TblWidget->item(i,2)->text();
 
             if(!get_ID_from_checkParameter(sampleNo,ID))
             {
@@ -105,8 +109,10 @@ void MainWindow::on_EM_update_loadLocalSql_PsBtn_clicked()
 
              if(isLocalBarCodeExist(strExec,sampleNo)) //判断条形码是否有下载信息
              {
+                 //qDebug()<<"fasdf";
+
                 #if 1
-                if(SqlTempToQstring(strExec,20))//获取sampleInfo信息(数据库执行语句,数据库长度)
+                if(SqlTempToQstring(strExec,21))//获取sampleInfo信息(数据库执行语句,数据库长度)
                 {
                      int j=0;
                                                          //已经查到的信息直接导入
@@ -125,6 +131,10 @@ void MainWindow::on_EM_update_loadLocalSql_PsBtn_clicked()
                  }
                 #endif
              }
+             else
+             {
+               showInformationBox(QString::fromUtf8("该条形码没有下载信息..."));
+              }
     }  
   }
     setCursor(QCursor(Qt::ArrowCursor));

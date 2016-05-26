@@ -66,4 +66,5 @@ OTHER_FILES += \
     xml.txt \
     text.txt \
     WH.SQL \
-    ËõÐ´.txt
+    ËõÐ´.txt \
+    ×ªÂë.txt

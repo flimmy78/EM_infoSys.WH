@@ -15,20 +15,14 @@ bool MainWindow:: fill_CREEPING(int index)
 
     str1 = indexOfotherText(strArray[2][index],QString::fromUtf8("潜动测试_"));
 
-    if(str1 =="0")
+    if(str1 == "0")
     {
-        return true;
+        return false;
     }
 
-    rowCount =ui->EM_CREEPING_TblWidget->rowCount();
-    columnCount =ui->EM_CREEPING_TblWidget->columnCount();
-
+    rowCount    = ui->EM_CREEPING_TblWidget->rowCount();
+    columnCount = ui->EM_CREEPING_TblWidget->columnCount();
     ui->EM_CREEPING_TblWidget->insertRow(rowCount);
-
-    for(int j =0;j<columnCount;j++)//初始化
-    {
-        ui->EM_CREEPING_TblWidget->setItem(rowCount,j, new QTableWidgetItem(""));
-    }
 
     ui->EM_CREEPING_TblWidget->setItem(rowCount,0, new QTableWidgetItem(my_MT_DETECT_TASK.DETECT_TASK_NO));//检定任务单
     ui->EM_CREEPING_TblWidget->setItem(rowCount,1, new QTableWidgetItem(my_MT_DETECT_TASK.EQUIP_CATEG));                 //设备类别
@@ -37,16 +31,12 @@ bool MainWindow:: fill_CREEPING(int index)
     ui->EM_CREEPING_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                             //检定单元编号
     ui->EM_CREEPING_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                 //表位编号
     ui->EM_CREEPING_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));                 //设备条形码
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(strArray[3][0]));     //检定时间
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));                 //序号
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,9, new QTableWidgetItem("1"));                 //检定点序号
-
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,10, new QTableWidgetItem("1"));                //是否有效
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,11, new QTableWidgetItem("115%Un"));           //电压负载 115%
+    ui->EM_CREEPING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(my_CONC_CODE.TIME));     //检定时间
+    ui->EM_CREEPING_TblWidget->setItem(rowCount,11, new QTableWidgetItem("115%Un"));                      //电压负载 115%
 
     str2 = indexOfTable(strArray[1][index],QString::fromUtf8("校验圈数"));
 
-    if(str2=="0")
+    if(str2 == "0")
     {
         ui->EM_CREEPING_TblWidget->setItem(rowCount,12,new QTableWidgetItem("5"));                      //校验圈数
     }
@@ -85,8 +75,6 @@ bool MainWindow:: fill_CREEPING(int index)
     ui->EM_CREEPING_TblWidget->setItem(rowCount,17, new QTableWidgetItem(my_CONC_CODE.CREEPING));//合格？
 
     ui->EM_CREEPING_TblWidget->setItem(rowCount,18, new QTableWidgetItem(currentTime()));//wrietdate
-    ui->EM_CREEPING_TblWidget->setItem(rowCount,19, new QTableWidgetItem("0"));
-
     ui->EM_CREEPING_TblWidget->setItem(rowCount,20, new QTableWidgetItem(currentTime()));//handle date
 
     return true;
@@ -100,30 +88,20 @@ void MainWindow::addNode_CREEPING(QString nodeName, QDomDocument &domDoc)
     rowCount = ui->EM_CREEPING_TblWidget->rowCount();
     columnCount = ui->EM_CREEPING_TblWidget->columnCount();
 
-    if(rowCount <= 0)
+    if(!avoid_readVoidErr_TblWdiget(ui->EM_CREEPING_TblWidget))
     {
         return ;
     }
 
-    for(int j=0;j<rowCount;j++)
-    {
-        for(int i=0;i<columnCount;i++)
-        {
-            if(!ui->EM_CREEPING_TblWidget->item(j,i))
-            ui->EM_CREEPING_TblWidget->setItem(j,i, new QTableWidgetItem(""));
-        }
-    }
-
     projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
     projectElement = domDoc.createElement(nodeName);
-    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectNo","PJ0196");
     projectElement.setAttribute("projectName",QString::fromUtf8("潜动试验"));
-    //projectElement.setAttribute("testResult",my_CONC_CODE.CREEPING);
+    projectElement.setAttribute("result",my_CONC_CODE.CREEPING);
     projectsElement.appendChild( projectElement );
 
     for(int i =0;i<rowCount;i++)
     {
-        projectElement.setAttribute("testResult",ui->EM_CREEPING_TblWidget->item(i,17)->text());
         domElement = domDoc.createElement("testData");
         projectElement.appendChild( domElement );
 
@@ -133,6 +111,7 @@ void MainWindow::addNode_CREEPING(QString nodeName, QDomDocument &domDoc)
         domElement.setAttribute("PF","");
         domElement.setAttribute("volt",ui->EM_CREEPING_TblWidget->item(i,11)->text());
 
+        domElement.setAttribute("testNum","0");
         domElement.setAttribute("curr","");
         domElement.setAttribute("conclusion",ui->EM_CREEPING_TblWidget->item(i,17)->text());
         domElement.setAttribute("refTime",ui->EM_CREEPING_TblWidget->item(i,7)->text());

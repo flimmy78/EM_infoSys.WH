@@ -3,10 +3,9 @@
 #include "QFile"
 #include "QDebug"
 
-//生成XML文件
-void MainWindow::on_EM_creat_xml_PsBtn_clicked()
+bool MainWindow:: MU_creat_xml()
 {
-    QString  fileName = "./update.xml";// "e:/update.xml";
+    QString  fileName =strUpdatePath;
     QFile *file;
     QDomDocument domDoc;
 
@@ -15,15 +14,10 @@ void MainWindow::on_EM_creat_xml_PsBtn_clicked()
       file->remove(fileName);
     }
 
-    if(!create_xml(fileName,"samples"))
-    {
-        return ;
-    }
-
-    if(!load_xmlFile(fileName,domDoc))
-    {
-        return ;
-    }
+    QDomProcessingInstruction instruction = domDoc.createProcessingInstruction("xml","version=\"1.0\" encoding=\"GB2312\"");
+    domDoc.appendChild(instruction);
+    QDomElement root = domDoc.createElement("samples"); //根节点
+    domDoc.appendChild(root);
 
     addNode_sample("sample",domDoc);
     addNode_INTUIT("project",domDoc);
@@ -33,22 +27,27 @@ void MainWindow::on_EM_creat_xml_PsBtn_clicked()
     addNode_STARTING("project",domDoc);
     addNode_INFLUENCE("project",domDoc);
 
+    g_domDoc=domDoc;
+
     if(!save_xmlFile(fileName, domDoc))
     {
-       return ;
+       return  false;
     }
 
-    showInformationBox(QString::fromUtf8("创建成功"));
+     return  true;
+    //showInformationBox(QString::fromUtf8("创建成功"));
+
 }
+
 
 void MainWindow::on_EM_save_XML_PsBtn_clicked()
 {
     QStringList strList;
     QDomDocument domDoc;
     QString  strTemp;
-    if(!load_xmlFile("e:/down1.xml",domDoc))
+    if(!load_xmlFile("d:/down1.xml",domDoc))
     {
-        save_xmlFile("e:/sampleInfo.xml",domDoc);
+        save_xmlFile("d:/sampleInfo.xml",domDoc);
         return;
     }
 

@@ -68,6 +68,8 @@ void MainWindow:: init_TblWidget()
     ui->EM_update_loadDetectTaskNo_TblWidget->horizontalHeader()->setResizeMode( QHeaderView::ResizeToContents);
     ui->EM_update_loadDetectTaskNo_TblWidget->verticalHeader()->setHidden(false);
 
+    strUpdatePath ="./EM_update.xml"; //"d:/update.xml";//"d:/update.xml";
+    strDownPath ="./EM_down.xml";
 
 }
 
@@ -130,6 +132,31 @@ void MainWindow::remove_TblWdiget_Row(QTableWidget *TblWiget)
     }
 }
 
+//避免读取的时候如果没有赋值,出现空指针
+bool MainWindow::avoid_readVoidErr_TblWdiget(QTableWidget *TblWiget)
+{
+    int rowCount,columnCount;
+    rowCount = TblWiget->rowCount();
+    columnCount = TblWiget->columnCount();
+
+//    qDebug()<<QString::number(rowCount);
+    if(rowCount <= 0)
+    {
+        return false ;
+    }
+
+    for(int j=0;j<rowCount;j++)
+    {
+        for(int i=0;i<columnCount;i++)
+        {
+            if(!TblWiget->item(j,i))
+            TblWiget->setItem(j,i, new QTableWidgetItem(""));
+        }
+    }
+
+    return true;
+}
+
 void MainWindow::on_EM_down_Act_triggered()
 {
   ui->stackedWidget->setCurrentIndex(0);
@@ -161,7 +188,7 @@ QString MainWindow:: get_DB_FileName()
    QString   strFileName;
    QFileInfo fileInfo;
 
-   setCursor(QCursor(Qt::WaitCursor));
+   setCursor(QCursor(Qt::BusyCursor));
 
    if(1)
    {

@@ -17,18 +17,12 @@ bool MainWindow:: fill_STARTING(int index)
 
     if(str1=="0")
     {
-        return  true;
+        return  false;
     }
 
     rowCount =ui->EM_STARTING_TblWidget->rowCount();
     columnCount =ui->EM_STARTING_TblWidget->columnCount();
-
     ui->EM_STARTING_TblWidget->insertRow(rowCount);
-
-    for(int j =0;j<columnCount;j++)//初始化
-    {
-        ui->EM_STARTING_TblWidget->setItem(rowCount,j, new QTableWidgetItem(""));
-    }
 
     ui->EM_STARTING_TblWidget->setItem(rowCount,0, new QTableWidgetItem(my_MT_DETECT_TASK.DETECT_TASK_NO));//检定任务单
     ui->EM_STARTING_TblWidget->setItem(rowCount,1, new QTableWidgetItem(my_MT_DETECT_TASK.EQUIP_CATEG));                 //设备类别
@@ -37,22 +31,19 @@ bool MainWindow:: fill_STARTING(int index)
     ui->EM_STARTING_TblWidget->setItem(rowCount,4, new QTableWidgetItem(""));                 //检定单元编号
     ui->EM_STARTING_TblWidget->setItem(rowCount,5, new QTableWidgetItem(""));                 //表位编号
     ui->EM_STARTING_TblWidget->setItem(rowCount,6, new QTableWidgetItem(my_MT_DETECT_TASK.BAR_CODE));                 //设备条形码
-    ui->EM_STARTING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(strArray[3][0]));     //检定时间
-    ui->EM_STARTING_TblWidget->setItem(rowCount,8, new QTableWidgetItem("1"));//序号
-    ui->EM_STARTING_TblWidget->setItem(rowCount,9, new QTableWidgetItem("1"));//检定点序号
+    ui->EM_STARTING_TblWidget->setItem(rowCount,7, new QTableWidgetItem(my_CONC_CODE.TIME));     //检定时间
 
-    ui->EM_STARTING_TblWidget->setItem(rowCount,10, new QTableWidgetItem("1"));//是否有效
     ui->EM_STARTING_TblWidget->setItem(rowCount,11, new QTableWidgetItem("100%Un"));//电压负载 100%
 
     str2 = indexOfTable(strArray[1][index],QString::fromUtf8("校验圈数"));
 
     if(str2=="0")
     {
-        ui->EM_STARTING_TblWidget->setItem(rowCount,12,new QTableWidgetItem("5"));                      //校验圈数
+        ui->EM_STARTING_TblWidget->setItem(rowCount,12,new QTableWidgetItem("5"));
     }
     else
     {
-         ui->EM_STARTING_TblWidget->setItem(rowCount,12,new QTableWidgetItem(str2));                      //校验圈数
+         ui->EM_STARTING_TblWidget->setItem(rowCount,12,new QTableWidgetItem(str2));
     }
 
     str2=str1.left(str1.indexOf("_"));
@@ -83,13 +74,9 @@ bool MainWindow:: fill_STARTING(int index)
     my_CONC_CODE.STARTING=JBWCSYJLDM_index(str1);
     ui->EM_STARTING_TblWidget->setItem(rowCount,17, new QTableWidgetItem(my_CONC_CODE.STARTING));//合格？
     ui->EM_STARTING_TblWidget->setItem(rowCount,18, new QTableWidgetItem(currentTime()));//wrietdate
-    ui->EM_STARTING_TblWidget->setItem(rowCount,19, new QTableWidgetItem("0"));
-
     ui->EM_STARTING_TblWidget->setItem(rowCount,20, new QTableWidgetItem(currentTime()));//handle date
 
     str1 = indexOfTable(strArray[1][index],QString::fromUtf8("电流量程"));
-
-    ui->EM_STARTING_TblWidget->setItem(rowCount,21, new QTableWidgetItem(strLoadCurrent));//启动电流
 
     return true;
 }
@@ -102,30 +89,20 @@ void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
     rowCount = ui->EM_STARTING_TblWidget->rowCount();
     columnCount = ui->EM_STARTING_TblWidget->columnCount();
 
-    if(rowCount <= 0)
+    if(!avoid_readVoidErr_TblWdiget(ui->EM_STARTING_TblWidget))
     {
         return ;
     }
 
-    for(int j=0;j<rowCount;j++)
-    {
-        for(int i=0;i<columnCount;i++)
-        {
-            if(!ui->EM_STARTING_TblWidget->item(j,i))
-            ui->EM_STARTING_TblWidget->setItem(j,i, new QTableWidgetItem(""));
-        }
-    }
-
     projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
     projectElement = domDoc.createElement(nodeName);
-    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectNo","PJ0195");
     projectElement.setAttribute("projectName",QString::fromUtf8("启动试验"));
-    //projectElement.setAttribute("testResult",my_CONC_CODE.STARTING);
+    projectElement.setAttribute("result",my_CONC_CODE.STARTING);
     projectsElement.appendChild( projectElement );
 
-    for(int i =0;i<rowCount;i++)//
+    for(int i =0;i<rowCount;i++)
     {
-        projectElement.setAttribute("testResult",ui->EM_STARTING_TblWidget->item(i,17)->text());
         domElement = domDoc.createElement("testData");
         projectElement.appendChild( domElement );
 
@@ -135,6 +112,7 @@ void MainWindow::addNode_STARTING(QString nodeName, QDomDocument &domDoc)
         domElement.setAttribute("PF","");
         domElement.setAttribute("volt","");
 
+        domElement.setAttribute("testNum","0");
         domElement.setAttribute("curr","");
         domElement.setAttribute("conclusion",ui->EM_STARTING_TblWidget->item(i,17)->text());
         domElement.setAttribute("refTime",ui->EM_STARTING_TblWidget->item(i,7)->text());

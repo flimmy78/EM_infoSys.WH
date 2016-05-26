@@ -18,7 +18,7 @@ bool MainWindow::fill_BASICERR(QString ID)
 }
 
 //获取checkParameter相关内容
-int MainWindow:: get_BASICERR_checkParameter(QString strID)
+void MainWindow:: get_BASICERR_checkParameter(QString strID)
 {
     QString strExec,str2,str3;
     int rowCount;
@@ -27,7 +27,7 @@ int MainWindow:: get_BASICERR_checkParameter(QString strID)
 
     if(!SqlTempToQstring(strExec,11))
     {
-        return 0;
+        return ;
     }
 
     rowCount =ui->EM_BASICERR_TblWidget->rowCount();
@@ -51,7 +51,6 @@ int MainWindow:: get_BASICERR_checkParameter(QString strID)
             }
         }
     }
-    return 0;
 }
 
 void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
@@ -64,25 +63,15 @@ void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
     rowCount = ui->EM_BASICERR_TblWidget->rowCount();
     columnCount = ui->EM_BASICERR_TblWidget->columnCount();
 
-    if(rowCount <= 0)
+    if(!avoid_readVoidErr_TblWdiget(ui->EM_BASICERR_TblWidget))
     {
         return ;
     }
-
-    for(int j=0;j<rowCount;j++)
-    {
-        for(int i=0;i<columnCount;i++)
-        {
-            if(!ui->EM_BASICERR_TblWidget->item(j,i))
-            ui->EM_BASICERR_TblWidget->setItem(j,i, new QTableWidgetItem(""));
-        }
-    }
-
     projectsElement = domDoc.documentElement().firstChild().firstChild().toElement();
     projectElement = domDoc.createElement(nodeName);
-    projectElement.setAttribute("sampleNo",my_MT_DETECT_TASK.BAR_CODE);
+    projectElement.setAttribute("projectNo","PJ0001");
     projectElement.setAttribute("projectName",QString::fromUtf8("基本误差"));
-    projectElement.setAttribute("testResult",my_CONC_CODE.BASICERR);
+    projectElement.setAttribute("result",my_CONC_CODE.BASICERR);
     projectsElement.appendChild( projectElement );
 
     for(int i =0;i<rowCount;i++)//
@@ -97,14 +86,16 @@ void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
         testDataElement.setAttribute("volt",ui->EM_BASICERR_TblWidget->item(i,14)->text());
 
         testDataElement.setAttribute("curr",ui->EM_BASICERR_TblWidget->item(i,13)->text());
+
         testDataElement.setAttribute("conclusion",ui->EM_BASICERR_TblWidget->item(i,22)->text());
         testDataElement.setAttribute("refTime",ui->EM_BASICERR_TblWidget->item(i,7)->text());
-        testDataElement.setAttribute("strSampleID","");
+        testDataElement.setAttribute("aveErr",ui->EM_BASICERR_TblWidget->item(i,20)->text());//平均误差
+        testDataElement.setAttribute("intErr",ui->EM_BASICERR_TblWidget->item(i,21)->text());//化整误差
 
         str1= ui->EM_BASICERR_TblWidget->item(i,19)->text(); //误差次数
         int simplingCount = str1.count("|")+1;
 
-        for(int i =0;i<simplingCount;i++)
+        for(int j =0;j<simplingCount;j++)
         {
             index=str1.indexOf("|");
 
@@ -121,7 +112,16 @@ void MainWindow::addNode_BASICERR(QString nodeName, QDomDocument &domDoc)
             textNode = domDoc.createTextNode(str2);
             domElement = domDoc.createElement("error");
             domElement.appendChild(textNode);
-            testDataElement.appendChild( domElement );
+            testDataElement.appendChild( domElement );                                                
+
+        }
+
+        for(int j =simplingCount;j<5;j++)//默认至少5个,小于则补充为'/'
+        {
+            QDomText textNodeTemp = domDoc.createTextNode("/");
+            QDomElement DomElementTemp = domDoc.createElement("error");
+            DomElementTemp.appendChild(textNodeTemp);
+            testDataElement.appendChild( DomElementTemp );
         }
     }
 }

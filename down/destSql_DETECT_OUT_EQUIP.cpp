@@ -16,6 +16,7 @@ void MainWindow::dwon_DETECT_OUT_EQUIP(QString strBarCode)
     QSqlQuery  sqlQuery;
     QString    strExec;
     int rowCount;
+
     strExec = QString("select * from  MT_DETECT_OUT_EQUIP where BAR_CODE ='%1' order by  WRITE_DATE desc").arg(strBarCode);
 
     if(!sqlQuery.exec(strExec))
