@@ -39,6 +39,7 @@ void  MainWindow::open_localSql()
          return;
      }
 
+#if 0
      strExec ="CREATE TABLE if not exists MT_METER( METER_ID char(128),ERP_BATCH_NO char(128),BAR_CODE char(128) primary key,ASSET_NO char(128),MADE_NO char(128),LOT_NO char(128),ORG_NO char(128),ORG_TYPE char(128),PR_ORG char(128),BELONG_DEPT char(128),\n"
                     "CONTRACT_ID char(128),CONTRACT_NO char(128),RCV_ID char(128),ARRIVE_BATCH_NO char(128),AREA_CODE char(128),STORE_AREA_SORT char(128),WH_ID char(128),WH_AREA_ID char(128),STORE_AREA_ID char(128),\n"
                     "STORE_LOC_ID char(128),PALLET_BAR_CODE char(128),BOX_BAR_CODE char(128),SORT_CODE char(128),TYPE_CODE char(128),MODEL_CODE char(128),WIRING_MODE char(128),VOLT_CODE char(128),RATED_CURRENT char(128),OVERLOAD_FACTOR char(128),AP_PRE_LEVEL_CODE char(128),\n"
@@ -55,4 +56,5 @@ void  MainWindow::open_localSql()
         showInformationBox(QString::fromUtf8("create MT_METER error"));
         return;
     }
+#endif
 }

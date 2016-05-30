@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>信息化平台.电能表.WH.0523</string>
+   <string>信息化平台.电能表.WH.0530</string>
   </property>
   <property name="windowIcon">
    <iconset resource="pic/pic.qrc">
@@ -2008,7 +2008,7 @@
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>6</number>
+              <number>5</number>
              </property>
              <widget class="QWidget" name="EM_INTUIT_MET_tab">
               <attribute name="title">

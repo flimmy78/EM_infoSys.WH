@@ -35,8 +35,7 @@ void MainWindow::on_EM_down_saveLocalSql_PsBtn_clicked()
     }
 
     save_sampleInfo();
-    save_MT_METER();
-
+//    save_MT_METER();
 //    save_MT_P_CODE();
 //    save_MT_DETECT_TASK();
 //    save_MT_DETECT_OUT_EQUIP();
@@ -56,9 +55,9 @@ void MainWindow::on_EM_down_loadLocalSql_PsBtn_clicked()
 
     getDataFromLocalSqlToTblWidget(strExec,ui->EM_sampleInfo_TblWidget,ui->EM_sampleInfo_TblWidget->columnCount());
 
-    strExec = QString("select * from  MT_METER where BAR_CODE = '%1'").arg(strBarCode);
+//    strExec = QString("select * from  MT_METER where BAR_CODE = '%1'").arg(strBarCode);
 
-    getDataFromLocalSqlToTblWidget(strExec,ui->EM_METER_TblWidget,ui->EM_METER_TblWidget->columnCount());
+//    getDataFromLocalSqlToTblWidget(strExec,ui->EM_METER_TblWidget,ui->EM_METER_TblWidget->columnCount());
 
     setCursor(QCursor(Qt::ArrowCursor));
 }
@@ -75,9 +74,9 @@ void MainWindow::on_EM_down_deleteLocalSqlItem_PsBtn_clicked()
     byteArray = strExec.toLocal8Bit();
     sql_exec(byteArray.data());
 
-    strExec=QString("delete  from MT_METER where BAR_CODE ='%1'").arg(strBarCode);
-    byteArray = strExec.toLocal8Bit();
-    sql_exec(byteArray.data());
+//    strExec=QString("delete  from MT_METER where BAR_CODE ='%1'").arg(strBarCode);
+//    byteArray = strExec.toLocal8Bit();
+//    sql_exec(byteArray.data());
 
     showInformationBox(QString::fromUtf8("删除成功，请读查看以确认"));
     //on_EM_down_loadLocalSql_PsBtn_clicked();

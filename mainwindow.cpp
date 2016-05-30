@@ -60,6 +60,7 @@ void MainWindow:: init_TblWidget()
     ui->EM_sampleInfo_TblWidget->horizontalHeader()->setResizeMode( QHeaderView::ResizeToContents);
     ui->EM_sampleInfo_TblWidget->verticalHeader()->setHidden(false);
 
+    ui->EM_down_TabWidget->setTabEnabled(1,false);
     ui->EM_down_TabWidget->setTabEnabled(2,false);
     ui->EM_down_TabWidget->setTabEnabled(3,false);
     ui->EM_down_TabWidget->setTabEnabled(4,false);

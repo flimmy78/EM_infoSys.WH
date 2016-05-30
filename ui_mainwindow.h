@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed May 25 14:35:47 2016
+** Created: Mon May 30 09:43:54 2016
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -1698,7 +1698,7 @@ public:
 
         stackedWidget->setCurrentIndex(0);
         EM_down_TabWidget->setCurrentIndex(0);
-        EM_update_TabWidget->setCurrentIndex(6);
+        EM_update_TabWidget->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1706,7 +1706,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\344\277\241\346\201\257\345\214\226\345\271\263\345\217\260.\347\224\265\350\203\275\350\241\250.WH.0523", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "\344\277\241\346\201\257\345\214\226\345\271\263\345\217\260.\347\224\265\350\203\275\350\241\250.WH.0530", 0, QApplication::UnicodeUTF8));
         EM_down_Act->setText(QApplication::translate("MainWindow", "\344\270\213\350\275\275\345\237\272\346\234\254\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));
 #ifndef QT_NO_TOOLTIP
         EM_down_Act->setToolTip(QApplication::translate("MainWindow", "\344\270\213\350\275\275\345\237\272\346\234\254\344\277\241\346\201\257", 0, QApplication::UnicodeUTF8));

@@ -15,11 +15,11 @@ void MainWindow::analyze_sampleInfo(const QDomDocument domDoc)
     int rowCount=ui->EM_sampleInfo_TblWidget->rowCount();
     ui->EM_sampleInfo_TblWidget->insertRow(rowCount);
 
-    ui->EM_METER_TblWidget->insertRow(rowCount);
+    //ui->EM_METER_TblWidget->insertRow(rowCount);
 
 
     ui->EM_sampleInfo_TblWidget->setItem(rowCount,0, new QTableWidgetItem(g_map.value("sampleNo")));
-    ui->EM_METER_TblWidget->setItem(rowCount,2, new QTableWidgetItem(g_map.value("sampleNo")));
+    //ui->EM_METER_TblWidget->setItem(rowCount,2, new QTableWidgetItem(g_map.value("sampleNo")));
 
 
     ui->EM_sampleInfo_TblWidget->setItem(rowCount,1, new QTableWidgetItem(g_map.value("tableType")));
@@ -43,7 +43,7 @@ void MainWindow::analyze_sampleInfo(const QDomDocument domDoc)
     ui->EM_sampleInfo_TblWidget->setItem(rowCount,17, new QTableWidgetItem(g_map.value("sampleUserName")));
 
     ui->EM_sampleInfo_TblWidget->setItem(rowCount,18, new QTableWidgetItem(g_map.value("sampleManuNo")));
-    ui->EM_METER_TblWidget->setItem(rowCount,4, new QTableWidgetItem(g_map.value("sampleManuNo")));
+    //ui->EM_METER_TblWidget->setItem(rowCount,4, new QTableWidgetItem(g_map.value("sampleManuNo")));
     ui->EM_sampleInfo_TblWidget->setItem(rowCount,19, new QTableWidgetItem(g_map.value("sampleSeal")));
 
 }
